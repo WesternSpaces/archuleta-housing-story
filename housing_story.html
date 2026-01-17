@@ -194,10 +194,10 @@
             flex-shrink: 0;
         }
 
-        .household-icon.maria { background: #fce7f3; }
-        .household-icon.garcias { background: #dbeafe; }
-        .household-icon.rodriguezes { background: #fef3c7; }
-        .household-icon.robert { background: #e0e7ff; }
+        .household-icon.anna { background: #fce7f3; }
+        .household-icon.mikejenny { background: #dbeafe; }
+        .household-icon.lindatom { background: #e0e7ff; }
+        .household-icon.patchris { background: #fef3c7; }
 
         .household-name {
             font-weight: 600;
@@ -547,10 +547,10 @@
             box-shadow: 0 0 0 2px white;
         }
 
-        .household-mini.maria { background: #fce7f3; }
-        .household-mini.garcias { background: #dbeafe; }
-        .household-mini.rodriguezes { background: #fef3c7; }
-        .household-mini.robert { background: #e0e7ff; }
+        .household-mini.anna { background: #fce7f3; }
+        .household-mini.mikejenny { background: #dbeafe; }
+        .household-mini.lindatom { background: #e0e7ff; }
+        .household-mini.patchris { background: #fef3c7; }
 
         .summary-notes {
             font-size: 0.85rem;
@@ -699,50 +699,71 @@
     <!-- CHAPTER 1: MEET YOUR NEIGHBORS -->
     <section class="chapter-section">
         <h2><span class="chapter-number">1</span> Meet Your Neighbors</h2>
-        <p>These aren't real people, but they represent real situations in our community. As you read, consider: <strong>Which household feels most familiar to you?</strong></p>
+        <p>These aren't real people, but they represent real situations in our community. As you read, consider: <strong>Which household's story resonates with you?</strong></p>
 
-        <div class="household-card" data-household="maria">
+        <div class="callout teal" style="margin: 15px 0;">
+            <strong>You'll see "AMI" throughout</strong>—that's Area Median Income. It's the middle point of all household incomes in our area. For Archuleta County in 2025, 100% AMI for a 2-person household is $81,600/year. Housing programs use AMI to determine who qualifies: 50% AMI means you earn half the median; 80% AMI means you earn 80% of it. Housing is considered "affordable" when you spend no more than 30% of income on it.
+        </div>
+
+        <div class="household-card" data-household="anna">
             <div class="household-header">
-                <div class="household-icon maria">&#x1F3E5;</div>
+                <div class="household-icon anna">&#x1F3E5;</div>
                 <div>
-                    <div class="household-name">Maria: The Healthcare Worker</div>
+                    <div class="household-name">Anna: The Healthcare Worker</div>
                     <div class="household-subtitle">CNA at Pagosa Springs Medical Center, $42,000/year (~50% AMI)</div>
                 </div>
             </div>
             <div class="household-details">
-                <p>Maria is 34 and has been here five years. She's great at her job and loves the community. She rents a one-bedroom apartment and works extra shifts when she can. She's looked at buying, but the math doesn't work. She's considered moving to Durango, where some coworkers commute from, but doesn't want to spend two hours a day in a car.</p>
+                <p>Anna is 34 and has been here five years. She's great at her job and loves the community. She rents a one-bedroom apartment and works extra shifts when she can. She's looked at buying, but the math doesn't work. She's considered moving to Durango, where some coworkers commute from, but doesn't want to spend two hours a day in a car.</p>
             </div>
             <div class="household-afford">
                 <strong>What she can afford:</strong> $1,050/month rent | Homeownership out of reach
             </div>
         </div>
 
-        <div class="household-card" data-household="garcias">
+        <div class="household-card" data-household="mikejenny">
             <div class="household-header">
-                <div class="household-icon garcias">&#x1F46A;</div>
+                <div class="household-icon mikejenny">&#x1F46A;</div>
                 <div>
-                    <div class="household-name">The Garcias: The Young Family</div>
-                    <div class="household-subtitle">Deputy sheriff + teacher's aide, two kids, $93,000/year (~80% AMI)</div>
+                    <div class="household-name">Mike & Jenny: The Young Family</div>
+                    <div class="household-subtitle">Deputy sheriff + part-time teacher, two kids, $102,000/year (~100% AMI)</div>
                 </div>
             </div>
             <div class="household-details">
-                <p>Carlos and Elena are in their late 30s with two kids in elementary school. They've rented the same three-bedroom house for six years. The landlord just told them he's selling—and the new owner may not keep it as a rental. They've started looking to buy, but listings under $400,000 are rare.</p>
+                <p>Mike and Jenny are in their late 30s with two kids in elementary school. They've rented the same three-bedroom house for six years. The landlord just told them he's selling—and the new owner may not keep it as a rental. They've started looking to buy, but even at 100% AMI, they can't afford the median home.</p>
             </div>
             <div class="household-afford">
-                <strong>What they can afford:</strong> $2,325/month rent | ~$350,000 home
+                <strong>What they can afford:</strong> $2,550/month rent | ~$385,000 home
             </div>
         </div>
 
-        <div class="household-card" data-household="rodriguezes">
+        <div class="household-card" data-household="lindatom">
             <div class="household-header">
-                <div class="household-icon rodriguezes">&#x1F373;</div>
+                <div class="household-icon lindatom">&#x1F3E0;</div>
                 <div>
-                    <div class="household-name">The Rodriguezes: The Restaurant Owners</div>
+                    <div class="household-name">Linda & Tom: The Retiring Couple</div>
+                    <div class="household-subtitle">Retired teacher + retired worker, $65,000/year (~80% AMI)</div>
+                </div>
+            </div>
+            <div class="household-details">
+                <p>Linda, 67, taught at Pagosa Springs schools for 30 years. Tom, 69, worked various jobs in the county. They live on combined pensions and Social Security. They own a 3-bedroom home worth $450,000, but it's more house than they need now. They'd like to downsize to something smaller—but there's nothing on the market under $350,000.</p>
+                <p style="font-style: italic; color: #666; margin-top: 10px;">If they could downsize, they'd free up a family home for the market. But they can't find their next place.</p>
+            </div>
+            <div class="household-afford">
+                <strong>What they could afford:</strong> $1,625/month rent | ~$245,000 home (if they downsized)
+            </div>
+        </div>
+
+        <div class="household-card" data-household="patchris">
+            <div class="household-header">
+                <div class="household-icon patchris">&#x1F373;</div>
+                <div>
+                    <div class="household-name">Pat & Chris: The Restaurant Owners</div>
                     <div class="household-subtitle">Downtown restaurant owners for 12 years</div>
                 </div>
             </div>
             <div class="household-details">
-                <p>Miguel and Teresa aren't looking for housing themselves—they own their home. But they can't find workers. Last summer, they had to close two days a week because they couldn't staff the kitchen. When they do find applicants, many back out once they see rental prices.</p>
+                <p>Pat and Chris aren't looking for housing themselves—they own their home. But they can't find workers. Last summer, they had to close two days a week because they couldn't staff the kitchen. When they do find applicants, many back out once they see rental prices.</p>
                 <p style="font-style: italic; color: #666; margin-top: 10px;">"We've turned away business. We've shortened hours. It's not a labor problem—it's a housing problem."</p>
             </div>
             <div class="household-afford">
@@ -750,41 +771,25 @@
             </div>
         </div>
 
-        <div class="household-card" data-household="robert">
-            <div class="household-header">
-                <div class="household-icon robert">&#x1F3E0;</div>
-                <div>
-                    <div class="household-name">Robert: The Retiring Teacher</div>
-                    <div class="household-subtitle">25 years at Pagosa Springs Middle School, $32,000/year (~40% AMI)</div>
-                </div>
-            </div>
-            <div class="household-details">
-                <p>Robert, 67, retired two years ago and lives on Social Security plus a modest pension. He owns his home, but it's more house than he needs now. He'd like to downsize to something smaller and more accessible—maybe a condo or apartment—and free up equity. But there's nothing like that on the market.</p>
-            </div>
-            <div class="household-afford">
-                <strong>What he could afford:</strong> $800/month rent | ~$120,000 home (if he downsized)
-            </div>
-        </div>
-
         <!-- Reflection 1 -->
         <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 25px;">
-            <p style="margin: 0 0 15px 0;"><strong>Which household feels most familiar to your situation—or to someone you know?</strong></p>
+            <p style="margin: 0 0 15px 0;"><strong>Which household's story resonates with you—or reminds you of someone in our community?</strong></p>
             <div class="reflection-options">
                 <label class="reflection-option">
-                    <input type="checkbox" name="familiar_household" value="maria" onchange="updateSummary()">
-                    <span>Maria (healthcare worker, can't afford rent)</span>
+                    <input type="checkbox" name="familiar_household" value="anna" onchange="updateSummary()">
+                    <span>Anna (healthcare worker, can't afford rent)</span>
                 </label>
                 <label class="reflection-option">
-                    <input type="checkbox" name="familiar_household" value="garcias" onchange="updateSummary()">
-                    <span>The Garcias (working family, trying to buy)</span>
+                    <input type="checkbox" name="familiar_household" value="mikejenny" onchange="updateSummary()">
+                    <span>Mike & Jenny (working family, trying to buy)</span>
                 </label>
                 <label class="reflection-option">
-                    <input type="checkbox" name="familiar_household" value="rodriguezes" onchange="updateSummary()">
-                    <span>The Rodriguezes (employer, can't find workers)</span>
+                    <input type="checkbox" name="familiar_household" value="lindatom" onchange="updateSummary()">
+                    <span>Linda & Tom (retirees, limited downsizing options)</span>
                 </label>
                 <label class="reflection-option">
-                    <input type="checkbox" name="familiar_household" value="robert" onchange="updateSummary()">
-                    <span>Robert (senior, limited downsizing options)</span>
+                    <input type="checkbox" name="familiar_household" value="patchris" onchange="updateSummary()">
+                    <span>Pat & Chris (employers, can't find workers)</span>
                 </label>
             </div>
         </div>
@@ -819,27 +824,37 @@
                 <th>The Gap</th>
             </tr>
             <tr>
-                <td><strong>Maria</strong> ($42k/yr)</td>
+                <td><strong>Anna</strong> (healthcare, 50% AMI)</td>
                 <td>$1,050/mo rent</td>
                 <td>$2,783/mo median rent</td>
                 <td class="gap-negative">-$1,733/mo</td>
             </tr>
             <tr>
-                <td><strong>The Garcias</strong> ($93k/yr)</td>
-                <td>~$350,000 home</td>
+                <td><strong>Mike & Jenny</strong> (family, 100% AMI)</td>
+                <td>~$385,000 home</td>
                 <td>$553,500 median home</td>
-                <td class="gap-negative">-$203,500</td>
+                <td class="gap-negative">-$168,500</td>
             </tr>
             <tr>
-                <td><strong>Robert</strong> ($32k/yr)</td>
-                <td>$800/mo rent</td>
+                <td><strong>Linda & Tom</strong> (retirees, 80% AMI)</td>
+                <td>~$245,000 home</td>
+                <td>$350,000+ smallest available</td>
+                <td class="gap-negative">-$105,000+</td>
+            </tr>
+            <tr>
+                <td><strong>Pat & Chris's workers</strong></td>
+                <td>$750-875/mo rent</td>
                 <td>$2,783/mo median rent</td>
-                <td class="gap-negative">-$1,983/mo</td>
+                <td class="gap-negative">-$1,900+/mo</td>
             </tr>
         </table>
 
         <div class="callout">
-            <strong>For Maria:</strong> She'd need to earn $111,000/year—nearly <em>triple</em> her salary—to afford median rent at 30% of income. So she spends closer to 50% on housing, leaving little for savings or emergencies.
+            <strong>For Anna:</strong> She'd need to earn $111,000/year—nearly <em>triple</em> her salary—to afford median rent at 30% of income. So she spends closer to 50% on housing, leaving little for savings or emergencies.
+        </div>
+
+        <div class="callout orange">
+            <strong>For Pat & Chris's workers:</strong> When a restaurant can't find line cooks because they'd need to earn $111,000 to afford median rent, the restaurant closes early. The worker, the business, and the community all lose.
         </div>
 
         <div class="stat-row">
@@ -863,23 +878,23 @@
 
         <!-- Reflection 2 -->
         <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 25px;">
-            <p style="margin: 0 0 15px 0;"><strong>Have you experienced this affordability gap?</strong></p>
+            <p style="margin: 0 0 15px 0;"><strong>How does this affordability gap show up in our community?</strong></p>
             <div class="reflection-options">
                 <label class="reflection-option">
-                    <input type="checkbox" name="gap_experience" value="self" onchange="updateSummary()">
-                    <span>Yes, I'm struggling with housing costs myself</span>
+                    <input type="checkbox" name="gap_experience" value="workers" onchange="updateSummary()">
+                    <span>I see this affecting workers I know</span>
                 </label>
                 <label class="reflection-option">
-                    <input type="checkbox" name="gap_experience" value="someone" onchange="updateSummary()">
-                    <span>Someone I know is struggling</span>
+                    <input type="checkbox" name="gap_experience" value="families" onchange="updateSummary()">
+                    <span>I see this affecting families in our community</span>
                 </label>
                 <label class="reflection-option">
-                    <input type="checkbox" name="gap_experience" value="community" onchange="updateSummary()">
-                    <span>I see this affecting my community/workplace</span>
+                    <input type="checkbox" name="gap_experience" value="businesses" onchange="updateSummary()">
+                    <span>I see businesses struggling to hire</span>
                 </label>
                 <label class="reflection-option">
-                    <input type="checkbox" name="gap_experience" value="no" onchange="updateSummary()">
-                    <span>I haven't experienced this directly</span>
+                    <input type="checkbox" name="gap_experience" value="residents" onchange="updateSummary()">
+                    <span>I see longtime residents having to leave</span>
                 </label>
             </div>
         </div>
@@ -887,8 +902,8 @@
 
     <!-- CHAPTER 3: ECONOMIC IMPACT -->
     <section class="chapter-section economic">
-        <h2><span class="chapter-number">3</span> It's Not Just Personal—It's Economic</h2>
-        <p>The Rodriguezes' story isn't unique. Housing is the top barrier to hiring in Archuleta County.</p>
+        <h2><span class="chapter-number">3</span> It Affects All of Us</h2>
+        <p>Pat & Chris's story isn't unique. Housing affects more than just the people looking for a place to live—it affects our whole community.</p>
 
         <div class="stat-row">
             <div class="stat-box gold">
@@ -909,35 +924,36 @@
             <strong>The jobs-housing imbalance:</strong> Pagosa Springs has <strong>3.5 jobs for every working household</strong>—one of the most extreme ratios in Colorado. Our economy needs more workers than can live here.
         </div>
 
-        <h3>Real Impacts</h3>
+        <h3>How It Shows Up in Our Community</h3>
         <ul>
-            <li><strong>Restaurants close early</strong> because they can't staff the kitchen</li>
-            <li><strong>Healthcare facilities limit services</strong> because nurses can't find housing</li>
-            <li><strong>Schools struggle to hire</strong> teachers and support staff</li>
-            <li><strong>Contractors turn down work</strong> because they can't find laborers</li>
+            <li><strong>As employers:</strong> Can't find workers to fill essential positions</li>
+            <li><strong>As patrons:</strong> Favorite restaurants close early, healthcare has longer waits</li>
+            <li><strong>As neighbors:</strong> Longtime residents forced to move away</li>
+            <li><strong>As taxpayers:</strong> Emergency services understaffed, schools struggle to hire</li>
+            <li><strong>As community members:</strong> Less diverse, less vibrant community</li>
         </ul>
 
-        <p style="font-size: 1.1rem; margin-top: 20px;"><strong>When workers can't live here, businesses can't operate here.</strong></p>
+        <p style="font-size: 1.1rem; margin-top: 20px;"><strong>When workers can't live here, businesses can't operate here—and our community loses what makes it special.</strong></p>
 
         <!-- Employer Reflection -->
         <div style="background: #fff7ed; padding: 20px; border-radius: 8px; margin-top: 25px; border-left: 4px solid #d97706;">
-            <p style="margin: 0 0 15px 0;"><strong>If you're an employer: What's your experience?</strong></p>
+            <p style="margin: 0 0 15px 0;"><strong>If you're an employer or work with one: What have you observed?</strong></p>
             <div class="reflection-options">
                 <label class="reflection-option">
-                    <input type="checkbox" name="employer_exp" value="biggest_challenge" onchange="updateSummary()">
-                    <span>Housing is our biggest hiring challenge</span>
+                    <input type="checkbox" name="employer_exp" value="hiring_challenge" onchange="updateSummary()">
+                    <span>Housing seems to affect hiring in our area</span>
                 </label>
                 <label class="reflection-option">
                     <input type="checkbox" name="employer_exp" value="lost_candidates" onchange="updateSummary()">
-                    <span>We've lost candidates due to housing</span>
+                    <span>I've seen candidates back out due to housing</span>
                 </label>
                 <label class="reflection-option">
                     <input type="checkbox" name="employer_exp" value="commute" onchange="updateSummary()">
-                    <span>Employees commute long distances</span>
+                    <span>Many employees commute long distances</span>
                 </label>
                 <label class="reflection-option">
-                    <input type="checkbox" name="employer_exp" value="considered_housing" onchange="updateSummary()">
-                    <span>We've considered providing or subsidizing housing</span>
+                    <input type="checkbox" name="employer_exp" value="service_impacts" onchange="updateSummary()">
+                    <span>I've noticed service impacts (shorter hours, longer waits)</span>
                 </label>
             </div>
         </div>
@@ -948,36 +964,36 @@
         <h2><span class="chapter-number">4</span> We're Not Starting From Scratch</h2>
         <p>Good news: our community has already taken steps to address housing. Here's what exists—and how it connects to our four households.</p>
 
-        <h3>For Maria (Healthcare Worker, ~50% AMI)</h3>
+        <h3>For Anna (Healthcare Worker, ~50% AMI)</h3>
         <ul>
             <li><strong>Housing Choice Vouchers</strong> — Rental assistance (~30 vouchers, program at capacity)</li>
             <li><strong>Hickory Ridge Apartments</strong> — 40 units for ≤60% AMI</li>
             <li><strong>Rose Mountain Townhomes</strong> — 34 new units at 30-60% AMI (opened 2024)</li>
         </ul>
-        <p style="font-size: 0.9rem; color: #666;"><em>The gap: Waitlists are long. Maria earns slightly too much for some programs but not enough for market rent.</em></p>
+        <p style="font-size: 0.9rem; color: #666;"><em>The gap: Waitlists are long. Anna earns slightly too much for some programs but not enough for market rent.</em></p>
 
-        <h3>For the Garcias (Working Family, ~80% AMI)</h3>
+        <h3>For Mike & Jenny (Working Family, ~100% AMI)</h3>
         <ul>
             <li><strong>HomesFund Down Payment Assistance</strong> — Second mortgages of $15k-$50k</li>
             <li><strong>Pagosa Springs CDC Workforce Housing</strong> — Chris Mountain homes ~$350k</li>
             <li><strong>Habitat for Humanity</strong> — Affordable homeownership (1-3 homes/year)</li>
         </ul>
-        <p style="font-size: 0.9rem; color: #666;"><em>The gap: Few homes exist at their price point. Down payment assistance can't bridge a $200k+ gap.</em></p>
+        <p style="font-size: 0.9rem; color: #666;"><em>The gap: Even at 100% AMI, they can't afford the median home. Down payment assistance helps but can't bridge a $168k gap.</em></p>
 
-        <h3>For the Rodriguezes (Employers)</h3>
-        <ul>
-            <li><strong>HOWL Program</strong> (new 2025) — Employer-linked workforce assistance</li>
-            <li><strong>Pipeline projects</strong> — Pagosa Views, Timberline, The Enclave with deed-restricted units</li>
-        </ul>
-        <p style="font-size: 0.9rem; color: #666;"><em>The gap: No employer-assisted housing program exists yet. HOWL is a pilot. Large-scale workforce housing is years away.</em></p>
-
-        <h3>For Robert (Senior, ~40% AMI)</h3>
+        <h3>For Linda & Tom (Retirees, ~80% AMI)</h3>
         <ul>
             <li><strong>Casa de los Arcos</strong> — 16 senior units at 0-30% AMI</li>
             <li><strong>Socorro Senior Living</strong> — 19 senior units at 0-30% AMI</li>
             <li><strong>Archuleta Seniors, Inc.</strong> — Aging-in-place support services</li>
         </ul>
-        <p style="font-size: 0.9rem; color: #666;"><em>The gap: Very limited senior housing. Long waitlists. Few options between "stay in your house" and "move away."</em></p>
+        <p style="font-size: 0.9rem; color: #666;"><em>The gap: Very limited smaller housing stock. They earn too much for subsidized senior housing, but can't find anything smaller to buy.</em></p>
+
+        <h3>For Pat & Chris (Employers)</h3>
+        <ul>
+            <li><strong>HOWL Program</strong> (new 2025) — Employer-linked workforce assistance</li>
+            <li><strong>Pipeline projects</strong> — Pagosa Views, Timberline, The Enclave with deed-restricted units</li>
+        </ul>
+        <p style="font-size: 0.9rem; color: #666;"><em>The gap: No employer-assisted housing program exists yet. HOWL is a pilot. Large-scale workforce housing is years away.</em></p>
 
         <h3 style="margin-top: 30px;">What's in the Pipeline
             <button class="info-toggle" onclick="toggleInfo('infoPipeline')"><span>&#9432;</span> Details</button>
@@ -1062,54 +1078,50 @@
     <!-- CHAPTER 5: YOUR TURN -->
     <section class="chapter-section reflection">
         <h2><span class="chapter-number">5</span> Your Turn</h2>
-        <p>You've followed four households through the data. You've seen the affordability gap, the economic impact, and what's already happening. Now we want to hear from you.</p>
+        <p>You've followed four households through the data. You've seen the affordability gap, the community impact, and what's already happening. Now we want to hear from you.</p>
 
-        <h3>Who Are YOU in This Story?</h3>
+        <h3>What Brings You to This Conversation?</h3>
         <div class="reflection-options">
             <label class="reflection-option">
-                <input type="checkbox" name="who_are_you" value="struggling" onchange="updateSummary()">
-                <span>I'm struggling — Housing costs are a significant burden for my household</span>
+                <input type="checkbox" name="who_are_you" value="community" onchange="updateSummary()">
+                <span>I care about our community's future</span>
             </label>
             <label class="reflection-option">
-                <input type="checkbox" name="who_are_you" value="employer" onchange="updateSummary()">
-                <span>I'm an employer — Housing affects my ability to hire and retain</span>
+                <input type="checkbox" name="who_are_you" value="know_someone" onchange="updateSummary()">
+                <span>I know someone affected by housing challenges</span>
             </label>
             <label class="reflection-option">
-                <input type="checkbox" name="who_are_you" value="worried" onchange="updateSummary()">
-                <span>I'm worried about someone — Family member, friend, or neighbor is affected</span>
+                <input type="checkbox" name="who_are_you" value="curious" onchange="updateSummary()">
+                <span>I'm curious about the data</span>
             </label>
             <label class="reflection-option">
-                <input type="checkbox" name="who_are_you" value="landlord" onchange="updateSummary()">
-                <span>I'm a landlord or property owner</span>
+                <input type="checkbox" name="who_are_you" value="work_housing" onchange="updateSummary()">
+                <span>I work in housing, development, or a related field</span>
             </label>
             <label class="reflection-option">
-                <input type="checkbox" name="who_are_you" value="concerned" onchange="updateSummary()">
-                <span>I'm concerned about our community — I see the broader impacts</span>
-            </label>
-            <label class="reflection-option">
-                <input type="checkbox" name="who_are_you" value="comfortable" onchange="updateSummary()">
-                <span>I'm comfortable but see the problem — Housing works for me, but not for many</span>
+                <input type="checkbox" name="who_are_you" value="solutions" onchange="updateSummary()">
+                <span>I want to help find solutions</span>
             </label>
         </div>
 
-        <h3 style="margin-top: 30px;">What Matters Most?</h3>
+        <h3 style="margin-top: 30px;">What Matters Most for Our Community's Future?</h3>
         <p>Of the needs we've discussed, which feels most urgent?</p>
         <div class="reflection-options">
             <label class="reflection-option">
                 <input type="radio" name="urgent_need" value="rental" onchange="updateSummary()">
-                <span>Rental housing for workers (like Maria)</span>
+                <span>Rental housing for workers (like Anna)</span>
             </label>
             <label class="reflection-option">
                 <input type="radio" name="urgent_need" value="homeownership" onchange="updateSummary()">
-                <span>Homeownership opportunities for families (like the Garcias)</span>
-            </label>
-            <label class="reflection-option">
-                <input type="radio" name="urgent_need" value="workforce" onchange="updateSummary()">
-                <span>Workforce housing so businesses can hire (like the Rodriguezes need)</span>
+                <span>Homeownership opportunities for families (like Mike & Jenny)</span>
             </label>
             <label class="reflection-option">
                 <input type="radio" name="urgent_need" value="senior" onchange="updateSummary()">
-                <span>Senior housing and downsizing options (like Robert needs)</span>
+                <span>Senior housing and downsizing options (like Linda & Tom need)</span>
+            </label>
+            <label class="reflection-option">
+                <input type="radio" name="urgent_need" value="workforce" onchange="updateSummary()">
+                <span>Workforce housing so businesses can hire (like Pat & Chris need)</span>
             </label>
             <label class="reflection-option">
                 <input type="radio" name="urgent_need" value="all" onchange="updateSummary()">
@@ -1117,13 +1129,13 @@
             </label>
         </div>
 
-        <h3 style="margin-top: 30px;">Your Experience</h3>
-        <p>In one sentence, what's your experience with housing in Archuleta County?</p>
-        <textarea id="experience" placeholder="Share your experience..." oninput="updateSummary()"></textarea>
+        <h3 style="margin-top: 30px;">What Should Decision-Makers Understand?</h3>
+        <p>In one sentence, what do you think decision-makers should understand about housing here?</p>
+        <textarea id="experience" placeholder="Share your perspective..." oninput="updateSummary()"></textarea>
 
-        <h3 style="margin-top: 30px;">The One Thing</h3>
-        <p><strong>What's the ONE thing you want decision-makers to know about housing here?</strong></p>
-        <textarea id="one-thing" placeholder="What should they know?" oninput="updateSummary()"></textarea>
+        <h3 style="margin-top: 30px;">What Should Be Prioritized?</h3>
+        <p><strong>What matters most for our community's housing future?</strong></p>
+        <textarea id="one-thing" placeholder="What should decision-makers prioritize?" oninput="updateSummary()"></textarea>
     </section>
 
     <!-- CHAPTER 6: WHAT'S NEXT -->
@@ -1192,10 +1204,10 @@
         <div class="summary-section">
             <h4>Households that resonate</h4>
             <div class="household-icons">
-                <div class="household-mini maria" id="mobile-mini-maria" title="Maria">&#x1F3E5;</div>
-                <div class="household-mini garcias" id="mobile-mini-garcias" title="Garcias">&#x1F46A;</div>
-                <div class="household-mini rodriguezes" id="mobile-mini-rodriguezes" title="Rodriguezes">&#x1F373;</div>
-                <div class="household-mini robert" id="mobile-mini-robert" title="Robert">&#x1F3E0;</div>
+                <div class="household-mini anna" id="mobile-mini-anna" title="Anna">&#x1F3E5;</div>
+                <div class="household-mini mikejenny" id="mobile-mini-mikejenny" title="Mike & Jenny">&#x1F46A;</div>
+                <div class="household-mini lindatom" id="mobile-mini-lindatom" title="Linda & Tom">&#x1F3E0;</div>
+                <div class="household-mini patchris" id="mobile-mini-patchris" title="Pat & Chris">&#x1F373;</div>
             </div>
         </div>
         <div class="summary-section">
@@ -1240,10 +1252,10 @@
                 <div class="summary-section">
                     <h4>Households that resonate</h4>
                     <div class="household-icons">
-                        <div class="household-mini maria" id="mini-maria" title="Maria">&#x1F3E5;</div>
-                        <div class="household-mini garcias" id="mini-garcias" title="Garcias">&#x1F46A;</div>
-                        <div class="household-mini rodriguezes" id="mini-rodriguezes" title="Rodriguezes">&#x1F373;</div>
-                        <div class="household-mini robert" id="mini-robert" title="Robert">&#x1F3E0;</div>
+                        <div class="household-mini anna" id="mini-anna" title="Anna">&#x1F3E5;</div>
+                        <div class="household-mini mikejenny" id="mini-mikejenny" title="Mike & Jenny">&#x1F46A;</div>
+                        <div class="household-mini lindatom" id="mini-lindatom" title="Linda & Tom">&#x1F3E0;</div>
+                        <div class="household-mini patchris" id="mini-patchris" title="Pat & Chris">&#x1F373;</div>
                     </div>
                 </div>
 
@@ -1280,7 +1292,7 @@
         // Update summary sidebar
         function updateSummary() {
             // Update household icons
-            const households = ['maria', 'garcias', 'rodriguezes', 'robert'];
+            const households = ['anna', 'mikejenny', 'lindatom', 'patchris'];
             households.forEach(h => {
                 const checked = document.querySelector(`input[value="${h}"]`)?.checked;
                 document.getElementById(`mini-${h}`)?.classList.toggle('selected', checked);

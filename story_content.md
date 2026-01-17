@@ -8,17 +8,19 @@
 
 Housing policy can feel abstract—full of acronyms, statistics, and policy jargon. But behind every number is a person, a family, a business trying to make it work here.
 
-This story follows four households through the data. They're not real people, but they represent real situations in our community. As you read, consider: **Which household feels most familiar to you?**
+This story follows four households through the data. They're not real people, but they represent real situations in our community. As you read, consider: **Which household's story resonates with you?**
+
+> **What's AMI?** You'll see "AMI" throughout—that's Area Median Income. It's the middle point of all household incomes in our area. For Archuleta County in 2025, 100% AMI for a 2-person household is $81,600/year. Housing programs use AMI to determine who qualifies. Housing is considered "affordable" when you spend no more than 30% of income on it.
 
 ---
 
 ## Chapter 1: Meet Your Neighbors
 
-### Maria: The Healthcare Worker
+### Anna: The Healthcare Worker
 
-**Who she is:** Maria is 34, a Certified Nursing Assistant at Pagosa Springs Medical Center. She's been here five years, loves the community, and is great at her job. She earns $42,000 a year—about 50% of the Area Median Income (AMI).
+**Who she is:** Anna is 34, a Certified Nursing Assistant at Pagosa Springs Medical Center. She's been here five years, loves the community, and is great at her job. She earns $42,000 a year—about 50% of the Area Median Income (AMI).
 
-**Her situation:** Maria rents a one-bedroom apartment and works extra shifts when she can. She's looked at buying, but the math doesn't work. She's considered leaving for Durango, where some of her coworkers commute from, but she doesn't want to spend two hours a day in a car.
+**Her situation:** Anna rents a one-bedroom apartment and works extra shifts when she can. She's looked at buying, but the math doesn't work. She's considered leaving for Durango, where some of her coworkers commute from, but she doesn't want to spend two hours a day in a car.
 
 **What she can afford:**
 - Maximum rent: $1,050/month (30% of income)
@@ -26,48 +28,50 @@ This story follows four households through the data. They're not real people, bu
 
 ---
 
-### The Garcias: The Young Family
+### Mike & Jenny: The Young Family
 
-**Who they are:** Carlos and Elena Garcia are in their late 30s with two kids in elementary school. Carlos is a deputy sheriff ($65,000), Elena is a teacher's aide ($28,000). Combined household income: $93,000—about 80% AMI for a family of four.
+**Who they are:** Mike and Jenny are in their late 30s with two kids in elementary school. Mike is a deputy sheriff ($70,000), Jenny is a part-time teacher ($32,000). Combined household income: $102,000—about 100% AMI for a family of four.
 
-**Their situation:** They've been renting a three-bedroom house for six years. The landlord just told them he's selling—and the new owner may not keep it as a rental. They've started looking to buy, but listings under $400,000 are rare, and what's available needs major work.
+**Their situation:** They've been renting a three-bedroom house for six years. The landlord just told them he's selling—and the new owner may not keep it as a rental. They've started looking to buy, but even at 100% AMI, they can't afford the median home.
 
 **What they can afford:**
-- Maximum rent: $2,325/month
-- Maximum home price: ~$350,000
+- Maximum rent: $2,550/month
+- Maximum home price: ~$385,000
 
 ---
 
-### The Rodriguezes: The Restaurant Owners
+### Linda & Tom: The Retiring Couple
 
-**Who they are:** Miguel and Teresa Rodriguez have run a restaurant downtown for twelve years. They're not looking for housing themselves—they own their home. But they can't find workers.
+**Who they are:** Linda, 67, taught at Pagosa Springs schools for 30 years. Tom, 69, worked various jobs in the county. They live on combined pensions and Social Security—about $65,000/year, roughly 80% AMI.
 
-**Their situation:** Last summer, they had to close two days a week because they couldn't staff the kitchen. Line cooks, servers, dishwashers—they all need housing, and there's nothing available. When they do find applicants, many back out once they see rental prices. Miguel has considered buying a property to rent to employees, but the numbers don't pencil out.
+**Their situation:** Linda and Tom own a 3-bedroom home worth $450,000, but it's more house than they need now. They'd like to downsize to something smaller and more accessible—maybe a condo or smaller home—and free up a family home for the market. But there's nothing available under $350,000.
+
+*If they could downsize, they'd free up a family home for the market. But they can't find their next place.*
+
+**What they could afford:**
+- Maximum rent: $1,625/month
+- Maximum home price: ~$245,000 (if they downsized)
+
+---
+
+### Pat & Chris: The Restaurant Owners
+
+**Who they are:** Pat and Chris have run a restaurant downtown for twelve years. They're not looking for housing themselves—they own their home. But they can't find workers.
+
+**Their situation:** Last summer, they had to close two days a week because they couldn't staff the kitchen. Line cooks, servers, dishwashers—they all need housing, and there's nothing available. When they do find applicants, many back out once they see rental prices.
 
 **The impact:** "We've turned away business. We've shortened hours. It's not a labor problem—it's a housing problem."
 
 ---
 
-### Robert: The Retiring Teacher
-
-**Who he is:** Robert, 67, taught at Pagosa Springs Middle School for 25 years. He retired two years ago and lives on Social Security plus a modest pension—about $32,000/year, roughly 40% AMI.
-
-**His situation:** Robert owns his home, but it's more house than he needs now. He'd like to downsize to something smaller and more accessible—maybe a condo or apartment—and free up equity for retirement. But there's nothing like that on the market. Meanwhile, his property taxes keep rising with home values. He's staying put, but he worries about maintaining the house as he ages.
-
-**What he could afford:**
-- Maximum rent: $800/month
-- Maximum home price: ~$120,000 (if he downsized)
-
----
-
 ### Reflection
 
-**As you read through these four households, which one feels most familiar to your situation—or to someone you know?**
+**Which household's story resonates with you—or reminds you of someone in our community?**
 
-- [ ] Maria (healthcare worker, can't afford rent)
-- [ ] The Garcias (working family, trying to buy)
-- [ ] The Rodriguezes (employer, can't find workers)
-- [ ] Robert (senior, limited options to downsize)
+- [ ] Anna (healthcare worker, can't afford rent)
+- [ ] Mike & Jenny (working family, trying to buy)
+- [ ] Linda & Tom (retirees, limited downsizing options)
+- [ ] Pat & Chris (employers, can't find workers)
 - [ ] None of these / Other
 
 ---
@@ -84,23 +88,22 @@ When households spend more than 30%, they're considered **"cost-burdened"**—me
 
 ### The Reality in Archuleta County
 
-| What They Earn | What They Can Afford | What Housing Costs | The Gap |
-|----------------|---------------------|--------------------|---------|
-| **Maria** ($42,000/yr) | $1,050/mo rent | $2,783/mo median rent | **-$1,733/mo** |
-| **The Garcias** ($93,000/yr) | ~$350,000 home | $553,500 median home | **-$203,500** |
-| **Robert** ($32,000/yr) | $800/mo rent | $2,783/mo median rent | **-$1,983/mo** |
-
-**The Rodriguezes** aren't looking for housing—but their employees are. A line cook earning $35,000 can afford $875/month. A server earning $30,000 can afford $750/month. The median rent is $2,783.
+| Household | What They Can Afford | What Housing Costs | The Gap |
+|-----------|---------------------|--------------------|---------|
+| **Anna** (healthcare, 50% AMI) | $1,050/mo rent | $2,783/mo median rent | **-$1,733/mo** |
+| **Mike & Jenny** (family, 100% AMI) | ~$385,000 home | $553,500 median home | **-$168,500** |
+| **Linda & Tom** (retirees, 80% AMI) | ~$245,000 home | $350,000+ smallest available | **-$105,000+** |
+| **Pat & Chris's workers** | $750-875/mo rent | $2,783/mo median rent | **-$1,900+/mo** |
 
 ### What These Gaps Mean
 
-**For Maria:** She'd need to earn $111,000/year—nearly triple her salary—to afford the median rent at 30% of income. So she spends closer to 50% of her income on housing, leaving little for savings or emergencies.
+**For Anna:** She'd need to earn $111,000/year—nearly triple her salary—to afford the median rent at 30% of income. So she spends closer to 50% of her income on housing, leaving little for savings or emergencies.
 
-**For the Garcias:** They'd need to find a home at $350,000 or less. In 2024, only 12% of homes sold in Archuleta County were under $400,000.
+**For Mike & Jenny:** Even at 100% AMI, they can't afford the median home. They'd need to find a home at $385,000 or less—rare in today's market.
 
-**For Robert:** If he had to rent, he'd need subsidized senior housing. The waitlist at Casa de los Arcos is measured in years.
+**For Linda & Tom:** They earn too much for subsidized senior housing, but can't find anything smaller to buy. So they stay in their 3-bedroom home, unable to free it up for a family who needs it.
 
-**For the Rodriguezes' employees:** They commute from Durango. Or they double up in overcrowded housing. Or they don't take the job at all.
+**For Pat & Chris's workers:** When a restaurant can't find line cooks because they'd need to earn $111,000 to afford median rent, the restaurant closes early. The worker, the business, and the community all lose.
 
 ### The Bigger Picture
 
@@ -126,20 +129,20 @@ When households spend more than 30%, they're considered **"cost-burdened"**—me
 
 ### Reflection
 
-**Have you experienced this affordability gap?**
+**How does this affordability gap show up in our community?**
 
-- [ ] Yes, I'm struggling with housing costs myself
-- [ ] Someone I know is struggling
-- [ ] I see this affecting my community/workplace
-- [ ] I haven't experienced this directly
+- [ ] I see this affecting workers I know
+- [ ] I see this affecting families in our community
+- [ ] I see businesses struggling to hire
+- [ ] I see longtime residents having to leave
 
 ---
 
-## Chapter 3: It's Not Just Personal—It's Economic
+## Chapter 3: It Affects All of Us
 
-The Rodriguezes' story isn't unique. Housing is the top barrier to hiring in Archuleta County.
+Pat & Chris's story isn't unique. Housing affects more than just the people looking for a place to live—it affects our whole community.
 
-### What Employers Are Telling Us
+### What We're Hearing
 
 In the 2024 Housing Needs Assessment employer survey:
 
@@ -156,39 +159,26 @@ Pagosa Springs has **3.5 jobs for every working household**. This is one of the 
 
 What does that mean? It means our economy needs more workers than can live here. Businesses compete for a limited pool of residents. Workers commute from Durango, Bayfield, and beyond. And some jobs simply go unfilled.
 
-### Real Impacts
+### How It Shows Up in Our Community
 
-- **Restaurants close early** because they can't staff the kitchen
-- **Healthcare facilities limit services** because nurses and CNAs can't find housing
-- **Schools struggle to hire** teachers and support staff
-- **Contractors turn down work** because they can't find laborers
-- **Retail stores operate understaffed** during peak season
+- **As employers:** Can't find workers to fill essential positions
+- **As patrons:** Favorite restaurants close early, healthcare has longer waits
+- **As neighbors:** Longtime residents forced to move away
+- **As taxpayers:** Emergency services understaffed, schools struggle to hire
+- **As community members:** Less diverse, less vibrant community
 
-### The Economic Chain Reaction
-
-Every unfilled position is:
-- A business that can't serve customers
-- A service that goes unprovided
-- A tax base that doesn't expand
-- A community that can't grow sustainably
-
-**When workers can't live here, businesses can't operate here.**
+**When workers can't live here, businesses can't operate here—and our community loses what makes it special.**
 
 ---
 
-### For Employers
+### Reflection
 
-**If you're an employer, what's your experience?**
+**If you're an employer or work with one: What have you observed?**
 
-- [ ] Housing is our biggest hiring challenge
-- [ ] We've lost candidates due to housing
-- [ ] Employees commute long distances
-- [ ] We've considered providing or subsidizing housing
-- [ ] Housing hasn't significantly affected our hiring
-
-**What solutions have you tried or considered?**
-
-(Open text)
+- [ ] Housing seems to affect hiring in our area
+- [ ] I've seen candidates back out due to housing
+- [ ] Many employees commute long distances
+- [ ] I've noticed service impacts (shorter hours, longer waits)
 
 ---
 
@@ -198,46 +188,46 @@ Good news: our community has already taken steps to address housing. Let's look 
 
 ### Current Programs & Partners
 
-#### For Maria (Healthcare Worker, ~50% AMI)
+#### For Anna (Healthcare Worker, ~50% AMI)
 
 **What could help:**
 - **Housing Choice Vouchers** — Rental assistance for eligible households (program currently at capacity with ~30 vouchers)
 - **Hickory Ridge Apartments** — 40 units for households at 60% AMI or below
 - **Rose Mountain Townhomes** — 34 new units at 30-60% AMI (opened 2024)
 
-**The gap:** Waitlists are long. Supply is limited. Maria earns slightly too much for some programs but not enough for market rent.
+**The gap:** Waitlists are long. Supply is limited. Anna earns slightly too much for some programs but not enough for market rent.
 
 ---
 
-#### For the Garcias (Working Family, ~80% AMI)
+#### For Mike & Jenny (Working Family, ~100% AMI)
 
 **What could help:**
 - **HomesFund Down Payment Assistance** — Second mortgages of $15,000-$50,000 for 60-120% AMI buyers
 - **Pagosa Springs CDC Workforce Housing** — Chris Mountain development offering homes in the $350,000 range
 - **Habitat for Humanity** — Affordable homeownership (1-3 homes/year; waitlist exists)
 
-**The gap:** Few homes exist at their price point. Down payment assistance helps but can't bridge a $200,000+ gap between what they can afford and median price.
+**The gap:** Even at 100% AMI, they can't afford the median home. Down payment assistance helps but can't bridge a $168,000+ gap.
 
 ---
 
-#### For the Rodriguezes (Employers)
-
-**What could help:**
-- **HOWL Program** (new 2025) — Employer-linked rental and utility assistance for workforce at 80-120% AMI
-- **Workforce housing developments** — Pipeline projects include Pagosa Views, Timberline Apartments, and The Enclave with deed-restricted units
-
-**The gap:** No existing employer-assisted housing program. HOWL is a pilot. Large-scale workforce housing is still years away.
-
----
-
-#### For Robert (Senior, ~40% AMI)
+#### For Linda & Tom (Retirees, ~80% AMI)
 
 **What could help:**
 - **Casa de los Arcos** — 16 senior units at 0-30% AMI
 - **Socorro Senior Living** — 19 senior units at 0-30% AMI
 - **Archuleta Seniors, Inc.** — Aging-in-place support services
 
-**The gap:** Very limited senior housing stock. Long waitlists. Few options between "stay in your house" and "move away."
+**The gap:** Very limited smaller housing stock. They earn too much for subsidized senior housing, but can't find anything smaller to buy.
+
+---
+
+#### For Pat & Chris (Employers)
+
+**What could help:**
+- **HOWL Program** (new 2025) — Employer-linked rental and utility assistance for workforce at 80-120% AMI
+- **Workforce housing developments** — Pipeline projects include Pagosa Views, Timberline Apartments, and The Enclave with deed-restricted units
+
+**The gap:** No existing employer-assisted housing program. HOWL is a pilot. Large-scale workforce housing is still years away.
 
 ---
 
@@ -286,43 +276,39 @@ Both the Town and County have established housing as a priority:
 
 ## Chapter 5: Your Turn
 
-You've followed four households through the data. You've seen the affordability gap, the economic impact, and what's already happening.
+You've followed four households through the data. You've seen the affordability gap, the community impact, and what's already happening.
 
 Now we want to hear from you.
 
-### Who Are YOU in This Story?
+### What Brings You to This Conversation?
 
-Think about your own connection to housing in Archuleta County:
+- [ ] I care about our community's future
+- [ ] I know someone affected by housing challenges
+- [ ] I'm curious about the data
+- [ ] I work in housing, development, or a related field
+- [ ] I want to help find solutions
 
-- [ ] **I'm struggling** — Housing costs are a significant burden for my household
-- [ ] **I'm an employer** — Housing affects my ability to hire and retain workers
-- [ ] **I'm worried about someone** — A family member, friend, or neighbor is affected
-- [ ] **I'm a landlord or property owner** — I see this from the supply side
-- [ ] **I'm concerned about our community** — I see the broader impacts on Pagosa's future
-- [ ] **I'm comfortable but see the problem** — Housing works for me, but I recognize it doesn't for many
-- [ ] **Other**
-
-### What Matters Most?
+### What Matters Most for Our Community's Future?
 
 Of the needs we've discussed, which feels most urgent to you?
 
-- [ ] Rental housing for workers (like Maria)
-- [ ] Homeownership opportunities for families (like the Garcias)
-- [ ] Workforce housing so businesses can hire (like the Rodriguezes need)
-- [ ] Senior housing and downsizing options (like Robert needs)
+- [ ] Rental housing for workers (like Anna)
+- [ ] Homeownership opportunities for families (like Mike & Jenny)
+- [ ] Senior housing and downsizing options (like Linda & Tom need)
+- [ ] Workforce housing so businesses can hire (like Pat & Chris need)
 - [ ] All of these are equally urgent
 
-### Your Experience
+### What Should Decision-Makers Understand?
 
-**In one sentence, what's your experience with housing in Archuleta County?**
+**In one sentence, what do you think decision-makers should understand about housing here?**
 
 (Open text)
 
 ---
 
-### The One Thing
+### What Should Be Prioritized?
 
-**What's the ONE thing you want decision-makers to know about housing here?**
+**What matters most for our community's housing future?**
 
 (Open text)
 
