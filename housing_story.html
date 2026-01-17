@@ -51,13 +51,13 @@
         .page-wrapper {
             display: flex;
             gap: 30px;
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
         }
 
         .main-content {
             flex: 1;
-            max-width: 800px;
+            max-width: 900px;
         }
 
         .sidebar {
@@ -199,6 +199,7 @@
         .household-icon.mikejenny { background: #dbeafe; }
         .household-icon.lindatom { background: #e0e7ff; }
         .household-icon.patchris { background: #fef3c7; }
+        .household-icon.sam { background: #fef2f2; }
 
         .household-name {
             font-weight: 600;
@@ -584,6 +585,7 @@
         .household-mini.mikejenny { background: #dbeafe; }
         .household-mini.lindatom { background: #e0e7ff; }
         .household-mini.patchris { background: #fef3c7; }
+        .household-mini.sam { background: #fef2f2; }
 
         .summary-notes {
             font-size: 0.85rem;
@@ -835,12 +837,29 @@
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header style="max-width: 1200px; margin: 0 auto 30px auto;">
-        <h1>Housing in Archuleta County</h1>
-        <p style="font-size: 1.1rem; margin-bottom: 15px;">Follow the Story</p>
-        <div class="intro-box">
-            <p style="margin: 0 0 8px 0;"><strong>How to use this guide:</strong></p>
-            <p style="margin: 0; opacity: 0.9;">Follow four households through our housing data. See what they can afford, what housing actually costs, and why it matters for our whole community. Along the way, we'll ask for your reflections.</p>
+    <header style="max-width: 1300px; margin: 0 auto 30px auto; padding: 0; overflow: hidden;">
+        <!-- Gold accent banner strip -->
+        <div style="background: linear-gradient(90deg, #d97706 0%, #f59e0b 50%, #d97706 100%); padding: 8px 20px; text-align: center;">
+            <p style="font-size: 0.9rem; margin: 0; color: white; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600;">Open House #1 | January 21, 2026</p>
+        </div>
+
+        <!-- Main header content -->
+        <div style="padding: 25px 30px 30px 30px;">
+            <h1 style="margin: 0 0 5px 0;">Housing in Archuleta County</h1>
+            <p style="font-size: 1.2rem; margin: 0 0 20px 0; opacity: 0.95;">Follow the Story</p>
+
+            <div style="display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap; margin: 20px 0; padding: 15px 20px; background: rgba(255,255,255,0.12); border-radius: 8px; border: 1px solid rgba(255,255,255,0.15);">
+                <img src="images/logo_county.png" alt="Archuleta County" style="height: 50px; width: auto; filter: brightness(0) invert(1);" onerror="this.style.display='none'">
+                <img src="images/logo_town.png" alt="Town of Pagosa Springs" style="height: 50px; width: auto; filter: brightness(0) invert(1);" onerror="this.style.display='none'">
+                <span style="font-weight: 600; font-size: 0.95rem; padding: 8px 15px; background: rgba(255,255,255,0.1); border-radius: 6px;">Pagosa Springs CDC</span>
+            </div>
+
+            <p style="font-size: 0.9rem; margin: 0 0 20px 0; opacity: 0.8; font-weight: 500; letter-spacing: 0.5px;">Housing Action Plan</p>
+
+            <div class="intro-box">
+                <p style="margin: 0 0 8px 0;"><strong>How to use this guide:</strong></p>
+                <p style="margin: 0; opacity: 0.9;">Follow five households through our housing data. See what they can afford, what housing actually costs, and why it matters for our whole community. Along the way, we'll ask for your reflections.</p>
+            </div>
         </div>
     </header>
 
@@ -848,49 +867,36 @@
     <div class="main-content" id="main-content" tabindex="-1">
 
     <!-- ABOUT THIS PROCESS -->
-    <section class="chapter-section" style="border-top-color: #059669;">
-        <h2 style="color: #059669;">
-            <span class="chapter-number" style="background: #059669;">ⓘ</span> About This Process
+    <section class="chapter-section" style="border-top-color: #d97706;">
+        <h2 style="color: #d97706;">
+            <span class="chapter-number" style="background: #d97706;">ⓘ</span> About This Process
         </h2>
         <p>This story is part of the <strong>Archuleta County & Town of Pagosa Springs Housing Action Plan</strong> process. We're working to understand our housing challenges and develop solutions together.</p>
 
         <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0;">
             <button class="info-toggle" onclick="toggleInfo('infoHNA')"><span>ⓘ</span> What's a Housing Needs Assessment?</button>
             <button class="info-toggle" onclick="toggleInfo('infoHAP')"><span>ⓘ</span> What's a Housing Action Plan?</button>
-            <button class="info-toggle" onclick="toggleInfo('infoProcess')"><span>ⓘ</span> Our Process & Timeline</button>
+            <button class="info-toggle" onclick="toggleInfo('infoProcess')"><span>ⓘ</span> Our Process</button>
+        </div>
+
+        <div class="info-content" id="infoProcess">
+            <h4>Our Community Engagement Process</h4>
+            <p style="margin-bottom: 15px;">The Housing Action Plan is being developed through a series of working sessions with community stakeholders, paired with opportunities for broader public input. This diagram shows how the pieces fit together.</p>
+            <img src="images/process_diagram.png" alt="Housing Action Plan Community Engagement Process: Four progressive working sessions with public engagement including Open House #1 (review draft goals), Open House #2 (prioritized strategies), and Public Review of Final Draft, leading to Final Plan Presentation and Adoption" style="max-width: 100%; height: auto; border-radius: 8px; margin: 0; display: block;">
         </div>
 
         <div class="info-content" id="infoHNA">
             <h4>What's a Housing Needs Assessment?</h4>
-            <ul>
-                <li>Identifies the type and amount of housing needed at all income levels</li>
-                <li>Completed April 2025 for Archuleta County</li>
-                <li>Analyzes demographics, economics, housing inventory, and market conditions</li>
-                <li><strong>Not a mandate</strong> — it's an informational tool to guide planning</li>
-            </ul>
+            <p style="margin-bottom: 15px;">A Housing Needs Assessment identifies the type and amount of housing needed at all income levels. Completed in April 2025 for Archuleta County, it analyzes demographics, economics, housing inventory, and market conditions. It's an informational tool to guide planning—not a mandate.</p>
+            <img src="images/hna_purposes.png" alt="How to Use an HNA: Informing Housing Policy, Increasing Affordability & Stability, Planning for Change, Community & Economic Vibrancy, Accessing Funding, Education and Support" style="max-width: 100%; height: auto; border-radius: 8px; margin: 0; display: block;">
             <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Source: DOLA Housing Needs Assessment Guidelines</p>
         </div>
 
         <div class="info-content" id="infoHAP">
             <h4>What's a Housing Action Plan?</h4>
-            <ul>
-                <li>Turns the Needs Assessment into action</li>
-                <li>Sets goals and strategies specific to our community</li>
-                <li>Required by Colorado law (SB 24-174) by January 2028</li>
-                <li>Shaped by community input — <strong>that's why we're here</strong></li>
-            </ul>
+            <p style="margin-bottom: 15px;">A Housing Action Plan turns the Needs Assessment into action. Required by Colorado law (SB 24-174) by January 2028, it sets goals and strategies specific to our community—shaped by input from residents like you.</p>
+            <img src="images/hap_components.svg" alt="HAP 5 Components: Summary of Key HNA Findings, Summary of Public Engagement Findings, Housing Targets and Goals, Strategies, Implementation & Progress Report" style="max-width: 100%; height: auto; border-radius: 8px; margin: 0; display: block;" onerror="this.src='images/hap_components.png'">
             <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Source: DOLA Housing Action Plan Guide</p>
-        </div>
-
-        <div class="info-content" id="infoProcess">
-            <h4>Our Process</h4>
-            <ul>
-                <li><strong>Spring 2025:</strong> Housing Needs Assessment completed</li>
-                <li><strong>Jan-Mar 2026:</strong> Strategy Group sessions</li>
-                <li><strong>Jan 2026:</strong> Open House #1 — <em>YOU ARE HERE</em></li>
-                <li><strong>Spring 2026:</strong> Open House #2 / Draft strategies</li>
-                <li><strong>Fall 2026:</strong> Plan adoption</li>
-            </ul>
         </div>
     </section>
 
@@ -899,13 +905,30 @@
         <h2><span class="chapter-number">1</span> Meet Your Neighbors</h2>
         <p>These aren't real people, but they represent real situations in our community. As you read, consider: <strong>Which household's story resonates with you?</strong></p>
 
-        <div class="callout teal" style="margin: 15px 0;">
-            <strong>You'll see "AMI" throughout</strong>—that's Area Median Income. It's the middle point of all household incomes in our area. For Archuleta County in 2025, 100% AMI for a 2-person household is $81,600/year. Housing programs use AMI to determine who qualifies: 50% AMI means you earn half the median; 80% AMI means you earn 80% of it. Housing is considered "affordable" when you spend no more than 30% of income on it.
-            <button class="info-toggle" onclick="toggleInfo('infoAMITable')" style="margin-left: 0; margin-top: 10px;"><span>ⓘ</span> See Full AMI Table</button>
+        <div style="margin: 15px 0;">
+            <button class="info-toggle" onclick="toggleInfo('infoAMICostBurden')" style="margin-left: 0;"><span>ⓘ</span> What is AMI & Cost Burden?</button>
         </div>
 
-        <div class="info-content" id="infoAMITable">
-            <h4>2025 Archuleta County AMI by Household Size</h4>
+        <div class="info-content" id="infoAMICostBurden">
+            <h4>Understanding AMI & Cost Burden</h4>
+            <p><strong>Area Median Income (AMI)</strong> is the midpoint of household incomes in an area, determined annually by HUD. Half of households earn more, half earn less. For Archuleta County in 2025, 100% AMI for a 2-person household is $81,600/year.</p>
+
+            <p style="margin: 15px 0 8px 0;"><strong>Housing programs use AMI percentages to determine eligibility:</strong></p>
+            <ul style="margin: 0 0 15px 20px; padding: 0;">
+                <li><strong>Extremely Low Income:</strong> ≤30% AMI</li>
+                <li><strong>Very Low Income:</strong> 31-50% AMI</li>
+                <li><strong>Low Income:</strong> 51-80% AMI</li>
+                <li><strong>Moderate Income:</strong> 81-120% AMI</li>
+            </ul>
+
+            <p style="margin: 15px 0 8px 0;"><strong>Key definitions:</strong></p>
+            <ul style="margin: 0 0 15px 20px; padding: 0;">
+                <li><strong>Affordable housing:</strong> Housing where the occupant pays no more than 30% of gross income for housing costs (including utilities)</li>
+                <li><strong>Cost-burdened:</strong> A household spending more than 30% of income on housing</li>
+                <li><strong>Severely cost-burdened:</strong> A household spending more than 50% of income on housing</li>
+            </ul>
+
+            <h4 style="margin-top: 20px;">2025 Archuleta County AMI by Household Size</h4>
             <p style="margin-bottom: 10px;"><em>Average household size in Archuleta County: 2.3 persons</em></p>
             <div class="table-wrapper" style="margin: 0;">
                 <table style="font-size: 0.85rem;">
@@ -1035,6 +1058,23 @@
             </div>
         </div>
 
+        <div class="household-card" data-household="sam" style="background: #fef2f2; border-color: #fecaca;">
+            <div class="household-header">
+                <div class="household-icon sam" style="background: #fee2e2;">&#x1F3D5;</div>
+                <div>
+                    <div class="household-name">Sam: Experiencing Housing Instability</div>
+                    <div class="household-subtitle">Lost housing after job loss and medical bills</div>
+                </div>
+            </div>
+            <div class="household-details">
+                <p>Sam, 45, worked construction for years until an injury sidelined him. Medical bills piled up, then he lost his apartment when he couldn't make rent. He's been couch-surfing and sleeping in his car. He picks up day labor when he can, but without a stable address, holding a steady job is nearly impossible.</p>
+                <p style="font-style: italic; color: #666; margin-top: 10px;">Sam represents the 21 people counted as unsheltered in Archuleta County's 2024 Point-in-Time count—10 of whom are chronically homeless.</p>
+            </div>
+            <div class="household-afford" style="background: rgba(220, 38, 38, 0.1);">
+                <strong>What he needs:</strong> Emergency shelter (none in county—nearest is Durango, 60 miles) | Transitional housing | Path to stability
+            </div>
+        </div>
+
         <!-- Reflection 1 -->
         <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 25px;">
             <p style="margin: 0 0 15px 0;"><strong>Which household's story resonates with you—or reminds you of someone in our community?</strong></p>
@@ -1054,6 +1094,10 @@
                 <label class="reflection-option">
                     <input type="checkbox" name="familiar_household" value="patchris" onchange="updateSummary()">
                     <span>Pat & Chris (employers, can't find workers)</span>
+                </label>
+                <label class="reflection-option">
+                    <input type="checkbox" name="familiar_household" value="sam" onchange="updateSummary()">
+                    <span>Sam (experiencing housing instability)</span>
                 </label>
             </div>
         </div>
@@ -1082,14 +1126,20 @@
 
         <div class="info-content" id="infoAMI">
             <h4>Area Median Income (AMI)</h4>
-            <p>AMI is the middle point of all household incomes in our area—half earn more, half earn less. HUD calculates it yearly.</p>
+            <p><strong>Area Median Income (AMI)</strong> is the midpoint of household incomes in an area, determined annually by HUD. Half of households earn more, half earn less.</p>
             <p><strong>For Archuleta County in 2025 (2-person household):</strong></p>
             <ul>
-                <li><strong>100% AMI</strong> = $81,600/year</li>
-                <li><strong>80% AMI</strong> = $65,300/year ("low income" in housing programs)</li>
-                <li><strong>50% AMI</strong> = $40,800/year ("very low income")</li>
+                <li><strong>100% AMI</strong> = $81,600/year (Moderate Income)</li>
+                <li><strong>80% AMI</strong> = $65,300/year (Low Income)</li>
+                <li><strong>50% AMI</strong> = $40,800/year (Very Low Income)</li>
+                <li><strong>30% AMI</strong> = $24,480/year (Extremely Low Income)</li>
             </ul>
-            <p>Housing is "affordable" when you spend <strong>no more than 30%</strong> of income on it. Spend more, and you're "cost-burdened."</p>
+            <p style="margin-top: 12px;"><strong>Key definitions:</strong></p>
+            <ul>
+                <li><strong>Affordable housing:</strong> Housing where the occupant pays no more than 30% of gross income for housing costs (including utilities)</li>
+                <li><strong>Cost-burdened:</strong> A household spending more than 30% of income on housing</li>
+                <li><strong>Severely cost-burdened:</strong> A household spending more than 50% of income on housing</li>
+            </ul>
         </div>
 
         <p>Let's follow each household through the affordability calculation—comparing what they can afford to what housing actually costs.</p>
@@ -1098,33 +1148,45 @@
             <table>
                 <tr>
                     <th>Household</th>
-                    <th>What They Can Afford</th>
-                    <th>What Housing Costs</th>
-                    <th>The Gap</th>
+                    <th>Income / AMI</th>
+                    <th>Affordable</th>
+                    <th>Market</th>
+                    <th>Gap</th>
                 </tr>
                 <tr>
-                    <td><strong>Anna</strong> (healthcare, 50% AMI)</td>
-                    <td>$1,050/mo rent</td>
-                    <td>$2,783/mo median rent</td>
+                    <td><strong>Anna</strong></td>
+                    <td>$42,000/yr (50% AMI)</td>
+                    <td>$1,050/mo</td>
+                    <td>$2,783/mo</td>
                     <td class="gap-negative">-$1,733/mo</td>
                 </tr>
                 <tr>
-                    <td><strong>Mike & Jenny</strong> (family, 100% AMI)</td>
-                    <td>~$385,000 home</td>
-                    <td>$553,500 median home</td>
-                    <td class="gap-negative">-$168,500</td>
+                    <td><strong>Mike & Jenny</strong></td>
+                    <td>$102,000/yr (100% AMI)</td>
+                    <td>$385K home</td>
+                    <td>$553.5K home</td>
+                    <td class="gap-negative">-$168K</td>
                 </tr>
                 <tr>
-                    <td><strong>Linda & Tom</strong> (retirees, 80% AMI)</td>
-                    <td>~$245,000 home</td>
-                    <td>$350,000+ smallest available</td>
-                    <td class="gap-negative">-$105,000+</td>
+                    <td><strong>Linda & Tom</strong></td>
+                    <td>$65,000/yr (80% AMI)</td>
+                    <td>$245K home</td>
+                    <td>$350K+ smallest</td>
+                    <td class="gap-negative">-$105K+</td>
                 </tr>
                 <tr>
-                    <td><strong>Pat & Chris's workers</strong></td>
-                    <td>$750-875/mo rent</td>
-                    <td>$2,783/mo median rent</td>
+                    <td><strong>Pat's workers</strong></td>
+                    <td>$30-35K/yr (40-50% AMI)</td>
+                    <td>$750-875/mo</td>
+                    <td>$2,783/mo</td>
                     <td class="gap-negative">-$1,900+/mo</td>
+                </tr>
+                <tr style="background: #fef2f2;">
+                    <td><strong>Sam</strong></td>
+                    <td>Variable/unstable</td>
+                    <td>Emergency shelter</td>
+                    <td>None in county</td>
+                    <td class="gap-negative">No options</td>
                 </tr>
             </table>
             <div class="scroll-hint">← Swipe to see more →</div>
@@ -1165,13 +1227,24 @@
 
         <div class="info-content" id="digDeeperNeed">
             <h4>Projected Housing Need by 2035</h4>
+            <p style="font-size: 0.9rem; margin-bottom: 15px;">This chart shows projected housing need through 2035 based on population growth, household formation, and current gaps.</p>
             <img src="images/02_housing_need_by_income.png" alt="Housing Need by Income Level chart showing 1,316 total units needed, with largest need at 51-80% AMI (434 units)" style="max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px;">
+            <div class="callout" style="margin: 15px 0;">
+                <strong>Important context:</strong>
+                <ul style="margin: 10px 0 0 20px; padding: 0;">
+                    <li>These are projections, not mandates</li>
+                    <li>The community decides how much to produce vs. preserve</li>
+                    <li>The rental/ownership split can shift based on policy priorities</li>
+                    <li>Market-rate development will meet some need; public resources target the gaps</li>
+                </ul>
+            </div>
             <p style="font-size: 0.9rem;"><strong>Key insight:</strong> Below 80% AMI, nearly all need is rental. Above 100% AMI, ownership becomes viable.</p>
             <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Source: 2025 Housing Needs Assessment</p>
         </div>
 
         <div class="info-content" id="digDeeperMarket">
             <h4>Market Trends</h4>
+            <p style="margin-bottom: 15px;">The chart below compares what households can afford to pay with what housing actually costs. At 80% AMI, a household can afford about $1,633/month in rent or a $245,000 home—but the median rent is $2,783 and the median home price is $553,500.</p>
             <img src="images/01_affordability_gap.png" alt="The Affordability Gap chart showing $1,150/month rental gap and $308,500 ownership gap at 80% AMI" style="max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px;">
             <ul>
                 <li><strong>Home prices +56%</strong> since 2020</li>
@@ -1292,9 +1365,90 @@
     <!-- CHAPTER 4: WHAT'S HAPPENING -->
     <section class="chapter-section resources">
         <h2><span class="chapter-number">4</span> We're Not Starting From Scratch</h2>
-        <p>Good news: our community has already taken steps to address housing. Here's what exists—and how it connects to our four households.</p>
+        <p>Good news: our community has already taken steps to address housing. Here's what exists—and how it connects to our five households.</p>
 
-        <h3>For Anna (Healthcare Worker, ~50% AMI)</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin: 15px 0 20px 0;">
+            <button class="info-toggle" onclick="toggleInfo('defVouchers')"><span>ⓘ</span> Housing Choice Vouchers</button>
+            <button class="info-toggle" onclick="toggleInfo('defDPA')"><span>ⓘ</span> Down Payment Assistance</button>
+            <button class="info-toggle" onclick="toggleInfo('defDeedRestricted')"><span>ⓘ</span> Deed-Restricted Housing</button>
+            <button class="info-toggle" onclick="toggleInfo('defLIHTC')"><span>ⓘ</span> LIHTC</button>
+        </div>
+
+        <div class="info-content" id="defVouchers">
+            <h4>Housing Choice Vouchers (Section 8)</h4>
+            <p>Federal rental assistance where tenants pay approximately 30% of their income toward rent, and the voucher covers the rest. Vouchers are "portable"—tenants can use them with any landlord who accepts them, giving families flexibility to find housing that meets their needs.</p>
+        </div>
+
+        <div class="info-content" id="defDPA">
+            <h4>Down Payment Assistance (DPA)</h4>
+            <p>Loans or grants to help first-time buyers cover down payment and closing costs. Often structured as forgivable second mortgages—meaning if you stay in the home for a certain period, you don't have to repay it. Programs like HomesFund offer $15,000-$50,000 to qualifying buyers.</p>
+        </div>
+
+        <div class="info-content" id="defDeedRestricted">
+            <h4>Deed-Restricted Housing</h4>
+            <p>Homes with legal restrictions requiring sale or rent to income-qualified households at below-market prices. The restrictions "run with the land"—meaning they stay with the property even when it changes hands. Restrictions typically last 15-99 years, keeping housing affordable for generations.</p>
+        </div>
+
+        <div class="info-content" id="defLIHTC">
+            <h4>LIHTC (Low-Income Housing Tax Credit)</h4>
+            <p>Federal tax credits that incentivize private developers to build affordable rental housing. Developers receive tax credits in exchange for keeping rents affordable for households earning 30-60% AMI. Properties must maintain affordability for 15-30 years. This is the primary way affordable rental housing gets built in the U.S.</p>
+        </div>
+
+        <h3 style="margin-top: 25px;">Current Affordable Housing Inventory</h3>
+        <div class="table-wrapper">
+            <table style="font-size: 0.9rem;">
+                <tr>
+                    <th>Program/Property</th>
+                    <th>Units</th>
+                    <th>Serving</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td><strong>Housing Choice Vouchers</strong></td>
+                    <td>~30</td>
+                    <td>≤50% AMI</td>
+                    <td style="color: #dc2626;">At capacity</td>
+                </tr>
+                <tr>
+                    <td><strong>Rose Mountain Townhomes</strong></td>
+                    <td>34</td>
+                    <td>30-60% AMI</td>
+                    <td style="color: #059669;">New 2024</td>
+                </tr>
+                <tr>
+                    <td><strong>Hickory Ridge Apartments</strong></td>
+                    <td>41</td>
+                    <td>≤60% AMI</td>
+                    <td>Short waitlist</td>
+                </tr>
+                <tr>
+                    <td><strong>Archuleta Housing</strong></td>
+                    <td>52</td>
+                    <td>50-60% AMI</td>
+                    <td style="color: #d97706;">Rehab needed</td>
+                </tr>
+                <tr>
+                    <td><strong>Casa de los Arcos</strong></td>
+                    <td>16</td>
+                    <td>Seniors 0-30% AMI</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td><strong>Socorro Senior Living</strong></td>
+                    <td>12</td>
+                    <td>Seniors</td>
+                    <td>—</td>
+                </tr>
+                <tr style="background: #f0f3f5; font-weight: 600;">
+                    <td><strong>Total deed-restricted</strong></td>
+                    <td><strong>~195 units</strong></td>
+                    <td colspan="2"></td>
+                </tr>
+            </table>
+            <div class="scroll-hint">← Swipe to see more →</div>
+        </div>
+
+        <h3 style="margin-top: 25px;">For Anna (Healthcare Worker, ~50% AMI)</h3>
         <ul>
             <li><strong>Housing Choice Vouchers</strong> — Rental assistance (~30 vouchers, program at capacity)</li>
             <li><strong>Hickory Ridge Apartments</strong> — 40 units for ≤60% AMI</li>
@@ -1320,10 +1474,29 @@
 
         <h3>For Pat & Chris (Employers)</h3>
         <ul>
-            <li><strong>HOWL Program</strong> (new 2025) — Employer-linked workforce assistance</li>
             <li><strong>Pipeline projects</strong> — Pagosa Views, Timberline, The Enclave with deed-restricted units</li>
+            <li><strong>Workforce housing developments</strong> — Chris Mountain and other projects targeting working families</li>
         </ul>
-        <p style="font-size: 0.9rem; color: #666;"><em>The gap: No employer-assisted housing program exists yet. HOWL is a pilot. Large-scale workforce housing is years away.</em></p>
+        <p style="font-size: 0.9rem; color: #666;"><em>The gap: No employer-assisted housing program exists. Large-scale workforce housing is years away.</em></p>
+
+        <h3>For Sam (Experiencing Housing Instability)</h3>
+        <ul>
+            <li><strong>Rise Above Violence</strong> — Crisis housing for domestic violence survivors only</li>
+            <li><strong>Housing Solutions SW</strong> — Rapid re-housing (~5 households/year)</li>
+            <li><strong>No emergency shelter</strong> — Nearest is Durango (60 miles)</li>
+        </ul>
+        <p style="font-size: 0.9rem; color: #666;"><em>The gap: No emergency shelter in county. No permanent supportive housing for chronically homeless individuals. Very limited transitional housing options.</em></p>
+
+        <div class="callout" style="background: #fef2f2; border-left-color: #dc2626; margin-top: 25px;">
+            <strong style="color: #dc2626;">Critical Gap: No Emergency Shelter</strong>
+            <p style="margin: 10px 0;">Archuleta County has no emergency shelter. The nearest is in Durango, 60 miles away. In 2024, 21 people were counted as unsheltered, including 10 who are chronically homeless.</p>
+            <p style="margin: 10px 0 0 0;"><strong>Limited services exist:</strong></p>
+            <ul style="margin: 8px 0 0 20px; padding: 0;">
+                <li>Rise Above Violence provides crisis housing for domestic violence survivors</li>
+                <li>Housing Solutions SW offers rapid re-housing (~5 households/year)</li>
+                <li>No permanent supportive housing exists for chronically homeless individuals</li>
+            </ul>
+        </div>
 
         <h3 style="margin-top: 30px;">What's in the Pipeline
             <button class="info-toggle" onclick="toggleInfo('infoPipeline')"><span>&#9432;</span> Details</button>
@@ -1441,10 +1614,14 @@
     <!-- CHAPTER 5: YOUR TURN -->
     <section class="chapter-section reflection">
         <h2><span class="chapter-number">5</span> Your Turn</h2>
-        <p>You've followed four households through the data. You've seen the affordability gap, the community impact, and what's already happening. Now we want to hear from you.</p>
+        <p>You've followed five households through the data. You've seen the affordability gap, the community impact, and what's already happening. Now we want to hear from you.</p>
 
         <h3>What Brings You to This Conversation?</h3>
         <div class="reflection-options">
+            <label class="reflection-option">
+                <input type="checkbox" name="who_are_you" value="affected" onchange="updateSummary()">
+                <span>I am personally affected by the housing situation</span>
+            </label>
             <label class="reflection-option">
                 <input type="checkbox" name="who_are_you" value="community" onchange="updateSummary()">
                 <span>I care about our community's future</span>
@@ -1465,6 +1642,11 @@
                 <input type="checkbox" name="who_are_you" value="solutions" onchange="updateSummary()">
                 <span>I want to help find solutions</span>
             </label>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <label style="display: block; margin-bottom: 8px; font-weight: 500;">Who else should we hear from?</label>
+            <textarea id="who-else" placeholder="Are there groups or individuals whose voices are missing from this conversation?" style="min-height: 60px;" oninput="updateSummary()"></textarea>
         </div>
 
         <h3 style="margin-top: 30px;">What Matters Most for Our Community's Future?</h3>
@@ -1504,6 +1686,81 @@
                     <button type="button" class="rating-btn" data-name="urgent_workforce" data-value="low" onclick="selectRating(this)">Low</button>
                     <button type="button" class="rating-btn" data-name="urgent_workforce" data-value="medium" onclick="selectRating(this)">Medium</button>
                     <button type="button" class="rating-btn" data-name="urgent_workforce" data-value="high" onclick="selectRating(this)">High</button>
+                </div>
+            </div>
+
+            <div class="rating-item" style="background: #fef2f2; border-color: #fecaca;">
+                <div class="rating-label">Emergency shelter & transitional housing (like Sam needs)</div>
+                <div class="rating-buttons" role="group" aria-label="Urgency rating for emergency housing">
+                    <button type="button" class="rating-btn" data-name="urgent_emergency" data-value="low" onclick="selectRating(this)">Low</button>
+                    <button type="button" class="rating-btn" data-name="urgent_emergency" data-value="medium" onclick="selectRating(this)">Medium</button>
+                    <button type="button" class="rating-btn" data-name="urgent_emergency" data-value="high" onclick="selectRating(this)">High</button>
+                </div>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 30px;">Draft Vision Statement</h3>
+        <div class="callout" style="font-style: italic;">
+            "Archuleta County and the Town of Pagosa Springs will be a community where people at all income levels can find a place to call home—where workers can afford to live near their jobs, families can put down roots, and seniors can age in place."
+        </div>
+        <p><strong>Does this vision resonate? What would you add or change?</strong></p>
+        <textarea id="vision-feedback" placeholder="Share your thoughts on the vision statement..." oninput="updateSummary()"></textarea>
+
+        <h3 style="margin-top: 30px;">Six Objectives — Rate Their Priority</h3>
+        <p>How important is each objective for our community?</p>
+
+        <div class="rating-group">
+            <div class="rating-item">
+                <div class="rating-label"><strong>1. Support Workforce Stability</strong> — Help employers recruit and retain workers</div>
+                <div class="rating-buttons" role="group" aria-label="Priority rating for workforce stability">
+                    <button type="button" class="rating-btn" data-name="obj_workforce" data-value="low" onclick="selectRating(this)">Low</button>
+                    <button type="button" class="rating-btn" data-name="obj_workforce" data-value="medium" onclick="selectRating(this)">Medium</button>
+                    <button type="button" class="rating-btn" data-name="obj_workforce" data-value="high" onclick="selectRating(this)">High</button>
+                </div>
+            </div>
+
+            <div class="rating-item">
+                <div class="rating-label"><strong>2. Expand Rental Supply</strong> — Address the 0.5% vacancy rate</div>
+                <div class="rating-buttons" role="group" aria-label="Priority rating for rental supply">
+                    <button type="button" class="rating-btn" data-name="obj_rental" data-value="low" onclick="selectRating(this)">Low</button>
+                    <button type="button" class="rating-btn" data-name="obj_rental" data-value="medium" onclick="selectRating(this)">Medium</button>
+                    <button type="button" class="rating-btn" data-name="obj_rental" data-value="high" onclick="selectRating(this)">High</button>
+                </div>
+            </div>
+
+            <div class="rating-item">
+                <div class="rating-label"><strong>3. Enable Homeownership</strong> — Bridge the affordability gap for buyers</div>
+                <div class="rating-buttons" role="group" aria-label="Priority rating for homeownership">
+                    <button type="button" class="rating-btn" data-name="obj_ownership" data-value="low" onclick="selectRating(this)">Low</button>
+                    <button type="button" class="rating-btn" data-name="obj_ownership" data-value="medium" onclick="selectRating(this)">Medium</button>
+                    <button type="button" class="rating-btn" data-name="obj_ownership" data-value="high" onclick="selectRating(this)">High</button>
+                </div>
+            </div>
+
+            <div class="rating-item">
+                <div class="rating-label"><strong>4. Preserve Existing Affordable Housing</strong> — Protect what we have</div>
+                <div class="rating-buttons" role="group" aria-label="Priority rating for preservation">
+                    <button type="button" class="rating-btn" data-name="obj_preserve" data-value="low" onclick="selectRating(this)">Low</button>
+                    <button type="button" class="rating-btn" data-name="obj_preserve" data-value="medium" onclick="selectRating(this)">Medium</button>
+                    <button type="button" class="rating-btn" data-name="obj_preserve" data-value="high" onclick="selectRating(this)">High</button>
+                </div>
+            </div>
+
+            <div class="rating-item">
+                <div class="rating-label"><strong>5. Protect Residents from Displacement</strong> — Keep longtime residents housed</div>
+                <div class="rating-buttons" role="group" aria-label="Priority rating for displacement protection">
+                    <button type="button" class="rating-btn" data-name="obj_displacement" data-value="low" onclick="selectRating(this)">Low</button>
+                    <button type="button" class="rating-btn" data-name="obj_displacement" data-value="medium" onclick="selectRating(this)">Medium</button>
+                    <button type="button" class="rating-btn" data-name="obj_displacement" data-value="high" onclick="selectRating(this)">High</button>
+                </div>
+            </div>
+
+            <div class="rating-item">
+                <div class="rating-label"><strong>6. Maximize Limited Resources</strong> — Target public funds effectively</div>
+                <div class="rating-buttons" role="group" aria-label="Priority rating for resource efficiency">
+                    <button type="button" class="rating-btn" data-name="obj_resources" data-value="low" onclick="selectRating(this)">Low</button>
+                    <button type="button" class="rating-btn" data-name="obj_resources" data-value="medium" onclick="selectRating(this)">Medium</button>
+                    <button type="button" class="rating-btn" data-name="obj_resources" data-value="high" onclick="selectRating(this)">High</button>
                 </div>
             </div>
         </div>
@@ -1587,6 +1844,7 @@
                 <div class="household-mini mikejenny" id="mobile-mini-mikejenny" title="Mike & Jenny">&#x1F46A;</div>
                 <div class="household-mini lindatom" id="mobile-mini-lindatom" title="Linda & Tom">&#x1F3E0;</div>
                 <div class="household-mini patchris" id="mobile-mini-patchris" title="Pat & Chris">&#x1F373;</div>
+                <div class="household-mini sam" id="mobile-mini-sam" title="Sam">&#x1F3D5;</div>
             </div>
         </div>
         <div class="summary-section">
@@ -1635,6 +1893,7 @@
                         <div class="household-mini mikejenny" id="mini-mikejenny" title="Mike & Jenny">&#x1F46A;</div>
                         <div class="household-mini lindatom" id="mini-lindatom" title="Linda & Tom">&#x1F3E0;</div>
                         <div class="household-mini patchris" id="mini-patchris" title="Pat & Chris">&#x1F373;</div>
+                        <div class="household-mini sam" id="mini-sam" title="Sam">&#x1F3D5;</div>
                     </div>
                 </div>
 
@@ -1663,7 +1922,14 @@
             urgent_rental: null,
             urgent_homeownership: null,
             urgent_senior: null,
-            urgent_workforce: null
+            urgent_workforce: null,
+            urgent_emergency: null,
+            obj_workforce: null,
+            obj_rental: null,
+            obj_ownership: null,
+            obj_preserve: null,
+            obj_displacement: null,
+            obj_resources: null
         };
 
         // Toggle info content visibility
@@ -1699,7 +1965,7 @@
         // Update summary sidebar
         function updateSummary() {
             // Update household icons
-            const households = ['anna', 'mikejenny', 'lindatom', 'patchris'];
+            const households = ['anna', 'mikejenny', 'lindatom', 'patchris', 'sam'];
             households.forEach(h => {
                 const checked = document.querySelector(`input[value="${h}"]`)?.checked;
                 document.getElementById(`mini-${h}`)?.classList.toggle('selected', checked);
@@ -1713,6 +1979,7 @@
             if (ratingSelections.urgent_homeownership) ratings.push(`Homeownership: ${ratingSelections.urgent_homeownership}`);
             if (ratingSelections.urgent_senior) ratings.push(`Senior: ${ratingSelections.urgent_senior}`);
             if (ratingSelections.urgent_workforce) ratings.push(`Workforce: ${ratingSelections.urgent_workforce}`);
+            if (ratingSelections.urgent_emergency) ratings.push(`Emergency: ${ratingSelections.urgent_emergency}`);
 
             if (ratings.length > 0) {
                 urgentPreview.innerHTML = ratings.join('<br>');
@@ -1756,8 +2023,10 @@
             const knewPrograms = Array.from(document.querySelectorAll('input[name="knew_programs"]:checked')).map(cb => cb.value);
             const whoAreYou = Array.from(document.querySelectorAll('input[name="who_are_you"]:checked')).map(cb => cb.value);
 
+            const visionFeedback = document.getElementById('vision-feedback')?.value || '';
             const experience = document.getElementById('experience')?.value || '';
             const oneThing = document.getElementById('one-thing')?.value || '';
+            const whoElse = document.getElementById('who-else')?.value || '';
 
             // Disable button while sending
             const btn = document.querySelector('.submit-button');
@@ -1780,10 +2049,19 @@
                     employer_experience: employerExp.join(', '),
                     knew_programs: knewPrograms.join(', '),
                     who_are_you: whoAreYou.join(', '),
+                    who_else_should_hear: whoElse,
                     urgent_rental: ratingSelections.urgent_rental || '',
                     urgent_homeownership: ratingSelections.urgent_homeownership || '',
                     urgent_senior: ratingSelections.urgent_senior || '',
                     urgent_workforce: ratingSelections.urgent_workforce || '',
+                    urgent_emergency: ratingSelections.urgent_emergency || '',
+                    obj_workforce_stability: ratingSelections.obj_workforce || '',
+                    obj_rental_supply: ratingSelections.obj_rental || '',
+                    obj_homeownership: ratingSelections.obj_ownership || '',
+                    obj_preserve_affordable: ratingSelections.obj_preserve || '',
+                    obj_displacement: ratingSelections.obj_displacement || '',
+                    obj_resources: ratingSelections.obj_resources || '',
+                    vision_feedback: visionFeedback,
                     experience: experience,
                     one_thing: oneThing
                 })

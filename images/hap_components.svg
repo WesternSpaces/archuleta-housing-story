@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 280">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d97706"/>
+      <stop offset="100%" style="stop-color:#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2D3E4F"/>
+      <stop offset="100%" style="stop-color:#3d5166"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="280" fill="#f8f9fb" rx="8"/>
+
+  <!-- Title -->
+  <text x="300" y="35" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="600" fill="#2D3E4F" text-anchor="middle">Housing Action Plan Components</text>
+
+  <!-- Component 1 -->
+  <rect x="20" y="55" width="270" height="50" rx="6" fill="url(#tealGrad)"/>
+  <circle cx="45" cy="80" r="15" fill="#FACE6A"/>
+  <text x="45" y="85" font-family="sans-serif" font-size="14" font-weight="700" fill="#2D3E4F" text-anchor="middle">1</text>
+  <text x="70" y="75" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" fill="white">Summary of Key</text>
+  <text x="70" y="92" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" fill="white">HNA Findings</text>
+
+  <!-- Component 2 -->
+  <rect x="310" y="55" width="270" height="50" rx="6" fill="url(#tealGrad)"/>
+  <circle cx="335" cy="80" r="15" fill="#FACE6A"/>
+  <text x="335" y="85" font-family="sans-serif" font-size="14" font-weight="700" fill="#2D3E4F" text-anchor="middle">2</text>
+  <text x="360" y="75" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" fill="white">Summary of Public</text>
+  <text x="360" y="92" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" fill="white">Engagement Findings</text>
+
+  <!-- Component 3 -->
+  <rect x="20" y="115" width="270" height="50" rx="6" fill="url(#tealGrad)"/>
+  <circle cx="45" cy="140" r="15" fill="#FACE6A"/>
+  <text x="45" y="145" font-family="sans-serif" font-size="14" font-weight="700" fill="#2D3E4F" text-anchor="middle">3</text>
+  <text x="70" y="135" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" fill="white">Housing Targets</text>
+  <text x="70" y="152" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" fill="white">and Goals</text>
+
+  <!-- Component 4 -->
+  <rect x="310" y="115" width="270" height="50" rx="6" fill="url(#tealGrad)"/>
+  <circle cx="335" cy="140" r="15" fill="#FACE6A"/>
+  <text x="335" y="145" font-family="sans-serif" font-size="14" font-weight="700" fill="#2D3E4F" text-anchor="middle">4</text>
+  <text x="360" y="143" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" fill="white">Strategies</text>
+
+  <!-- Component 5 - Full width with gold accent -->
+  <rect x="20" y="175" width="560" height="50" rx="6" fill="url(#goldGrad)"/>
+  <circle cx="45" cy="200" r="15" fill="white"/>
+  <text x="45" y="205" font-family="sans-serif" font-size="14" font-weight="700" fill="#d97706" text-anchor="middle">5</text>
+  <text x="70" y="203" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600" fill="white">Implementation &amp; Progress Report</text>
+
+  <!-- Arrow flow indicators -->
+  <path d="M 155 108 L 155 115" stroke="#FACE6A" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 445 108 L 445 115" stroke="#FACE6A" stroke-width="2" fill="none"/>
+  <path d="M 155 168 L 155 175" stroke="#FACE6A" stroke-width="2" fill="none"/>
+  <path d="M 445 168 L 445 175" stroke="#FACE6A" stroke-width="2" fill="none"/>
+
+  <!-- Footer note -->
+  <text x="300" y="250" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#666" text-anchor="middle">Required by Colorado SB 24-174 by January 2028</text>
+  <text x="300" y="268" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#888" text-anchor="middle">Archuleta County &amp; Town of Pagosa Springs</text>
+</svg>
