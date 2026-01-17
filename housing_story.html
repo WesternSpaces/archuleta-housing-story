@@ -626,6 +626,70 @@
             color: #2D3E4F;
         }
 
+        /* Rating Scale Buttons */
+        .rating-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .rating-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .rating-label {
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #2D3E4F;
+        }
+
+        .rating-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .rating-btn {
+            flex: 1;
+            padding: 10px 15px;
+            border: 2px solid #d0d0d0;
+            background: white;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .rating-btn:hover {
+            border-color: #2D3E4F;
+            background: #f0f3f5;
+        }
+
+        .rating-btn.selected {
+            background: #2D3E4F;
+            color: white;
+            border-color: #2D3E4F;
+        }
+
+        .rating-btn[data-value="low"].selected {
+            background: #059669;
+            border-color: #059669;
+        }
+
+        .rating-btn[data-value="medium"].selected {
+            background: #d97706;
+            border-color: #d97706;
+        }
+
+        .rating-btn[data-value="high"].selected {
+            background: #dc2626;
+            border-color: #dc2626;
+        }
+
         /* Print styles */
         @media print {
             body {
@@ -698,6 +762,53 @@
     <div class="page-wrapper">
     <div class="main-content" id="main-content" tabindex="-1">
 
+    <!-- ABOUT THIS PROCESS -->
+    <section class="chapter-section" style="border-top-color: #059669;">
+        <h2 style="color: #059669;">
+            <span class="chapter-number" style="background: #059669;">ⓘ</span> About This Process
+        </h2>
+        <p>This story is part of the <strong>Archuleta County & Town of Pagosa Springs Housing Action Plan</strong> process. We're working to understand our housing challenges and develop solutions together.</p>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0;">
+            <button class="info-toggle" onclick="toggleInfo('infoHNA')"><span>ⓘ</span> What's a Housing Needs Assessment?</button>
+            <button class="info-toggle" onclick="toggleInfo('infoHAP')"><span>ⓘ</span> What's a Housing Action Plan?</button>
+            <button class="info-toggle" onclick="toggleInfo('infoProcess')"><span>ⓘ</span> Our Process & Timeline</button>
+        </div>
+
+        <div class="info-content" id="infoHNA">
+            <h4>What's a Housing Needs Assessment?</h4>
+            <ul>
+                <li>Identifies the type and amount of housing needed at all income levels</li>
+                <li>Completed April 2025 for Archuleta County</li>
+                <li>Analyzes demographics, economics, housing inventory, and market conditions</li>
+                <li><strong>Not a mandate</strong> — it's an informational tool to guide planning</li>
+            </ul>
+            <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Source: DOLA Housing Needs Assessment Guidelines</p>
+        </div>
+
+        <div class="info-content" id="infoHAP">
+            <h4>What's a Housing Action Plan?</h4>
+            <ul>
+                <li>Turns the Needs Assessment into action</li>
+                <li>Sets goals and strategies specific to our community</li>
+                <li>Required by Colorado law (SB 24-174) by January 2028</li>
+                <li>Shaped by community input — <strong>that's why we're here</strong></li>
+            </ul>
+            <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Source: DOLA Housing Action Plan Guide</p>
+        </div>
+
+        <div class="info-content" id="infoProcess">
+            <h4>Our Process</h4>
+            <ul>
+                <li><strong>Spring 2025:</strong> Housing Needs Assessment completed</li>
+                <li><strong>Jan-Mar 2026:</strong> Strategy Group sessions</li>
+                <li><strong>Jan 2026:</strong> Open House #1 — <em>YOU ARE HERE</em></li>
+                <li><strong>Spring 2026:</strong> Open House #2 / Draft strategies</li>
+                <li><strong>Fall 2026:</strong> Plan adoption</li>
+            </ul>
+        </div>
+    </section>
+
     <!-- CHAPTER 1: MEET YOUR NEIGHBORS -->
     <section class="chapter-section">
         <h2><span class="chapter-number">1</span> Meet Your Neighbors</h2>
@@ -705,6 +816,71 @@
 
         <div class="callout teal" style="margin: 15px 0;">
             <strong>You'll see "AMI" throughout</strong>—that's Area Median Income. It's the middle point of all household incomes in our area. For Archuleta County in 2025, 100% AMI for a 2-person household is $81,600/year. Housing programs use AMI to determine who qualifies: 50% AMI means you earn half the median; 80% AMI means you earn 80% of it. Housing is considered "affordable" when you spend no more than 30% of income on it.
+            <button class="info-toggle" onclick="toggleInfo('infoAMITable')" style="margin-left: 0; margin-top: 10px;"><span>ⓘ</span> See Full AMI Table</button>
+        </div>
+
+        <div class="info-content" id="infoAMITable">
+            <h4>2025 Archuleta County AMI by Household Size</h4>
+            <p style="margin-bottom: 10px;"><em>Average household size in Archuleta County: 2.3 persons</em></p>
+            <div style="overflow-x: auto;">
+                <table style="font-size: 0.85rem;">
+                    <tr>
+                        <th>AMI Level</th>
+                        <th>1-person</th>
+                        <th style="background: #fef3c7;">2-person</th>
+                        <th>3-person</th>
+                        <th>4-person</th>
+                        <th>5-person</th>
+                        <th>6-person</th>
+                    </tr>
+                    <tr>
+                        <td><strong>120%</strong></td>
+                        <td>$85,680</td>
+                        <td style="background: #fef9e6;"><strong>$97,920</strong></td>
+                        <td>$110,160</td>
+                        <td>$122,400</td>
+                        <td>$132,240</td>
+                        <td>$142,080</td>
+                    </tr>
+                    <tr>
+                        <td><strong>100%</strong></td>
+                        <td>$71,400</td>
+                        <td style="background: #fef9e6;"><strong>$81,600</strong></td>
+                        <td>$91,800</td>
+                        <td>$102,000</td>
+                        <td>$110,200</td>
+                        <td>$118,400</td>
+                    </tr>
+                    <tr>
+                        <td><strong>80%</strong></td>
+                        <td>$57,120</td>
+                        <td style="background: #fef9e6;"><strong>$65,280</strong></td>
+                        <td>$73,440</td>
+                        <td>$81,600</td>
+                        <td>$88,160</td>
+                        <td>$94,720</td>
+                    </tr>
+                    <tr>
+                        <td><strong>50%</strong></td>
+                        <td>$35,700</td>
+                        <td style="background: #fef9e6;"><strong>$40,800</strong></td>
+                        <td>$45,900</td>
+                        <td>$51,000</td>
+                        <td>$55,100</td>
+                        <td>$59,200</td>
+                    </tr>
+                    <tr>
+                        <td><strong>30%</strong></td>
+                        <td>$21,420</td>
+                        <td style="background: #fef9e6;"><strong>$24,480</strong></td>
+                        <td>$27,540</td>
+                        <td>$30,600</td>
+                        <td>$33,060</td>
+                        <td>$35,520</td>
+                    </tr>
+                </table>
+            </div>
+            <p style="font-size: 0.8rem; color: #666; margin-top: 10px;">Source: 2025 CHFA Income Limits</p>
         </div>
 
         <div class="household-card" data-household="anna">
@@ -795,6 +971,20 @@
                 </label>
             </div>
         </div>
+
+        <!-- Dig Deeper: Income Distribution -->
+        <div style="margin-top: 25px;">
+            <button class="info-toggle" onclick="toggleInfo('digDeeperIncome')"><span>📊</span> Dig Deeper: Income Distribution</button>
+        </div>
+        <div class="info-content" id="digDeeperIncome">
+            <h4>Who Lives Here? Income & Demographics</h4>
+            <ul>
+                <li><strong>43% of households</strong> earn below 80% AMI (~2,637 households)</li>
+                <li><strong>27% of residents</strong> are 65+ (many on fixed/limited income)</li>
+                <li><strong>Median age: 51 years</strong> (vs. 37 statewide)</li>
+            </ul>
+            <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Source: 2025 Housing Needs Assessment</p>
+        </div>
     </section>
 
     <!-- CHAPTER 2: THE MATH -->
@@ -878,6 +1068,74 @@
             <strong>The bigger picture:</strong> 44-48% of Archuleta County households are cost-burdened—spending more than 30% of income on housing. Rent increased 57% since 2012. Home prices increased 56% since 2020.
         </div>
 
+        <!-- Dig Deeper sections for Chapter 2 -->
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0;">
+            <button class="info-toggle" onclick="toggleInfo('digDeeperNeed')"><span>📊</span> Dig Deeper: Housing Need by 2035</button>
+            <button class="info-toggle" onclick="toggleInfo('digDeeperMarket')"><span>📊</span> Dig Deeper: Market Trends</button>
+        </div>
+
+        <div class="info-content" id="digDeeperNeed">
+            <h4>Projected Housing Need by 2035</h4>
+            <div style="overflow-x: auto;">
+                <table style="font-size: 0.9rem;">
+                    <tr>
+                        <th>Income Level</th>
+                        <th>Units Needed</th>
+                        <th>Rental</th>
+                        <th>Ownership</th>
+                    </tr>
+                    <tr>
+                        <td>≤30% AMI</td>
+                        <td>52</td>
+                        <td>52</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>31-50% AMI</td>
+                        <td>43</td>
+                        <td>43</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>51-80% AMI</td>
+                        <td>434</td>
+                        <td>434</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>81-100% AMI</td>
+                        <td>76</td>
+                        <td>38</td>
+                        <td>38</td>
+                    </tr>
+                    <tr>
+                        <td>100-120% AMI</td>
+                        <td>364</td>
+                        <td>182</td>
+                        <td>182</td>
+                    </tr>
+                    <tr style="font-weight: bold; background: #f0f3f5;">
+                        <td><strong>Total</strong></td>
+                        <td><strong>1,316</strong></td>
+                        <td><strong>853</strong></td>
+                        <td><strong>463</strong></td>
+                    </tr>
+                </table>
+            </div>
+            <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Source: 2025 Housing Needs Assessment</p>
+        </div>
+
+        <div class="info-content" id="digDeeperMarket">
+            <h4>Market Trends</h4>
+            <ul>
+                <li><strong>Home prices +56%</strong> since 2020</li>
+                <li><strong>Rent +57%</strong> since 2012</li>
+                <li><strong>Entry-level homes under $400k:</strong> nearly gone from market</li>
+                <li><strong>44-48% of households</strong> are cost-burdened (spending &gt;30% on housing)</li>
+            </ul>
+            <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Source: 2025 Housing Needs Assessment</p>
+        </div>
+
         <!-- Reflection 2 -->
         <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 25px;">
             <p style="margin: 0 0 15px 0;"><strong>How does this affordability gap show up in our community?</strong></p>
@@ -936,6 +1194,34 @@
         </ul>
 
         <p style="font-size: 1.1rem; margin-top: 20px;"><strong>When workers can't live here, businesses can't operate here—and our community loses what makes it special.</strong></p>
+
+        <!-- Dig Deeper sections for Chapter 3 -->
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0;">
+            <button class="info-toggle" onclick="toggleInfo('digDeeperEmployment')"><span>📊</span> Dig Deeper: Employment Data</button>
+            <button class="info-toggle" onclick="toggleInfo('digDeeperAffected')"><span>📊</span> Dig Deeper: Who's Most Affected</button>
+        </div>
+
+        <div class="info-content" id="digDeeperEmployment">
+            <h4>Employment Data</h4>
+            <ul>
+                <li><strong>Total jobs:</strong> 7,523 (projected 8,069 by 2034)</li>
+                <li><strong>3.5 jobs per working household</strong> (extreme ratio)</li>
+                <li><strong>20% of workforce commutes in daily</strong> (1,456 workers)</li>
+                <li><strong>63% of employers</strong> say hiring has gotten harder</li>
+            </ul>
+            <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Source: 2025 Housing Needs Assessment, Employer Survey</p>
+        </div>
+
+        <div class="info-content" id="digDeeperAffected">
+            <h4>Industries Most Affected</h4>
+            <ul>
+                <li>Accommodation & food services</li>
+                <li>Retail</li>
+                <li>Healthcare</li>
+                <li>Seasonal positions</li>
+            </ul>
+            <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Source: 2025 Housing Needs Assessment, Employer Survey</p>
+        </div>
 
         <!-- Employer Reflection -->
         <div style="background: #fff7ed; padding: 20px; border-radius: 8px; margin-top: 25px; border-left: 4px solid #d97706;">
@@ -1049,6 +1335,35 @@
             <strong>The Housing Action Plan builds on this foundation.</strong> Housing is already a priority in both Town and County strategic plans. The question isn't whether to act—it's how.
         </div>
 
+        <!-- Dig Deeper sections for Chapter 4 -->
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0;">
+            <button class="info-toggle" onclick="toggleInfo('digDeeperPipelineDetails')"><span>📊</span> Dig Deeper: Pipeline Details</button>
+            <button class="info-toggle" onclick="toggleInfo('digDeeperExisting')"><span>📊</span> Dig Deeper: Existing Affordable Inventory</button>
+        </div>
+
+        <div class="info-content" id="digDeeperPipelineDetails">
+            <h4>Development Pipeline Details</h4>
+            <ul>
+                <li><strong>~1,100 units</strong> in various stages of planning</li>
+                <li><strong>~180 units</strong> expected to complete 2025-2027</li>
+                <li><strong>Gap requiring public effort:</strong> ~200 units (primarily &lt;80% AMI)</li>
+            </ul>
+            <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Source: Strategy Group Session 1 Presentation</p>
+        </div>
+
+        <div class="info-content" id="digDeeperExisting">
+            <h4>Existing Affordable Housing Inventory</h4>
+            <p><strong>Total income-restricted units: 121</strong></p>
+            <ul>
+                <li><strong>Casa de Los Arcos:</strong> 16 units (Senior, 0-30% AMI)</li>
+                <li><strong>Rose Mountain Townhomes:</strong> 34 units (30-60% AMI)</li>
+                <li><strong>Socorro Senior Living:</strong> 19 units (Senior, 0-30% AMI)</li>
+                <li><strong>Hickory Ridge Apartments:</strong> 40 units (≤60% AMI)</li>
+                <li><strong>Other:</strong> 12 units (various programs)</li>
+            </ul>
+            <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Source: Strategy Group Session 1 Packet</p>
+        </div>
+
         <!-- Reflection 4 -->
         <div style="background: #f0fdf4; padding: 20px; border-radius: 8px; margin-top: 25px; border-left: 4px solid #059669;">
             <p style="margin: 0 0 15px 0;"><strong>Which of these programs or resources did you already know about?</strong></p>
@@ -1107,28 +1422,44 @@
         </div>
 
         <h3 style="margin-top: 30px;">What Matters Most for Our Community's Future?</h3>
-        <p>Of the needs we've discussed, which feels most urgent?</p>
-        <div class="reflection-options">
-            <label class="reflection-option">
-                <input type="radio" name="urgent_need" value="rental" onchange="updateSummary()">
-                <span>Rental housing for workers (like Anna)</span>
-            </label>
-            <label class="reflection-option">
-                <input type="radio" name="urgent_need" value="homeownership" onchange="updateSummary()">
-                <span>Homeownership opportunities for families (like Mike & Jenny)</span>
-            </label>
-            <label class="reflection-option">
-                <input type="radio" name="urgent_need" value="senior" onchange="updateSummary()">
-                <span>Senior housing and downsizing options (like Linda & Tom need)</span>
-            </label>
-            <label class="reflection-option">
-                <input type="radio" name="urgent_need" value="workforce" onchange="updateSummary()">
-                <span>Workforce housing so businesses can hire (like Pat & Chris need)</span>
-            </label>
-            <label class="reflection-option">
-                <input type="radio" name="urgent_need" value="all" onchange="updateSummary()">
-                <span>All of these are equally urgent</span>
-            </label>
+        <p>How urgent is each of these needs for our community?</p>
+
+        <div class="rating-group">
+            <div class="rating-item">
+                <div class="rating-label">Rental housing for workers (like Anna)</div>
+                <div class="rating-buttons" role="group" aria-label="Urgency rating for rental housing">
+                    <button type="button" class="rating-btn" data-name="urgent_rental" data-value="low" onclick="selectRating(this)">Low</button>
+                    <button type="button" class="rating-btn" data-name="urgent_rental" data-value="medium" onclick="selectRating(this)">Medium</button>
+                    <button type="button" class="rating-btn" data-name="urgent_rental" data-value="high" onclick="selectRating(this)">High</button>
+                </div>
+            </div>
+
+            <div class="rating-item">
+                <div class="rating-label">Homeownership for families (like Mike & Jenny)</div>
+                <div class="rating-buttons" role="group" aria-label="Urgency rating for homeownership">
+                    <button type="button" class="rating-btn" data-name="urgent_homeownership" data-value="low" onclick="selectRating(this)">Low</button>
+                    <button type="button" class="rating-btn" data-name="urgent_homeownership" data-value="medium" onclick="selectRating(this)">Medium</button>
+                    <button type="button" class="rating-btn" data-name="urgent_homeownership" data-value="high" onclick="selectRating(this)">High</button>
+                </div>
+            </div>
+
+            <div class="rating-item">
+                <div class="rating-label">Senior housing options (like Linda & Tom need)</div>
+                <div class="rating-buttons" role="group" aria-label="Urgency rating for senior housing">
+                    <button type="button" class="rating-btn" data-name="urgent_senior" data-value="low" onclick="selectRating(this)">Low</button>
+                    <button type="button" class="rating-btn" data-name="urgent_senior" data-value="medium" onclick="selectRating(this)">Medium</button>
+                    <button type="button" class="rating-btn" data-name="urgent_senior" data-value="high" onclick="selectRating(this)">High</button>
+                </div>
+            </div>
+
+            <div class="rating-item">
+                <div class="rating-label">Workforce housing for businesses (like Pat & Chris need)</div>
+                <div class="rating-buttons" role="group" aria-label="Urgency rating for workforce housing">
+                    <button type="button" class="rating-btn" data-name="urgent_workforce" data-value="low" onclick="selectRating(this)">Low</button>
+                    <button type="button" class="rating-btn" data-name="urgent_workforce" data-value="medium" onclick="selectRating(this)">Medium</button>
+                    <button type="button" class="rating-btn" data-name="urgent_workforce" data-value="high" onclick="selectRating(this)">High</button>
+                </div>
+            </div>
         </div>
 
         <h3 style="margin-top: 30px;">What Should Decision-Makers Understand?</h3>
@@ -1262,9 +1593,9 @@
                 </div>
 
                 <div class="summary-section">
-                    <h4>Most urgent need</h4>
-                    <div class="summary-notes" id="urgent-preview" style="min-height: 40px;">
-                        <span class="empty">Not selected yet</span>
+                    <h4>Priority ratings</h4>
+                    <div class="summary-notes" id="urgent-preview" style="min-height: 60px; font-size: 0.8rem;">
+                        <span class="empty">Not rated yet</span>
                     </div>
                 </div>
 
@@ -1281,6 +1612,14 @@
     </div><!-- end page-wrapper -->
 
     <script>
+        // Store rating selections
+        const ratingSelections = {
+            urgent_rental: null,
+            urgent_homeownership: null,
+            urgent_senior: null,
+            urgent_workforce: null
+        };
+
         // Toggle info content visibility
         function toggleInfo(id) {
             const content = document.getElementById(id);
@@ -1289,6 +1628,26 @@
             } else {
                 content.classList.add('show');
             }
+        }
+
+        // Handle rating button selection
+        function selectRating(btn) {
+            const name = btn.dataset.name;
+            const value = btn.dataset.value;
+
+            // Remove selected class from siblings
+            btn.parentElement.querySelectorAll('.rating-btn').forEach(b => {
+                b.classList.remove('selected');
+            });
+
+            // Add selected class to clicked button
+            btn.classList.add('selected');
+
+            // Store the selection
+            ratingSelections[name] = value;
+
+            // Update summary
+            updateSummary();
         }
 
         // Update summary sidebar
@@ -1301,20 +1660,18 @@
                 document.getElementById(`mobile-mini-${h}`)?.classList.toggle('selected', checked);
             });
 
-            // Update urgent need
-            const urgentSelected = document.querySelector('input[name="urgent_need"]:checked');
+            // Update urgent need preview with rating summary
             const urgentPreview = document.getElementById('urgent-preview');
-            if (urgentSelected) {
-                const labels = {
-                    'rental': 'Rental housing for workers',
-                    'homeownership': 'Homeownership for families',
-                    'workforce': 'Workforce housing for businesses',
-                    'senior': 'Senior housing options',
-                    'all': 'All equally urgent'
-                };
-                urgentPreview.innerHTML = labels[urgentSelected.value] || '';
+            const ratings = [];
+            if (ratingSelections.urgent_rental) ratings.push(`Rental: ${ratingSelections.urgent_rental}`);
+            if (ratingSelections.urgent_homeownership) ratings.push(`Homeownership: ${ratingSelections.urgent_homeownership}`);
+            if (ratingSelections.urgent_senior) ratings.push(`Senior: ${ratingSelections.urgent_senior}`);
+            if (ratingSelections.urgent_workforce) ratings.push(`Workforce: ${ratingSelections.urgent_workforce}`);
+
+            if (ratings.length > 0) {
+                urgentPreview.innerHTML = ratings.join('<br>');
             } else {
-                urgentPreview.innerHTML = '<span class="empty">Not selected yet</span>';
+                urgentPreview.innerHTML = '<span class="empty">Not rated yet</span>';
             }
 
             // Update notes preview
@@ -1352,7 +1709,6 @@
             const employerExp = Array.from(document.querySelectorAll('input[name="employer_exp"]:checked')).map(cb => cb.value);
             const knewPrograms = Array.from(document.querySelectorAll('input[name="knew_programs"]:checked')).map(cb => cb.value);
             const whoAreYou = Array.from(document.querySelectorAll('input[name="who_are_you"]:checked')).map(cb => cb.value);
-            const urgentNeed = document.querySelector('input[name="urgent_need"]:checked')?.value || '';
 
             const experience = document.getElementById('experience')?.value || '';
             const oneThing = document.getElementById('one-thing')?.value || '';
@@ -1378,7 +1734,10 @@
                     employer_experience: employerExp.join(', '),
                     knew_programs: knewPrograms.join(', '),
                     who_are_you: whoAreYou.join(', '),
-                    urgent_need: urgentNeed,
+                    urgent_rental: ratingSelections.urgent_rental || '',
+                    urgent_homeownership: ratingSelections.urgent_homeownership || '',
+                    urgent_senior: ratingSelections.urgent_senior || '',
+                    urgent_workforce: ratingSelections.urgent_workforce || '',
                     experience: experience,
                     one_thing: oneThing
                 })

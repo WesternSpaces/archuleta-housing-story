@@ -14,6 +14,35 @@ This story follows four households through the data. They're not real people, bu
 
 ---
 
+## About This Process
+
+This story is part of the **Archuleta County & Town of Pagosa Springs Housing Action Plan** process. We're working to understand our housing challenges and develop solutions together.
+
+### ⓘ What's a Housing Needs Assessment?
+- Identifies the type and amount of housing needed at all income levels
+- Completed April 2025 for Archuleta County
+- Analyzes demographics, economics, housing inventory, and market conditions
+- **Not a mandate** — it's an informational tool to guide planning
+
+*Source: DOLA Housing Needs Assessment Guidelines*
+
+### ⓘ What's a Housing Action Plan?
+- Turns the Needs Assessment into action
+- Sets goals and strategies specific to our community
+- Required by Colorado law (SB 24-174) by January 2028
+- Shaped by community input — **that's why we're here**
+
+*Source: DOLA Housing Action Plan Guide*
+
+### ⓘ Our Process
+- **Spring 2025:** Housing Needs Assessment completed
+- **Jan-Mar 2026:** Strategy Group sessions
+- **Jan 2026:** Open House #1 — *YOU ARE HERE*
+- **Spring 2026:** Open House #2 / Draft strategies
+- **Fall 2026:** Plan adoption
+
+---
+
 ## Chapter 1: Meet Your Neighbors
 
 ### Anna: The Healthcare Worker
@@ -74,6 +103,13 @@ This story follows four households through the data. They're not real people, bu
 - [ ] Pat & Chris (employers, can't find workers)
 - [ ] None of these / Other
 
+### ⓘ Dig Deeper: Income Distribution
+- **43% of households** earn below 80% AMI (~2,637 households)
+- **27% of residents** are 65+ (many on fixed/limited income)
+- **Median age: 51 years** (vs. 37 statewide)
+
+*Source: 2025 Housing Needs Assessment*
+
 ---
 
 ## Chapter 2: The Math Doesn't Work
@@ -125,6 +161,41 @@ When households spend more than 30%, they're considered **"cost-burdened"**—me
 
 **Why does this matter?** Most housing programs use AMI to determine who qualifies for assistance. If you earn "80% AMI," you might qualify for certain programs. This doesn't mean you're struggling—it means you earn 80% of what the median household earns.
 
+### ⓘ 2025 Archuleta County AMI by Household Size
+
+*Average household size in Archuleta County: 2.3 persons*
+
+| AMI Level | 1-person | 2-person | 3-person | 4-person | 5-person | 6-person |
+|-----------|----------|----------|----------|----------|----------|----------|
+| **120%** | $85,680 | **$97,920** | $110,160 | $122,400 | $132,240 | $142,080 |
+| **100%** | $71,400 | **$81,600** | $91,800 | $102,000 | $110,200 | $118,400 |
+| **80%** | $57,120 | **$65,280** | $73,440 | $81,600 | $88,160 | $94,720 |
+| **50%** | $35,700 | **$40,800** | $45,900 | $51,000 | $55,100 | $59,200 |
+| **30%** | $21,420 | **$24,480** | $27,540 | $30,600 | $33,060 | $35,520 |
+
+*Source: 2025 CHFA Income Limits*
+
+### ⓘ Dig Deeper: Housing Need by 2035
+
+| Income Level | Units Needed | Rental | Ownership |
+|--------------|--------------|--------|-----------|
+| ≤30% AMI | 52 | 52 | 0 |
+| 31-50% AMI | 43 | 43 | 0 |
+| 51-80% AMI | 434 | 434 | 0 |
+| 81-100% AMI | 76 | 38 | 38 |
+| 100-120% AMI | 364 | 182 | 182 |
+| **Total** | **1,316** | **853** | **463** |
+
+*Source: 2025 Housing Needs Assessment*
+
+### ⓘ Dig Deeper: Market Trends
+- **Home prices +56%** since 2020
+- **Rent +57%** since 2012
+- **Entry-level homes under $400k:** nearly gone from market
+- **44-48% of households** are cost-burdened (spending >30% on housing)
+
+*Source: 2025 Housing Needs Assessment*
+
 ---
 
 ### Reflection
@@ -168,6 +239,22 @@ What does that mean? It means our economy needs more workers than can live here.
 - **As community members:** Less diverse, less vibrant community
 
 **When workers can't live here, businesses can't operate here—and our community loses what makes it special.**
+
+### ⓘ Dig Deeper: Employment Data
+- **Total jobs:** 7,523 (projected 8,069 by 2034)
+- **3.5 jobs per working household** (extreme ratio)
+- **20% of workforce commutes in daily** (1,456 workers)
+- **63% of employers** say hiring has gotten harder
+
+*Source: 2025 Housing Needs Assessment, Employer Survey*
+
+### ⓘ Dig Deeper: Who's Most Affected
+- Accommodation & food services
+- Retail
+- Healthcare
+- Seasonal positions
+
+*Source: 2025 Housing Needs Assessment, Employer Survey*
 
 ---
 
@@ -247,6 +334,23 @@ About **1,100 housing units** are in various stages of planning and development:
 
 **The catch:** Most serve moderate- to higher-income households. Fewer address the 30-60% AMI gap.
 
+### ⓘ Dig Deeper: Pipeline Details
+- **~1,100 units** in various stages of planning
+- **~180 units** expected to complete 2025-2027
+- **Gap requiring public effort:** ~200 units (primarily <80% AMI)
+
+*Source: Strategy Group Session 1 Presentation*
+
+### ⓘ Dig Deeper: Existing Affordable Inventory
+**Total income-restricted units: 121**
+- **Casa de Los Arcos:** 16 units (Senior, 0-30% AMI)
+- **Rose Mountain Townhomes:** 34 units (30-60% AMI)
+- **Socorro Senior Living:** 19 units (Senior, 0-30% AMI)
+- **Hickory Ridge Apartments:** 40 units (≤60% AMI)
+- **Other:** 12 units (various programs)
+
+*Source: Strategy Group Session 1 Packet*
+
 ---
 
 ### Existing Policy Framework
@@ -290,13 +394,16 @@ Now we want to hear from you.
 
 ### What Matters Most for Our Community's Future?
 
-Of the needs we've discussed, which feels most urgent to you?
+**How urgent is each of these needs for our community?**
 
-- [ ] Rental housing for workers (like Anna)
-- [ ] Homeownership opportunities for families (like Mike & Jenny)
-- [ ] Senior housing and downsizing options (like Linda & Tom need)
-- [ ] Workforce housing so businesses can hire (like Pat & Chris need)
-- [ ] All of these are equally urgent
+Rate each from Low to High:
+
+| Housing Need | Low | Medium | High |
+|--------------|-----|--------|------|
+| Rental housing for workers (like Anna) | [ ] | [ ] | [ ] |
+| Homeownership for families (like Mike & Jenny) | [ ] | [ ] | [ ] |
+| Senior housing options (like Linda & Tom need) | [ ] | [ ] | [ ] |
+| Workforce housing for businesses (like Pat & Chris need) | [ ] | [ ] | [ ] |
 
 ### What Should Decision-Makers Understand?
 
