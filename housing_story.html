@@ -229,6 +229,17 @@
         }
 
         /* Data Tables */
+        .table-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 15px 0;
+        }
+
+        .table-wrapper::after {
+            content: '';
+            display: block;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -236,10 +247,15 @@
             font-size: 0.95rem;
         }
 
+        .table-wrapper table {
+            margin: 0;
+        }
+
         th, td {
             padding: 10px 12px;
             text-align: left;
             border-bottom: 1px solid #e0e0e0;
+            white-space: nowrap;
         }
 
         th {
@@ -251,6 +267,21 @@
         .gap-negative {
             color: #dc2626;
             font-weight: 600;
+        }
+
+        /* Mobile scroll hint */
+        .scroll-hint {
+            display: none;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #888;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 600px) {
+            .scroll-hint {
+                display: block;
+            }
         }
 
         /* Stat Boxes */
@@ -744,6 +775,60 @@
             .stat-box {
                 min-width: auto;
             }
+            /* Mobile table improvements */
+            table {
+                font-size: 0.85rem;
+            }
+            th, td {
+                padding: 8px 6px;
+            }
+            /* Info toggle buttons - remove left margin on mobile */
+            .info-toggle {
+                margin-left: 0;
+                margin-top: 8px;
+            }
+            /* Rating buttons - stack on very small screens */
+            .rating-buttons {
+                flex-direction: column;
+            }
+            .rating-btn {
+                padding: 12px 15px;
+            }
+            /* Chapter headings */
+            .chapter-section h2 {
+                font-size: 1.2rem;
+            }
+            /* Callout boxes */
+            .callout {
+                padding: 12px 15px;
+            }
+            /* Household cards */
+            .household-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            .household-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+            .household-afford {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Extra small screens (320px) */
+        @media (max-width: 380px) {
+            header h1 {
+                font-size: 1.2rem;
+            }
+            .chapter-section {
+                padding: 15px;
+            }
+            .stat-number {
+                font-size: 1.6rem;
+            }
         }
     </style>
 </head>
@@ -822,7 +907,7 @@
         <div class="info-content" id="infoAMITable">
             <h4>2025 Archuleta County AMI by Household Size</h4>
             <p style="margin-bottom: 10px;"><em>Average household size in Archuleta County: 2.3 persons</em></p>
-            <div style="overflow-x: auto;">
+            <div class="table-wrapper" style="margin: 0;">
                 <table style="font-size: 0.85rem;">
                     <tr>
                         <th>AMI Level</th>
@@ -879,6 +964,7 @@
                         <td>$35,520</td>
                     </tr>
                 </table>
+                <div class="scroll-hint">← Swipe to see more →</div>
             </div>
             <p style="font-size: 0.8rem; color: #666; margin-top: 10px;">Source: 2025 CHFA Income Limits</p>
         </div>
@@ -1008,38 +1094,41 @@
 
         <p>Let's follow each household through the affordability calculation—comparing what they can afford to what housing actually costs.</p>
 
-        <table>
-            <tr>
-                <th>Household</th>
-                <th>What They Can Afford</th>
-                <th>What Housing Costs</th>
-                <th>The Gap</th>
-            </tr>
-            <tr>
-                <td><strong>Anna</strong> (healthcare, 50% AMI)</td>
-                <td>$1,050/mo rent</td>
-                <td>$2,783/mo median rent</td>
-                <td class="gap-negative">-$1,733/mo</td>
-            </tr>
-            <tr>
-                <td><strong>Mike & Jenny</strong> (family, 100% AMI)</td>
-                <td>~$385,000 home</td>
-                <td>$553,500 median home</td>
-                <td class="gap-negative">-$168,500</td>
-            </tr>
-            <tr>
-                <td><strong>Linda & Tom</strong> (retirees, 80% AMI)</td>
-                <td>~$245,000 home</td>
-                <td>$350,000+ smallest available</td>
-                <td class="gap-negative">-$105,000+</td>
-            </tr>
-            <tr>
-                <td><strong>Pat & Chris's workers</strong></td>
-                <td>$750-875/mo rent</td>
-                <td>$2,783/mo median rent</td>
-                <td class="gap-negative">-$1,900+/mo</td>
-            </tr>
-        </table>
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Household</th>
+                    <th>What They Can Afford</th>
+                    <th>What Housing Costs</th>
+                    <th>The Gap</th>
+                </tr>
+                <tr>
+                    <td><strong>Anna</strong> (healthcare, 50% AMI)</td>
+                    <td>$1,050/mo rent</td>
+                    <td>$2,783/mo median rent</td>
+                    <td class="gap-negative">-$1,733/mo</td>
+                </tr>
+                <tr>
+                    <td><strong>Mike & Jenny</strong> (family, 100% AMI)</td>
+                    <td>~$385,000 home</td>
+                    <td>$553,500 median home</td>
+                    <td class="gap-negative">-$168,500</td>
+                </tr>
+                <tr>
+                    <td><strong>Linda & Tom</strong> (retirees, 80% AMI)</td>
+                    <td>~$245,000 home</td>
+                    <td>$350,000+ smallest available</td>
+                    <td class="gap-negative">-$105,000+</td>
+                </tr>
+                <tr>
+                    <td><strong>Pat & Chris's workers</strong></td>
+                    <td>$750-875/mo rent</td>
+                    <td>$2,783/mo median rent</td>
+                    <td class="gap-negative">-$1,900+/mo</td>
+                </tr>
+            </table>
+            <div class="scroll-hint">← Swipe to see more →</div>
+        </div>
 
         <div class="callout">
             <strong>For Anna:</strong> She'd need to earn $111,000/year—nearly <em>triple</em> her salary—to afford median rent at 30% of income. So she spends closer to 50% on housing, leaving little for savings or emergencies.
