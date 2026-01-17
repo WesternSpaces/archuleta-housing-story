@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Story Response Card - Print Version</title>
+    <style>
+        @page {
+            size: letter portrait;
+            margin: 0.5in;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.4;
+            color: #1a1a1a;
+            background: white;
+        }
+
+        .page {
+            width: 7.5in;
+            height: 5in;
+            padding: 0.4in;
+            position: relative;
+            page-break-after: always;
+            border: 1px solid #ccc;
+            margin: 10px auto;
+        }
+
+        /* Cut line indicator */
+        .cut-line {
+            text-align: center;
+            color: #999;
+            font-size: 9pt;
+            margin: 5px 0 15px 0;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #0d6b6e 0%, #0a5456 100%);
+            color: white;
+            padding: 12px 20px;
+            margin: -0.4in -0.4in 20px -0.4in;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 16pt;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .header p {
+            font-size: 10pt;
+            opacity: 0.9;
+            margin-top: 4px;
+        }
+
+        /* Household icons */
+        .households {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 15px 0;
+        }
+
+        .household-icon {
+            text-align: center;
+        }
+
+        .household-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin: 0 auto 6px auto;
+            border: 3px solid transparent;
+        }
+
+        .household-circle.maria { background: #fce7f3; }
+        .household-circle.garcias { background: #dbeafe; }
+        .household-circle.rodriguezes { background: #fef3c7; }
+        .household-circle.robert { background: #e0e7ff; }
+
+        .household-label {
+            font-size: 8pt;
+            color: #666;
+            max-width: 70px;
+        }
+
+        .instruction {
+            text-align: center;
+            font-size: 10pt;
+            color: #0d6b6e;
+            font-weight: 600;
+            margin: 15px 0 10px 0;
+        }
+
+        /* Note area */
+        .note-area {
+            margin-top: 15px;
+        }
+
+        .note-label {
+            font-size: 9pt;
+            color: #666;
+            margin-bottom: 6px;
+        }
+
+        .note-lines {
+            border-bottom: 1px solid #ccc;
+            height: 24px;
+            margin-bottom: 8px;
+        }
+
+        /* Back side */
+        .back-header {
+            background: #c9a227;
+            color: white;
+            padding: 10px 20px;
+            margin: -0.4in -0.4in 20px -0.4in;
+            text-align: center;
+        }
+
+        .back-header h2 {
+            font-size: 12pt;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .main-question {
+            font-size: 14pt;
+            font-weight: 700;
+            color: #0d6b6e;
+            text-align: center;
+            margin: 20px 0;
+            line-height: 1.3;
+        }
+
+        .response-box {
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            height: 2in;
+            margin: 15px 0;
+        }
+
+        .share-options {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+            font-size: 9pt;
+        }
+
+        .share-option {
+            text-align: center;
+            flex: 1;
+            max-width: 2in;
+        }
+
+        .share-option strong {
+            color: #0d6b6e;
+        }
+
+        .qr-box {
+            width: 0.9in;
+            height: 0.9in;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            margin: 8px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 7pt;
+            color: #999;
+        }
+
+        /* Footer */
+        .footer {
+            position: absolute;
+            bottom: 0.3in;
+            left: 0.4in;
+            right: 0.4in;
+            text-align: center;
+            font-size: 8pt;
+            color: #999;
+        }
+
+        /* Print styles */
+        .print-instructions {
+            background: #fffbeb;
+            border: 2px solid #c9a227;
+            padding: 15px;
+            margin: 20px auto;
+            max-width: 600px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        @media print {
+            .print-instructions, .cut-line {
+                display: none;
+            }
+            .page {
+                border: none;
+                margin: 0;
+            }
+        }
+
+        @media screen {
+            body {
+                background: #f0f0f0;
+                padding: 20px;
+            }
+            .page {
+                box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+                background: white;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="print-instructions">
+    <strong>Print Instructions:</strong><br>
+    Print on <strong>Letter</strong> size paper, then cut in half horizontally.<br>
+    Each sheet makes <strong>2 response cards</strong>.<br>
+    Recommended: Print on cardstock for durability.<br>
+    <em>Page 1 = Front of card, Page 2 = Back of card (print double-sided)</em>
+</div>
+
+<!-- CARD 1 - FRONT -->
+<div class="page">
+    <div class="header">
+        <h1>Your Housing Story</h1>
+        <p>Open House #1 | January 21, 2026</p>
+    </div>
+
+    <p class="instruction">As you walk through, circle the household(s) that resonate with you:</p>
+
+    <div class="households">
+        <div class="household-icon">
+            <div class="household-circle maria">🏥</div>
+            <div class="household-label">MARIA<br>Healthcare worker</div>
+        </div>
+        <div class="household-icon">
+            <div class="household-circle garcias">👨‍👩‍👧‍👦</div>
+            <div class="household-label">THE GARCIAS<br>Young family</div>
+        </div>
+        <div class="household-icon">
+            <div class="household-circle rodriguezes">🍳</div>
+            <div class="household-label">RODRIGUEZES<br>Restaurant owners</div>
+        </div>
+        <div class="household-icon">
+            <div class="household-circle robert">🏠</div>
+            <div class="household-label">ROBERT<br>Retiring teacher</div>
+        </div>
+    </div>
+
+    <div class="note-area">
+        <div class="note-label">Quick note — what strikes you most?</div>
+        <div class="note-lines"></div>
+        <div class="note-lines"></div>
+    </div>
+</div>
+
+<div class="cut-line">✂ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ✂</div>
+
+<!-- CARD 1 - BACK -->
+<div class="page">
+    <div class="back-header">
+        <h2>Share Your Voice</h2>
+    </div>
+
+    <p class="main-question">What's the ONE thing you want decision-makers to know about housing here?</p>
+
+    <div class="response-box"></div>
+
+    <div class="share-options">
+        <div class="share-option">
+            <strong>Option 1</strong><br>
+            Drop this card in the box at the exit
+        </div>
+        <div class="share-option">
+            <strong>Option 2</strong><br>
+            Scan to share more online
+            <img src="qr_housing_story.png" alt="QR Code" class="qr-box">
+        </div>
+    </div>
+
+    <div class="footer">
+        Thank you for being part of the conversation. | Housing Action Plan
+    </div>
+</div>
+
+<div class="cut-line">✂ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ✂</div>
+
+<!-- CARD 2 - FRONT (duplicate for 2-up printing) -->
+<div class="page">
+    <div class="header">
+        <h1>Your Housing Story</h1>
+        <p>Open House #1 | January 21, 2026</p>
+    </div>
+
+    <p class="instruction">As you walk through, circle the household(s) that resonate with you:</p>
+
+    <div class="households">
+        <div class="household-icon">
+            <div class="household-circle maria">🏥</div>
+            <div class="household-label">MARIA<br>Healthcare worker</div>
+        </div>
+        <div class="household-icon">
+            <div class="household-circle garcias">👨‍👩‍👧‍👦</div>
+            <div class="household-label">THE GARCIAS<br>Young family</div>
+        </div>
+        <div class="household-icon">
+            <div class="household-circle rodriguezes">🍳</div>
+            <div class="household-label">RODRIGUEZES<br>Restaurant owners</div>
+        </div>
+        <div class="household-icon">
+            <div class="household-circle robert">🏠</div>
+            <div class="household-label">ROBERT<br>Retiring teacher</div>
+        </div>
+    </div>
+
+    <div class="note-area">
+        <div class="note-label">Quick note — what strikes you most?</div>
+        <div class="note-lines"></div>
+        <div class="note-lines"></div>
+    </div>
+</div>
+
+<div class="cut-line">✂ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ✂</div>
+
+<!-- CARD 2 - BACK -->
+<div class="page">
+    <div class="back-header">
+        <h2>Share Your Voice</h2>
+    </div>
+
+    <p class="main-question">What's the ONE thing you want decision-makers to know about housing here?</p>
+
+    <div class="response-box"></div>
+
+    <div class="share-options">
+        <div class="share-option">
+            <strong>Option 1</strong><br>
+            Drop this card in the box at the exit
+        </div>
+        <div class="share-option">
+            <strong>Option 2</strong><br>
+            Scan to share more online
+            <img src="qr_housing_story.png" alt="QR Code" class="qr-box">
+        </div>
+    </div>
+
+    <div class="footer">
+        Thank you for being part of the conversation. | Housing Action Plan
+    </div>
+</div>
+
+</body>
+</html>
