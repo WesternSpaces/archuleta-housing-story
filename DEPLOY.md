@@ -1,59 +1,36 @@
 # Deployment Guide
 ## Housing Story Interactive Page
 
-This guide explains how to deploy the interactive housing story to GitHub Pages and prepare it for the Open House.
+This guide documents the deployed interactive housing story for the Open House.
 
 ---
 
-## Quick Start
+## DEPLOYED
 
-### 1. Create GitHub Repository
+**Live URL:** https://westernspaces.github.io/archuleta-housing-story/housing_story.html
+
+**Repository:** https://github.com/WesternSpaces/archuleta-housing-story
+
+**QR Code:** `qr_housing_story.png` (included in this folder)
+
+---
+
+## Quick Reference
+
+The page is live and ready to use. To make updates:
 
 ```bash
-# Navigate to the Interactive_Story folder
 cd "/Users/sarah/Documents/Western Spaces/Archuletta County/HAP/Engagement/Session One/Interactive_Story"
 
-# Initialize git repo
-git init
+# Make changes to housing_story.html
 
-# Add files
-git add housing_story.html story_content.md DEPLOY.md
-
-# Commit
-git commit -m "Initial commit: Housing story interactive page"
+# Commit and push
+git add housing_story.html
+git commit -m "Update: description of changes"
+git push
 ```
 
-### 2. Create Repository on GitHub
-
-1. Go to https://github.com/new
-2. Repository name: `archuleta-housing-story`
-3. Set to **Public** (required for free GitHub Pages)
-4. Do NOT initialize with README (we already have files)
-5. Click "Create repository"
-
-### 3. Push to GitHub
-
-```bash
-# Add remote (replace YOUR_USERNAME with actual GitHub username)
-git remote add origin https://github.com/YOUR_USERNAME/archuleta-housing-story.git
-
-# Push
-git branch -M main
-git push -u origin main
-```
-
-### 4. Enable GitHub Pages
-
-1. Go to repository Settings
-2. Click "Pages" in left sidebar
-3. Under "Source", select `main` branch
-4. Select `/ (root)` folder
-5. Click "Save"
-
-GitHub will provide a URL like:
-`https://YOUR_USERNAME.github.io/archuleta-housing-story/`
-
-The page will be live in 1-5 minutes.
+Changes will be live in 1-5 minutes.
 
 ---
 
@@ -85,7 +62,7 @@ archuleta-housing-story/
 brew install qrencode
 
 # Generate QR code
-qrencode -o qr_housing_story.png -s 10 "https://YOUR_USERNAME.github.io/archuleta-housing-story/housing_story.html"
+qrencode -o qr_housing_story.png -s 10 "https://westernspaces.github.io/archuleta-housing-story/housing_story.html"
 ```
 
 ---
@@ -149,7 +126,7 @@ Before the event, test the following:
 
 Add a prominent link on the virtual open house page:
 ```html
-<a href="https://YOUR_USERNAME.github.io/archuleta-housing-story/housing_story.html" target="_blank">
+<a href="https://westernspaces.github.io/archuleta-housing-story/housing_story.html" target="_blank">
   Explore the Interactive Housing Story
 </a>
 ```
@@ -158,7 +135,7 @@ Add a prominent link on the virtual open house page:
 
 ```html
 <iframe
-  src="https://YOUR_USERNAME.github.io/archuleta-housing-story/housing_story.html"
+  src="https://westernspaces.github.io/archuleta-housing-story/housing_story.html"
   width="100%"
   height="800"
   frameborder="0"
