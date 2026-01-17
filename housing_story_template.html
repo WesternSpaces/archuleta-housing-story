@@ -1,0 +1,1765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housing in {{COUNTY_NAME}}: Follow the Story</title>
+    <style>
+        /* Skip link for keyboard users */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #2D3E4F;
+            color: white;
+            padding: 8px 16px;
+            z-index: 100;
+            text-decoration: none;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: #f5f7f5;
+            color: #1a1a1a;
+        }
+
+        /* Focus states for accessibility */
+        *:focus {
+            outline: 3px solid #FACE6A;
+            outline-offset: 2px;
+        }
+
+        *:focus:not(:focus-visible) {
+            outline: none;
+        }
+
+        *:focus-visible {
+            outline: 3px solid #FACE6A;
+            outline-offset: 2px;
+        }
+
+        .page-wrapper {
+            display: flex;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .main-content {
+            flex: 1;
+            max-width: 800px;
+        }
+
+        .sidebar {
+            width: 280px;
+            flex-shrink: 0;
+        }
+
+        .sidebar-inner {
+            position: sticky;
+            top: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2D3E4F 0%, #232f3a 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.8rem;
+        }
+
+        header p {
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        .intro-box {
+            background: rgba(255,255,255,0.15);
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 4px solid #FACE6A;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .chapter-section {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-top: 4px solid #2D3E4F;
+        }
+
+        .chapter-section.highlight {
+            border-top-color: #FACE6A;
+        }
+
+        .chapter-section.economic {
+            border-top-color: #d97706;
+        }
+
+        .chapter-section.resources {
+            border-top-color: #059669;
+        }
+
+        .chapter-section.reflection {
+            border-top-color: #7c3aed;
+        }
+
+        .chapter-section h2 {
+            color: #2D3E4F;
+            margin-top: 0;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chapter-number {
+            background: #2D3E4F;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .chapter-section.highlight .chapter-number {
+            background: #FACE6A;
+            color: #2D3E4F;
+        }
+
+        .chapter-section.economic .chapter-number {
+            background: #d97706;
+        }
+
+        .chapter-section.resources .chapter-number {
+            background: #059669;
+        }
+
+        .chapter-section.reflection .chapter-number {
+            background: #7c3aed;
+        }
+
+        /* Household Cards */
+        .household-card {
+            background: #f8fafa;
+            border: 2px solid #e0e7e7;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            position: relative;
+        }
+
+        .household-card.selected {
+            border-color: #2D3E4F;
+            background: #f0f4f7;
+        }
+
+        .household-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+
+        .household-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .household-icon.anna { background: #fce7f3; }
+        .household-icon.mikejenny { background: #dbeafe; }
+        .household-icon.lindatom { background: #e0e7ff; }
+        .household-icon.patchris { background: #fef3c7; }
+
+        .household-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #2D3E4F;
+        }
+
+        .household-subtitle {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .household-details {
+            margin: 12px 0;
+            font-size: 0.95rem;
+        }
+
+        .household-afford {
+            background: rgba(45, 62, 79, 0.08);
+            padding: 10px 15px;
+            border-radius: 6px;
+            margin-top: 12px;
+            font-size: 0.9rem;
+        }
+
+        .household-afford strong {
+            color: #2D3E4F;
+        }
+
+        /* Data Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            padding: 10px 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        th {
+            background: #f0f3f5;
+            font-weight: 600;
+            color: #2D3E4F;
+        }
+
+        .gap-negative {
+            color: #dc2626;
+            font-weight: 600;
+        }
+
+        /* Stat Boxes */
+        .stat-row {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #2D3E4F 0%, #232f3a 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .stat-box.warning {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+        }
+
+        .stat-box.gold {
+            background: linear-gradient(135deg, #FACE6A 0%, #d4a84a 100%);
+            color: #2D3E4F;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+
+        /* Info Toggle (Learn More) */
+        .info-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: #e8edf2;
+            border: 1px solid #b8c4d0;
+            color: #2D3E4F;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: all 0.2s;
+        }
+
+        .info-toggle:hover {
+            background: #d0dbe8;
+        }
+
+        .info-content {
+            display: none;
+            background: #f8f9fb;
+            border: 1px solid #d0dbe8;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 15px 0;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .info-content.show {
+            display: block;
+        }
+
+        .info-content h4 {
+            color: #2D3E4F;
+            margin: 0 0 10px 0;
+            font-size: 0.95rem;
+        }
+
+        .info-content ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .info-content li {
+            margin-bottom: 8px;
+        }
+
+        /* Callout Box */
+        .callout {
+            background: #fef9e6;
+            border-left: 4px solid #FACE6A;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .callout.teal {
+            background: #e8edf2;
+            border-left-color: #2D3E4F;
+        }
+
+        .callout.orange {
+            background: #ffedd5;
+            border-left-color: #d97706;
+        }
+
+        /* Reflection Options */
+        .reflection-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .reflection-option {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            background: #f8f9fa;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .reflection-option:hover {
+            border-color: #2D3E4F;
+            background: #f0f3f5;
+        }
+
+        .reflection-option.selected {
+            border-color: #2D3E4F;
+            background: #e8edf2;
+        }
+
+        .reflection-option input {
+            margin-right: 12px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .reflection-option label {
+            cursor: pointer;
+            flex: 1;
+        }
+
+        /* Text Input */
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #2D3E4F;
+        }
+
+        /* Pipeline Table */
+        .pipeline-table {
+            font-size: 0.9rem;
+        }
+
+        .pipeline-table td {
+            vertical-align: top;
+        }
+
+        /* Process Timeline */
+        .timeline {
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            margin: 15px 0;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 35px;
+            bottom: -15px;
+            width: 2px;
+            background: #e0e0e0;
+        }
+
+        .timeline-item:last-child::before {
+            display: none;
+        }
+
+        .timeline-marker {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            flex-shrink: 0;
+            margin-right: 15px;
+            z-index: 1;
+        }
+
+        .timeline-marker.complete {
+            background: #059669;
+            color: white;
+        }
+
+        .timeline-marker.current {
+            background: #FACE6A;
+            color: #2D3E4F;
+            font-weight: bold;
+        }
+
+        .timeline-marker.future {
+            background: #e5e7eb;
+            color: #6b7280;
+        }
+
+        .timeline-content {
+            flex: 1;
+            padding-top: 4px;
+        }
+
+        .timeline-content strong {
+            color: #2D3E4F;
+        }
+
+        .timeline-content p {
+            margin: 4px 0 0 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Sidebar Summary */
+        .story-summary {
+            background: #2D3E4F;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .story-summary h3 {
+            margin-top: 0;
+            color: white;
+            font-size: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 10px;
+        }
+
+        .summary-section {
+            margin: 15px 0;
+        }
+
+        .summary-section h4 {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.8rem;
+            margin: 0 0 8px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .household-icons {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .household-mini {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            opacity: 0.4;
+            transition: all 0.2s;
+        }
+
+        .household-mini.selected {
+            opacity: 1;
+            box-shadow: 0 0 0 2px white;
+        }
+
+        .household-mini.anna { background: #fce7f3; }
+        .household-mini.mikejenny { background: #dbeafe; }
+        .household-mini.lindatom { background: #e0e7ff; }
+        .household-mini.patchris { background: #fef3c7; }
+
+        .summary-notes {
+            font-size: 0.85rem;
+            background: rgba(255,255,255,0.1);
+            padding: 10px;
+            border-radius: 6px;
+            min-height: 60px;
+        }
+
+        .summary-notes.empty {
+            color: rgba(255,255,255,0.5);
+            font-style: italic;
+        }
+
+        /* Submit Section */
+        .submit-section {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .submit-button {
+            background: #2D3E4F;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .submit-button:hover {
+            background: #232f3a;
+        }
+
+        .print-button {
+            background: #6b7280;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .print-button:hover {
+            background: #4b5563;
+        }
+
+        /* Mobile Summary */
+        .mobile-summary {
+            display: none;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 40px;
+            padding: 20px;
+        }
+
+        footer a {
+            color: #2D3E4F;
+        }
+
+        /* Rating Scale Buttons */
+        .rating-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .rating-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .rating-label {
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #2D3E4F;
+        }
+
+        .rating-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .rating-btn {
+            flex: 1;
+            padding: 10px 15px;
+            border: 2px solid #d0d0d0;
+            background: white;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .rating-btn:hover {
+            border-color: #2D3E4F;
+            background: #f0f3f5;
+        }
+
+        .rating-btn.selected {
+            background: #2D3E4F;
+            color: white;
+            border-color: #2D3E4F;
+        }
+
+        .rating-btn[data-value="low"].selected {
+            background: #059669;
+            border-color: #059669;
+        }
+
+        .rating-btn[data-value="medium"].selected {
+            background: #d97706;
+            border-color: #d97706;
+        }
+
+        .rating-btn[data-value="high"].selected {
+            background: #dc2626;
+            border-color: #dc2626;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .sidebar {
+                display: none;
+            }
+            .page-wrapper {
+                display: block;
+            }
+            .main-content {
+                max-width: 100%;
+            }
+            .submit-button, .print-button {
+                display: none;
+            }
+            .chapter-section {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 900px) {
+            .page-wrapper {
+                flex-direction: column;
+            }
+            .sidebar {
+                display: none;
+            }
+            .mobile-summary {
+                display: block;
+                margin: 30px 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            header {
+                padding: 20px;
+            }
+            header h1 {
+                font-size: 1.4rem;
+            }
+            .stat-row {
+                flex-direction: column;
+            }
+            .stat-box {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header style="max-width: 1200px; margin: 0 auto 30px auto;">
+        <h1>Housing in {{COUNTY_NAME}}</h1>
+        <p style="font-size: 1.1rem; margin-bottom: 15px;">Follow the Story</p>
+        <div class="intro-box">
+            <p style="margin: 0 0 8px 0;"><strong>How to use this guide:</strong></p>
+            <p style="margin: 0; opacity: 0.9;">Follow four households through our housing data. See what they can afford, what housing actually costs, and why it matters for our whole community. Along the way, we'll ask for your reflections.</p>
+        </div>
+    </header>
+
+    <div class="page-wrapper">
+    <div class="main-content" id="main-content" tabindex="-1">
+
+    <!-- ABOUT THIS PROCESS -->
+    <section class="chapter-section" style="border-top-color: #059669;">
+        <h2 style="color: #059669;">
+            <span class="chapter-number" style="background: #059669;">ⓘ</span> About This Process
+        </h2>
+        <p>This story is part of the <strong>{{REGION_NAME}} Housing Action Plan</strong> process. We're working to understand our housing challenges and develop solutions together.</p>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0;">
+            <button class="info-toggle" onclick="toggleInfo('infoHNA')"><span>ⓘ</span> What's a Housing Needs Assessment?</button>
+            <button class="info-toggle" onclick="toggleInfo('infoHAP')"><span>ⓘ</span> What's a Housing Action Plan?</button>
+            <button class="info-toggle" onclick="toggleInfo('infoProcess')"><span>ⓘ</span> Our Process & Timeline</button>
+        </div>
+
+        <div class="info-content" id="infoHNA">
+            <h4>What's a Housing Needs Assessment?</h4>
+            <ul>
+                <li>Identifies the type and amount of housing needed at all income levels</li>
+                <li>Completed {{HNA_COMPLETION_DATE}} for {{COUNTY_NAME}}</li>
+                <li>Analyzes demographics, economics, housing inventory, and market conditions</li>
+                <li><strong>Not a mandate</strong> — it's an informational tool to guide planning</li>
+            </ul>
+            <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Source: DOLA Housing Needs Assessment Guidelines</p>
+        </div>
+
+        <div class="info-content" id="infoHAP">
+            <h4>What's a Housing Action Plan?</h4>
+            <ul>
+                <li>Turns the Needs Assessment into action</li>
+                <li>Sets goals and strategies specific to our community</li>
+                <li>Required by Colorado law (SB 24-174) by January 2028</li>
+                <li>Shaped by community input — <strong>that's why we're here</strong></li>
+            </ul>
+            <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Source: DOLA Housing Action Plan Guide</p>
+        </div>
+
+        <div class="info-content" id="infoProcess">
+            <h4>Our Process</h4>
+            <ul>
+                <li><strong>Spring 2025:</strong> Housing Needs Assessment completed</li>
+                <li><strong>{{STRATEGY_GROUP_DATES}}:</strong> Strategy Group sessions</li>
+                <li><strong>Jan 2026:</strong> Open House #1 — <em>YOU ARE HERE</em></li>
+                <li><strong>{{OPEN_HOUSE_2_DATE}}:</strong> Open House #2 / Draft strategies</li>
+                <li><strong>{{PLAN_ADOPTION_DATE}}:</strong> Plan adoption</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- CHAPTER 1: MEET YOUR NEIGHBORS -->
+    <section class="chapter-section">
+        <h2><span class="chapter-number">1</span> Meet Your Neighbors</h2>
+        <p>These aren't real people, but they represent real situations in our community. As you read, consider: <strong>Which household's story resonates with you?</strong></p>
+
+        <div class="callout teal" style="margin: 15px 0;">
+            <strong>You'll see "AMI" throughout</strong>—that's Area Median Income. It's the middle point of all household incomes in our area. For {{COUNTY_NAME}} in 2025, 100% AMI for a 2-person household is {{AMI_100_2PERSON}}/year. Housing programs use AMI to determine who qualifies: 50% AMI means you earn half the median; 80% AMI means you earn 80% of it. Housing is considered "affordable" when you spend no more than 30% of income on it.
+            <button class="info-toggle" onclick="toggleInfo('infoAMITable')" style="margin-left: 0; margin-top: 10px;"><span>ⓘ</span> See Full AMI Table</button>
+        </div>
+
+        <div class="info-content" id="infoAMITable">
+            <h4>2025 {{COUNTY_NAME}} AMI by Household Size</h4>
+            <p style="margin-bottom: 10px;"><em>Average household size in {{COUNTY_NAME}}: {{AVG_HOUSEHOLD_SIZE}} persons</em></p>
+            <div style="overflow-x: auto;">
+                <table style="font-size: 0.85rem;">
+                    <tr>
+                        <th>AMI Level</th>
+                        <th>1-person</th>
+                        <th style="background: #fef3c7;">2-person</th>
+                        <th>3-person</th>
+                        <th>4-person</th>
+                        <th>5-person</th>
+                        <th>6-person</th>
+                    </tr>
+                    <tr>
+                        <td><strong>120%</strong></td>
+                        <td>{{AMI_120_1PERSON}}</td>
+                        <td style="background: #fef9e6;"><strong>{{AMI_120_2PERSON}}</strong></td>
+                        <td>{{AMI_120_3PERSON}}</td>
+                        <td>{{AMI_120_4PERSON}}</td>
+                        <td>{{AMI_120_5PERSON}}</td>
+                        <td>{{AMI_120_6PERSON}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>100%</strong></td>
+                        <td>{{AMI_100_1PERSON}}</td>
+                        <td style="background: #fef9e6;"><strong>{{AMI_100_2PERSON}}</strong></td>
+                        <td>{{AMI_100_3PERSON}}</td>
+                        <td>{{AMI_100_4PERSON}}</td>
+                        <td>{{AMI_100_5PERSON}}</td>
+                        <td>{{AMI_100_6PERSON}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>80%</strong></td>
+                        <td>{{AMI_80_1PERSON}}</td>
+                        <td style="background: #fef9e6;"><strong>{{AMI_80_2PERSON}}</strong></td>
+                        <td>{{AMI_80_3PERSON}}</td>
+                        <td>{{AMI_100_2PERSON}}</td>
+                        <td>{{AMI_80_5PERSON}}</td>
+                        <td>{{AMI_80_6PERSON}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>50%</strong></td>
+                        <td>{{AMI_50_1PERSON}}</td>
+                        <td style="background: #fef9e6;"><strong>{{AMI_50_2PERSON}}</strong></td>
+                        <td>{{AMI_50_3PERSON}}</td>
+                        <td>{{AMI_50_4PERSON}}</td>
+                        <td>{{AMI_50_5PERSON}}</td>
+                        <td>{{AMI_50_6PERSON}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>30%</strong></td>
+                        <td>{{AMI_30_1PERSON}}</td>
+                        <td style="background: #fef9e6;"><strong>{{AMI_30_2PERSON}}</strong></td>
+                        <td>{{AMI_30_3PERSON}}</td>
+                        <td>{{AMI_30_4PERSON}}</td>
+                        <td>{{AMI_30_5PERSON}}</td>
+                        <td>{{AMI_30_6PERSON}}</td>
+                    </tr>
+                </table>
+            </div>
+            <p style="font-size: 0.8rem; color: #666; margin-top: 10px;">Source: 2025 CHFA Income Limits</p>
+        </div>
+
+        <div class="household-card" data-household="anna">
+            <div class="household-header">
+                <div class="household-icon anna">&#x1F3E5;</div>
+                <div>
+                    <div class="household-name">Anna: The Healthcare Worker</div>
+                    <div class="household-subtitle">CNA at {{TOWN_SHORT}} Medical Center, $42,000/year (~50% AMI)</div>
+                </div>
+            </div>
+            <div class="household-details">
+                <p>Anna is 34 and has been here five years. She's great at her job and loves the community. She rents a one-bedroom apartment and works extra shifts when she can. She's looked at buying, but the math doesn't work. She's considered moving to Durango, where some coworkers commute from, but doesn't want to spend two hours a day in a car.</p>
+            </div>
+            <div class="household-afford">
+                <strong>What she can afford:</strong> $1,050/month rent | Homeownership out of reach
+            </div>
+        </div>
+
+        <div class="household-card" data-household="mikejenny">
+            <div class="household-header">
+                <div class="household-icon mikejenny">&#x1F46A;</div>
+                <div>
+                    <div class="household-name">Mike & Jenny: The Young Family</div>
+                    <div class="household-subtitle">Deputy sheriff + part-time teacher, two kids, {{AMI_100_4PERSON}}/year (~100% AMI)</div>
+                </div>
+            </div>
+            <div class="household-details">
+                <p>Mike and Jenny are in their late 30s with two kids in elementary school. They've rented the same three-bedroom house for six years. The landlord just told them he's selling—and the new owner may not keep it as a rental. They've started looking to buy, but even at 100% AMI, they can't afford the median home.</p>
+            </div>
+            <div class="household-afford">
+                <strong>What they can afford:</strong> $2,550/month rent | ~$385,000 home
+            </div>
+        </div>
+
+        <div class="household-card" data-household="lindatom">
+            <div class="household-header">
+                <div class="household-icon lindatom">&#x1F3E0;</div>
+                <div>
+                    <div class="household-name">Linda & Tom: The Retiring Couple</div>
+                    <div class="household-subtitle">Retired teacher + retired worker, $65,000/year (~80% AMI)</div>
+                </div>
+            </div>
+            <div class="household-details">
+                <p>Linda, 67, taught at {{TOWN_SHORT}} schools for 30 years. Tom, 69, worked various jobs in the county. They live on combined pensions and Social Security. They own a 3-bedroom home worth $450,000, but it's more house than they need now. They'd like to downsize to something smaller—but there's nothing on the market under $350,000.</p>
+                <p style="font-style: italic; color: #666; margin-top: 10px;">If they could downsize, they'd free up a family home for the market. But they can't find their next place.</p>
+            </div>
+            <div class="household-afford">
+                <strong>What they could afford:</strong> $1,625/month rent | ~$245,000 home (if they downsized)
+            </div>
+        </div>
+
+        <div class="household-card" data-household="patchris">
+            <div class="household-header">
+                <div class="household-icon patchris">&#x1F373;</div>
+                <div>
+                    <div class="household-name">Pat & Chris: The Restaurant Owners</div>
+                    <div class="household-subtitle">Downtown restaurant owners for 12 years</div>
+                </div>
+            </div>
+            <div class="household-details">
+                <p>Pat and Chris aren't looking for housing themselves—they own their home. But they can't find workers. Last summer, they had to close two days a week because they couldn't staff the kitchen. When they do find applicants, many back out once they see rental prices.</p>
+                <p style="font-style: italic; color: #666; margin-top: 10px;">"We've turned away business. We've shortened hours. It's not a labor problem—it's a housing problem."</p>
+            </div>
+            <div class="household-afford">
+                <strong>What their employees need:</strong> Line cooks ($35k) need $875/mo | Servers ($30k) need $750/mo
+            </div>
+        </div>
+
+        <!-- Reflection 1 -->
+        <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 25px;">
+            <p style="margin: 0 0 15px 0;"><strong>Which household's story resonates with you—or reminds you of someone in our community?</strong></p>
+            <div class="reflection-options">
+                <label class="reflection-option">
+                    <input type="checkbox" name="familiar_household" value="anna" onchange="updateSummary()">
+                    <span>Anna (healthcare worker, can't afford rent)</span>
+                </label>
+                <label class="reflection-option">
+                    <input type="checkbox" name="familiar_household" value="mikejenny" onchange="updateSummary()">
+                    <span>Mike & Jenny (working family, trying to buy)</span>
+                </label>
+                <label class="reflection-option">
+                    <input type="checkbox" name="familiar_household" value="lindatom" onchange="updateSummary()">
+                    <span>Linda & Tom (retirees, limited downsizing options)</span>
+                </label>
+                <label class="reflection-option">
+                    <input type="checkbox" name="familiar_household" value="patchris" onchange="updateSummary()">
+                    <span>Pat & Chris (employers, can't find workers)</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Dig Deeper: Income Distribution -->
+        <div style="margin-top: 25px;">
+            <button class="info-toggle" onclick="toggleInfo('digDeeperIncome')"><span>📊</span> Dig Deeper: Income Distribution</button>
+        </div>
+        <div class="info-content" id="digDeeperIncome">
+            <h4>Who Lives Here? Income & Demographics</h4>
+            <ul>
+                <li><strong>43% of households</strong> earn below 80% AMI (~2,637 households)</li>
+                <li><strong>27% of residents</strong> are 65+ (many on fixed/limited income)</li>
+                <li><strong>Median age: {{MEDIAN_AGE}} years</strong> (vs. {{STATE_MEDIAN_AGE}} statewide)</li>
+            </ul>
+            <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Source: 2025 Housing Needs Assessment</p>
+        </div>
+    </section>
+
+    <!-- CHAPTER 2: THE MATH -->
+    <section class="chapter-section highlight">
+        <h2>
+            <span class="chapter-number">2</span> The Math Doesn't Work
+            <button class="info-toggle" onclick="toggleInfo('infoAMI')"><span>&#9432;</span> What's AMI?</button>
+        </h2>
+
+        <div class="info-content" id="infoAMI">
+            <h4>Area Median Income (AMI)</h4>
+            <p>AMI is the middle point of all household incomes in our area—half earn more, half earn less. HUD calculates it yearly.</p>
+            <p><strong>For {{COUNTY_NAME}} in 2025 (2-person household):</strong></p>
+            <ul>
+                <li><strong>100% AMI</strong> = {{AMI_100_2PERSON}}/year</li>
+                <li><strong>80% AMI</strong> = $65,300/year ("low income" in housing programs)</li>
+                <li><strong>50% AMI</strong> = {{AMI_50_2PERSON}}/year ("very low income")</li>
+            </ul>
+            <p>Housing is "affordable" when you spend <strong>no more than 30%</strong> of income on it. Spend more, and you're "cost-burdened."</p>
+        </div>
+
+        <p>Let's follow each household through the affordability calculation—comparing what they can afford to what housing actually costs.</p>
+
+        <table>
+            <tr>
+                <th>Household</th>
+                <th>What They Can Afford</th>
+                <th>What Housing Costs</th>
+                <th>The Gap</th>
+            </tr>
+            <tr>
+                <td><strong>Anna</strong> (healthcare, 50% AMI)</td>
+                <td>$1,050/mo rent</td>
+                <td>{{MEDIAN_RENT}}/mo median rent</td>
+                <td class="gap-negative">-$1,733/mo</td>
+            </tr>
+            <tr>
+                <td><strong>Mike & Jenny</strong> (family, 100% AMI)</td>
+                <td>~$385,000 home</td>
+                <td>{{MEDIAN_HOME_PRICE}} median home</td>
+                <td class="gap-negative">-$168,500</td>
+            </tr>
+            <tr>
+                <td><strong>Linda & Tom</strong> (retirees, 80% AMI)</td>
+                <td>~$245,000 home</td>
+                <td>$350,000+ smallest available</td>
+                <td class="gap-negative">-$105,000+</td>
+            </tr>
+            <tr>
+                <td><strong>Pat & Chris's workers</strong></td>
+                <td>$750-875/mo rent</td>
+                <td>{{MEDIAN_RENT}}/mo median rent</td>
+                <td class="gap-negative">-$1,900+/mo</td>
+            </tr>
+        </table>
+
+        <div class="callout">
+            <strong>For Anna:</strong> She'd need to earn $111,000/year—nearly <em>triple</em> her salary—to afford median rent at 30% of income. So she spends closer to 50% on housing, leaving little for savings or emergencies.
+        </div>
+
+        <div class="callout orange">
+            <strong>For Pat & Chris's workers:</strong> When a restaurant can't find line cooks because they'd need to earn $111,000 to afford median rent, the restaurant closes early. The worker, the business, and the community all lose.
+        </div>
+
+        <div class="stat-row">
+            <div class="stat-box warning">
+                <div class="stat-number">{{MEDIAN_RENT}}</div>
+                <div class="stat-label">Median monthly rent</div>
+            </div>
+            <div class="stat-box warning">
+                <div class="stat-number">{{MEDIAN_HOME_PRICE}}</div>
+                <div class="stat-label">Median home price</div>
+            </div>
+            <div class="stat-box warning">
+                <div class="stat-number">{{RENTAL_VACANCY_RATE}}</div>
+                <div class="stat-label">Rental vacancy (healthy: 5-7%)</div>
+            </div>
+        </div>
+
+        <div class="callout teal">
+            <strong>The bigger picture:</strong> {{COST_BURDENED_PERCENT}} of {{COUNTY_NAME}} households are cost-burdened—spending more than 30% of income on housing. Rent increased 57% since 2012. Home prices increased 56% since 2020.
+        </div>
+
+        <!-- Dig Deeper sections for Chapter 2 -->
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0;">
+            <button class="info-toggle" onclick="toggleInfo('digDeeperNeed')"><span>📊</span> Dig Deeper: Housing Need by 2035</button>
+            <button class="info-toggle" onclick="toggleInfo('digDeeperMarket')"><span>📊</span> Dig Deeper: Market Trends</button>
+        </div>
+
+        <div class="info-content" id="digDeeperNeed">
+            <h4>Projected Housing Need by 2035</h4>
+            <div style="overflow-x: auto;">
+                <table style="font-size: 0.9rem;">
+                    <tr>
+                        <th>Income Level</th>
+                        <th>Units Needed</th>
+                        <th>Rental</th>
+                        <th>Ownership</th>
+                    </tr>
+                    <tr>
+                        <td>≤30% AMI</td>
+                        <td>52</td>
+                        <td>52</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>31-50% AMI</td>
+                        <td>43</td>
+                        <td>43</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>51-80% AMI</td>
+                        <td>434</td>
+                        <td>434</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>81-100% AMI</td>
+                        <td>76</td>
+                        <td>38</td>
+                        <td>38</td>
+                    </tr>
+                    <tr>
+                        <td>100-120% AMI</td>
+                        <td>364</td>
+                        <td>182</td>
+                        <td>182</td>
+                    </tr>
+                    <tr style="font-weight: bold; background: #f0f3f5;">
+                        <td><strong>Total</strong></td>
+                        <td><strong>1,316</strong></td>
+                        <td><strong>853</strong></td>
+                        <td><strong>463</strong></td>
+                    </tr>
+                </table>
+            </div>
+            <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Source: 2025 Housing Needs Assessment</p>
+        </div>
+
+        <div class="info-content" id="digDeeperMarket">
+            <h4>Market Trends</h4>
+            <ul>
+                <li><strong>Home prices +56%</strong> since 2020</li>
+                <li><strong>Rent +57%</strong> since 2012</li>
+                <li><strong>Entry-level homes under $400k:</strong> nearly gone from market</li>
+                <li><strong>{{COST_BURDENED_PERCENT}} of households</strong> are cost-burdened (spending &gt;30% on housing)</li>
+            </ul>
+            <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Source: 2025 Housing Needs Assessment</p>
+        </div>
+
+        <!-- Reflection 2 -->
+        <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 25px;">
+            <p style="margin: 0 0 15px 0;"><strong>How does this affordability gap show up in our community?</strong></p>
+            <div class="reflection-options">
+                <label class="reflection-option">
+                    <input type="checkbox" name="gap_experience" value="workers" onchange="updateSummary()">
+                    <span>I see this affecting workers I know</span>
+                </label>
+                <label class="reflection-option">
+                    <input type="checkbox" name="gap_experience" value="families" onchange="updateSummary()">
+                    <span>I see this affecting families in our community</span>
+                </label>
+                <label class="reflection-option">
+                    <input type="checkbox" name="gap_experience" value="businesses" onchange="updateSummary()">
+                    <span>I see businesses struggling to hire</span>
+                </label>
+                <label class="reflection-option">
+                    <input type="checkbox" name="gap_experience" value="residents" onchange="updateSummary()">
+                    <span>I see longtime residents having to leave</span>
+                </label>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHAPTER 3: ECONOMIC IMPACT -->
+    <section class="chapter-section economic">
+        <h2><span class="chapter-number">3</span> It Affects All of Us</h2>
+        <p>Pat & Chris's story isn't unique. Housing affects more than just the people looking for a place to live—it affects our whole community.</p>
+
+        <div class="stat-row">
+            <div class="stat-box gold">
+                <div class="stat-number">60%</div>
+                <div class="stat-label">of employers cite housing as #1 hiring barrier</div>
+            </div>
+            <div class="stat-box gold">
+                <div class="stat-number">17%</div>
+                <div class="stat-label">positions unfilled at peak season</div>
+            </div>
+            <div class="stat-box gold">
+                <div class="stat-number">{{COMMUTERS_IN}}</div>
+                <div class="stat-label">workers commute in daily</div>
+            </div>
+        </div>
+
+        <div class="callout orange">
+            <strong>The jobs-housing imbalance:</strong> {{TOWN_SHORT}} has <strong>{{JOBS_PER_HOUSEHOLD}} jobs for every working household</strong>—one of the most extreme ratios in Colorado. Our economy needs more workers than can live here.
+        </div>
+
+        <h3>How It Shows Up in Our Community</h3>
+        <ul>
+            <li><strong>As employers:</strong> Can't find workers to fill essential positions</li>
+            <li><strong>As patrons:</strong> Favorite restaurants close early, healthcare has longer waits</li>
+            <li><strong>As neighbors:</strong> Longtime residents forced to move away</li>
+            <li><strong>As taxpayers:</strong> Emergency services understaffed, schools struggle to hire</li>
+            <li><strong>As community members:</strong> Less diverse, less vibrant community</li>
+        </ul>
+
+        <p style="font-size: 1.1rem; margin-top: 20px;"><strong>When workers can't live here, businesses can't operate here—and our community loses what makes it special.</strong></p>
+
+        <!-- Dig Deeper sections for Chapter 3 -->
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0;">
+            <button class="info-toggle" onclick="toggleInfo('digDeeperEmployment')"><span>📊</span> Dig Deeper: Employment Data</button>
+            <button class="info-toggle" onclick="toggleInfo('digDeeperAffected')"><span>📊</span> Dig Deeper: Who's Most Affected</button>
+        </div>
+
+        <div class="info-content" id="digDeeperEmployment">
+            <h4>Employment Data</h4>
+            <ul>
+                <li><strong>Total jobs:</strong> {{TOTAL_JOBS}} (projected {{PROJECTED_JOBS}} by 2034)</li>
+                <li><strong>{{JOBS_PER_HOUSEHOLD}} jobs per working household</strong> (extreme ratio)</li>
+                <li><strong>20% of workforce commutes in daily</strong> ({{COMMUTERS_IN}} workers)</li>
+                <li><strong>63% of employers</strong> say hiring has gotten harder</li>
+            </ul>
+            <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Source: 2025 Housing Needs Assessment, Employer Survey</p>
+        </div>
+
+        <div class="info-content" id="digDeeperAffected">
+            <h4>Industries Most Affected</h4>
+            <ul>
+                <li>Accommodation & food services</li>
+                <li>Retail</li>
+                <li>Healthcare</li>
+                <li>Seasonal positions</li>
+            </ul>
+            <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Source: 2025 Housing Needs Assessment, Employer Survey</p>
+        </div>
+
+        <!-- Employer Reflection -->
+        <div style="background: #fff7ed; padding: 20px; border-radius: 8px; margin-top: 25px; border-left: 4px solid #d97706;">
+            <p style="margin: 0 0 15px 0;"><strong>If you're an employer or work with one: What have you observed?</strong></p>
+            <div class="reflection-options">
+                <label class="reflection-option">
+                    <input type="checkbox" name="employer_exp" value="hiring_challenge" onchange="updateSummary()">
+                    <span>Housing seems to affect hiring in our area</span>
+                </label>
+                <label class="reflection-option">
+                    <input type="checkbox" name="employer_exp" value="lost_candidates" onchange="updateSummary()">
+                    <span>I've seen candidates back out due to housing</span>
+                </label>
+                <label class="reflection-option">
+                    <input type="checkbox" name="employer_exp" value="commute" onchange="updateSummary()">
+                    <span>Many employees commute long distances</span>
+                </label>
+                <label class="reflection-option">
+                    <input type="checkbox" name="employer_exp" value="service_impacts" onchange="updateSummary()">
+                    <span>I've noticed service impacts (shorter hours, longer waits)</span>
+                </label>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHAPTER 4: WHAT'S HAPPENING -->
+    <section class="chapter-section resources">
+        <h2><span class="chapter-number">4</span> We're Not Starting From Scratch</h2>
+        <p>Good news: our community has already taken steps to address housing. Here's what exists—and how it connects to our four households.</p>
+
+        <h3>For Anna (Healthcare Worker, ~50% AMI)</h3>
+        <ul>
+            <li><strong>Housing Choice Vouchers</strong> — Rental assistance (~30 vouchers, program at capacity)</li>
+            <li><strong>Hickory Ridge Apartments</strong> — 40 units for ≤60% AMI</li>
+            <li><strong>Rose Mountain Townhomes</strong> — 34 new units at 30-60% AMI (opened 2024)</li>
+        </ul>
+        <p style="font-size: 0.9rem; color: #666;"><em>The gap: Waitlists are long. Anna earns slightly too much for some programs but not enough for market rent.</em></p>
+
+        <h3>For Mike & Jenny (Working Family, ~100% AMI)</h3>
+        <ul>
+            <li><strong>HomesFund Down Payment Assistance</strong> — Second mortgages of $15k-$50k</li>
+            <li><strong>{{TOWN_SHORT}} CDC Workforce Housing</strong> — Chris Mountain homes ~$350k</li>
+            <li><strong>Habitat for Humanity</strong> — Affordable homeownership (1-3 homes/year)</li>
+        </ul>
+        <p style="font-size: 0.9rem; color: #666;"><em>The gap: Even at 100% AMI, they can't afford the median home. Down payment assistance helps but can't bridge a $168k gap.</em></p>
+
+        <h3>For Linda & Tom (Retirees, ~80% AMI)</h3>
+        <ul>
+            <li><strong>Casa de los Arcos</strong> — 16 senior units at 0-30% AMI</li>
+            <li><strong>Socorro Senior Living</strong> — 19 senior units at 0-30% AMI</li>
+            <li><strong>Archuleta Seniors, Inc.</strong> — Aging-in-place support services</li>
+        </ul>
+        <p style="font-size: 0.9rem; color: #666;"><em>The gap: Very limited smaller housing stock. They earn too much for subsidized senior housing, but can't find anything smaller to buy.</em></p>
+
+        <h3>For Pat & Chris (Employers)</h3>
+        <ul>
+            <li><strong>HOWL Program</strong> (new 2025) — Employer-linked workforce assistance</li>
+            <li><strong>Pipeline projects</strong> — Pagosa Views, Timberline, The Enclave with deed-restricted units</li>
+        </ul>
+        <p style="font-size: 0.9rem; color: #666;"><em>The gap: No employer-assisted housing program exists yet. HOWL is a pilot. Large-scale workforce housing is years away.</em></p>
+
+        <h3 style="margin-top: 30px;">What's in the Pipeline
+            <button class="info-toggle" onclick="toggleInfo('infoPipeline')"><span>&#9432;</span> Details</button>
+        </h3>
+
+        <div class="info-content" id="infoPipeline">
+            <p>About <strong>1,100 housing units</strong> are in various stages of planning:</p>
+            <table class="pipeline-table">
+                <tr>
+                    <th>Project</th>
+                    <th>Units</th>
+                    <th>Affordability</th>
+                    <th>Timeline</th>
+                </tr>
+                <tr>
+                    <td>Pagosa Views</td>
+                    <td>650</td>
+                    <td>10% deed-restricted</td>
+                    <td>2026-2040</td>
+                </tr>
+                <tr>
+                    <td>Timberline Apartments</td>
+                    <td>100</td>
+                    <td>LIHTC (30-80% AMI)</td>
+                    <td>2026-2030</td>
+                </tr>
+                <tr>
+                    <td>The Enclave</td>
+                    <td>70</td>
+                    <td>60-90% AMI</td>
+                    <td>2027</td>
+                </tr>
+                <tr>
+                    <td>Pagosa Peaks</td>
+                    <td>96</td>
+                    <td>10% deed-restricted</td>
+                    <td>2027</td>
+                </tr>
+                <tr>
+                    <td>Chris Mountain Phase 2</td>
+                    <td>50</td>
+                    <td>Workforce housing</td>
+                    <td>2024-2031</td>
+                </tr>
+            </table>
+            <p style="margin-top: 15px;"><strong>Good news:</strong> If these projects move forward, they could meet much of projected need.</p>
+            <p><strong>The catch:</strong> Most serve moderate- to higher-income households. Fewer address the 30-60% AMI gap.</p>
+        </div>
+
+        <div class="callout teal" style="margin-top: 20px;">
+            <strong>The Housing Action Plan builds on this foundation.</strong> Housing is already a priority in both Town and County strategic plans. The question isn't whether to act—it's how.
+        </div>
+
+        <!-- Dig Deeper sections for Chapter 4 -->
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0;">
+            <button class="info-toggle" onclick="toggleInfo('digDeeperPipelineDetails')"><span>📊</span> Dig Deeper: Pipeline Details</button>
+            <button class="info-toggle" onclick="toggleInfo('digDeeperExisting')"><span>📊</span> Dig Deeper: Existing Affordable Inventory</button>
+        </div>
+
+        <div class="info-content" id="digDeeperPipelineDetails">
+            <h4>Development Pipeline Details</h4>
+            <ul>
+                <li><strong>~1,100 units</strong> in various stages of planning</li>
+                <li><strong>~180 units</strong> expected to complete 2025-2027</li>
+                <li><strong>Gap requiring public effort:</strong> ~200 units (primarily &lt;80% AMI)</li>
+            </ul>
+            <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Source: Strategy Group Session 1 Presentation</p>
+        </div>
+
+        <div class="info-content" id="digDeeperExisting">
+            <h4>Existing Affordable Housing Inventory</h4>
+            <p><strong>Total income-restricted units: 121</strong></p>
+            <ul>
+                <li><strong>Casa de Los Arcos:</strong> 16 units (Senior, 0-30% AMI)</li>
+                <li><strong>Rose Mountain Townhomes:</strong> 34 units (30-60% AMI)</li>
+                <li><strong>Socorro Senior Living:</strong> 19 units (Senior, 0-30% AMI)</li>
+                <li><strong>Hickory Ridge Apartments:</strong> 40 units (≤60% AMI)</li>
+                <li><strong>Other:</strong> 12 units (various programs)</li>
+            </ul>
+            <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">Source: Strategy Group Session 1 Packet</p>
+        </div>
+
+        <!-- Reflection 4 -->
+        <div style="background: #f0fdf4; padding: 20px; border-radius: 8px; margin-top: 25px; border-left: 4px solid #059669;">
+            <p style="margin: 0 0 15px 0;"><strong>Which of these programs or resources did you already know about?</strong></p>
+            <div class="reflection-options">
+                <label class="reflection-option">
+                    <input type="checkbox" name="knew_programs" value="vouchers">
+                    <span>Housing Choice Vouchers</span>
+                </label>
+                <label class="reflection-option">
+                    <input type="checkbox" name="knew_programs" value="dpa">
+                    <span>Down payment assistance (HomesFund)</span>
+                </label>
+                <label class="reflection-option">
+                    <input type="checkbox" name="knew_programs" value="developments">
+                    <span>Workforce housing developments (Chris Mountain, etc.)</span>
+                </label>
+                <label class="reflection-option">
+                    <input type="checkbox" name="knew_programs" value="senior">
+                    <span>Senior housing options</span>
+                </label>
+                <label class="reflection-option">
+                    <input type="checkbox" name="knew_programs" value="none">
+                    <span>None of these / I didn't know about any</span>
+                </label>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHAPTER 5: YOUR TURN -->
+    <section class="chapter-section reflection">
+        <h2><span class="chapter-number">5</span> Your Turn</h2>
+        <p>You've followed four households through the data. You've seen the affordability gap, the community impact, and what's already happening. Now we want to hear from you.</p>
+
+        <h3>What Brings You to This Conversation?</h3>
+        <div class="reflection-options">
+            <label class="reflection-option">
+                <input type="checkbox" name="who_are_you" value="community" onchange="updateSummary()">
+                <span>I care about our community's future</span>
+            </label>
+            <label class="reflection-option">
+                <input type="checkbox" name="who_are_you" value="know_someone" onchange="updateSummary()">
+                <span>I know someone affected by housing challenges</span>
+            </label>
+            <label class="reflection-option">
+                <input type="checkbox" name="who_are_you" value="curious" onchange="updateSummary()">
+                <span>I'm curious about the data</span>
+            </label>
+            <label class="reflection-option">
+                <input type="checkbox" name="who_are_you" value="work_housing" onchange="updateSummary()">
+                <span>I work in housing, development, or a related field</span>
+            </label>
+            <label class="reflection-option">
+                <input type="checkbox" name="who_are_you" value="solutions" onchange="updateSummary()">
+                <span>I want to help find solutions</span>
+            </label>
+        </div>
+
+        <h3 style="margin-top: 30px;">What Matters Most for Our Community's Future?</h3>
+        <p>How urgent is each of these needs for our community?</p>
+
+        <div class="rating-group">
+            <div class="rating-item">
+                <div class="rating-label">Rental housing for workers (like Anna)</div>
+                <div class="rating-buttons" role="group" aria-label="Urgency rating for rental housing">
+                    <button type="button" class="rating-btn" data-name="urgent_rental" data-value="low" onclick="selectRating(this)">Low</button>
+                    <button type="button" class="rating-btn" data-name="urgent_rental" data-value="medium" onclick="selectRating(this)">Medium</button>
+                    <button type="button" class="rating-btn" data-name="urgent_rental" data-value="high" onclick="selectRating(this)">High</button>
+                </div>
+            </div>
+
+            <div class="rating-item">
+                <div class="rating-label">Homeownership for families (like Mike & Jenny)</div>
+                <div class="rating-buttons" role="group" aria-label="Urgency rating for homeownership">
+                    <button type="button" class="rating-btn" data-name="urgent_homeownership" data-value="low" onclick="selectRating(this)">Low</button>
+                    <button type="button" class="rating-btn" data-name="urgent_homeownership" data-value="medium" onclick="selectRating(this)">Medium</button>
+                    <button type="button" class="rating-btn" data-name="urgent_homeownership" data-value="high" onclick="selectRating(this)">High</button>
+                </div>
+            </div>
+
+            <div class="rating-item">
+                <div class="rating-label">Senior housing options (like Linda & Tom need)</div>
+                <div class="rating-buttons" role="group" aria-label="Urgency rating for senior housing">
+                    <button type="button" class="rating-btn" data-name="urgent_senior" data-value="low" onclick="selectRating(this)">Low</button>
+                    <button type="button" class="rating-btn" data-name="urgent_senior" data-value="medium" onclick="selectRating(this)">Medium</button>
+                    <button type="button" class="rating-btn" data-name="urgent_senior" data-value="high" onclick="selectRating(this)">High</button>
+                </div>
+            </div>
+
+            <div class="rating-item">
+                <div class="rating-label">Workforce housing for businesses (like Pat & Chris need)</div>
+                <div class="rating-buttons" role="group" aria-label="Urgency rating for workforce housing">
+                    <button type="button" class="rating-btn" data-name="urgent_workforce" data-value="low" onclick="selectRating(this)">Low</button>
+                    <button type="button" class="rating-btn" data-name="urgent_workforce" data-value="medium" onclick="selectRating(this)">Medium</button>
+                    <button type="button" class="rating-btn" data-name="urgent_workforce" data-value="high" onclick="selectRating(this)">High</button>
+                </div>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 30px;">What Should Decision-Makers Understand?</h3>
+        <p>In one sentence, what do you think decision-makers should understand about housing here?</p>
+        <textarea id="experience" placeholder="Share your perspective..." oninput="updateSummary()"></textarea>
+
+        <h3 style="margin-top: 30px;">What Should Be Prioritized?</h3>
+        <p><strong>What matters most for our community's housing future?</strong></p>
+        <textarea id="one-thing" placeholder="What should decision-makers prioritize?" oninput="updateSummary()"></textarea>
+    </section>
+
+    <!-- CHAPTER 6: WHAT'S NEXT -->
+    <section class="chapter-section">
+        <h2><span class="chapter-number">6</span> What Happens Next</h2>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-marker complete">&#10003;</div>
+                <div class="timeline-content">
+                    <strong>Housing Needs Assessment</strong> (Completed {{HNA_COMPLETION_DATE}})
+                    <p>Data on who needs what, how much, and where</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker complete">&#10003;</div>
+                <div class="timeline-content">
+                    <strong>Strategy Group Sessions</strong> ({{STRATEGY_GROUP_DATES}})
+                    <p>Working group shaping goals and strategies</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker current">&#9733;</div>
+                <div class="timeline-content">
+                    <strong>Open House #1 — YOU ARE HERE</strong> ({{OPEN_HOUSE_1_DATE}})
+                    <p>Community input on vision and priorities</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker future">&bull;</div>
+                <div class="timeline-content">
+                    <strong>Strategy Development</strong> (Feb-Apr 2026)
+                    <p>Developing specific actions and roles</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker future">&bull;</div>
+                <div class="timeline-content">
+                    <strong>Open House #2</strong> ({{OPEN_HOUSE_2_DATE}})
+                    <p>Review draft strategies, provide feedback</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker future">&bull;</div>
+                <div class="timeline-content">
+                    <strong>Plan Adoption</strong> ({{PLAN_ADOPTION_DATE}})
+                    <p>Town Council and County Commissioners</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="callout teal">
+            <strong>Stay Involved:</strong>
+            <ul style="margin: 10px 0 0 0;">
+                <li>Visit the boards and share your input tonight</li>
+                <li>Share this story with family: scan the QR at the welcome table</li>
+                <li>Sign up for updates at the welcome table</li>
+                <li>Watch for Open House #2 this spring</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- MOBILE SUMMARY -->
+    <section class="story-summary mobile-summary">
+        <h3>Your Story So Far</h3>
+        <div class="summary-section">
+            <h4>Households that resonate</h4>
+            <div class="household-icons">
+                <div class="household-mini anna" id="mobile-mini-anna" title="Anna">&#x1F3E5;</div>
+                <div class="household-mini mikejenny" id="mobile-mini-mikejenny" title="Mike & Jenny">&#x1F46A;</div>
+                <div class="household-mini lindatom" id="mobile-mini-lindatom" title="Linda & Tom">&#x1F3E0;</div>
+                <div class="household-mini patchris" id="mobile-mini-patchris" title="Pat & Chris">&#x1F373;</div>
+            </div>
+        </div>
+        <div class="summary-section">
+            <h4>Your reflections</h4>
+            <div class="summary-notes empty" id="mobile-notes-preview">Your notes will appear here...</div>
+        </div>
+    </section>
+
+    <!-- SUBMIT -->
+    <section class="submit-section">
+        <h3 style="color: #2D3E4F; margin-top: 0;">Share Your Story</h3>
+        <p>Your input helps shape the Housing Action Plan. Share your reflections so we can include your voice.</p>
+
+        <div style="margin: 20px 0;">
+            <label style="display: block; margin-bottom: 8px; font-weight: 500;">Name (optional):</label>
+            <input type="text" id="user-name" style="width: 100%; max-width: 300px; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px; font-size: 1rem;">
+        </div>
+
+        <div style="margin: 20px 0;">
+            <label style="display: block; margin-bottom: 8px; font-weight: 500;">Email (optional, for updates):</label>
+            <input type="email" id="user-email" style="width: 100%; max-width: 300px; padding: 10px; border: 2px solid #e0e0e0; border-radius: 6px; font-size: 1rem;">
+        </div>
+
+        <button class="submit-button" onclick="submitStory()">Send My Story</button>
+        <button class="print-button" onclick="window.print()">Print</button>
+    </section>
+
+    <footer>
+        <p>Questions? Contact <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a></p>
+        <p style="margin-top: 10px; font-size: 0.85rem;">Data source: 2025 Regional Housing Needs Assessment by ECOnorthwest and Western Spaces</p>
+        <p style="font-size: 0.85rem;">Prepared for the {{REGION_NAME}} Housing Action Plan</p>
+    </footer>
+
+    </div><!-- end main-content -->
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-inner">
+            <section class="story-summary">
+                <h3>Your Story So Far</h3>
+
+                <div class="summary-section">
+                    <h4>Households that resonate</h4>
+                    <div class="household-icons">
+                        <div class="household-mini anna" id="mini-anna" title="Anna">&#x1F3E5;</div>
+                        <div class="household-mini mikejenny" id="mini-mikejenny" title="Mike & Jenny">&#x1F46A;</div>
+                        <div class="household-mini lindatom" id="mini-lindatom" title="Linda & Tom">&#x1F3E0;</div>
+                        <div class="household-mini patchris" id="mini-patchris" title="Pat & Chris">&#x1F373;</div>
+                    </div>
+                </div>
+
+                <div class="summary-section">
+                    <h4>Priority ratings</h4>
+                    <div class="summary-notes" id="urgent-preview" style="min-height: 60px; font-size: 0.8rem;">
+                        <span class="empty">Not rated yet</span>
+                    </div>
+                </div>
+
+                <div class="summary-section">
+                    <h4>Your reflections</h4>
+                    <div class="summary-notes" id="notes-preview">
+                        <span class="empty">Your notes will appear here...</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </aside>
+
+    </div><!-- end page-wrapper -->
+
+    <script>
+        // Store rating selections
+        const ratingSelections = {
+            urgent_rental: null,
+            urgent_homeownership: null,
+            urgent_senior: null,
+            urgent_workforce: null
+        };
+
+        // Toggle info content visibility
+        function toggleInfo(id) {
+            const content = document.getElementById(id);
+            if (content.classList.contains('show')) {
+                content.classList.remove('show');
+            } else {
+                content.classList.add('show');
+            }
+        }
+
+        // Handle rating button selection
+        function selectRating(btn) {
+            const name = btn.dataset.name;
+            const value = btn.dataset.value;
+
+            // Remove selected class from siblings
+            btn.parentElement.querySelectorAll('.rating-btn').forEach(b => {
+                b.classList.remove('selected');
+            });
+
+            // Add selected class to clicked button
+            btn.classList.add('selected');
+
+            // Store the selection
+            ratingSelections[name] = value;
+
+            // Update summary
+            updateSummary();
+        }
+
+        // Update summary sidebar
+        function updateSummary() {
+            // Update household icons
+            const households = ['anna', 'mikejenny', 'lindatom', 'patchris'];
+            households.forEach(h => {
+                const checked = document.querySelector(`input[value="${h}"]`)?.checked;
+                document.getElementById(`mini-${h}`)?.classList.toggle('selected', checked);
+                document.getElementById(`mobile-mini-${h}`)?.classList.toggle('selected', checked);
+            });
+
+            // Update urgent need preview with rating summary
+            const urgentPreview = document.getElementById('urgent-preview');
+            const ratings = [];
+            if (ratingSelections.urgent_rental) ratings.push(`Rental: ${ratingSelections.urgent_rental}`);
+            if (ratingSelections.urgent_homeownership) ratings.push(`Homeownership: ${ratingSelections.urgent_homeownership}`);
+            if (ratingSelections.urgent_senior) ratings.push(`Senior: ${ratingSelections.urgent_senior}`);
+            if (ratingSelections.urgent_workforce) ratings.push(`Workforce: ${ratingSelections.urgent_workforce}`);
+
+            if (ratings.length > 0) {
+                urgentPreview.innerHTML = ratings.join('<br>');
+            } else {
+                urgentPreview.innerHTML = '<span class="empty">Not rated yet</span>';
+            }
+
+            // Update notes preview
+            const experience = document.getElementById('experience')?.value || '';
+            const oneThing = document.getElementById('one-thing')?.value || '';
+            const notesPreview = document.getElementById('notes-preview');
+            const mobileNotesPreview = document.getElementById('mobile-notes-preview');
+
+            let notes = [];
+            if (experience.trim()) notes.push(experience.substring(0, 100) + (experience.length > 100 ? '...' : ''));
+            if (oneThing.trim()) notes.push(oneThing.substring(0, 100) + (oneThing.length > 100 ? '...' : ''));
+
+            const notesHTML = notes.length > 0
+                ? notes.join('<br><br>')
+                : '<span class="empty">Your notes will appear here...</span>';
+
+            if (notesPreview) notesPreview.innerHTML = notesHTML;
+            if (mobileNotesPreview) mobileNotesPreview.innerHTML = notesHTML;
+
+            // Highlight selected options
+            document.querySelectorAll('.reflection-option').forEach(opt => {
+                const input = opt.querySelector('input');
+                opt.classList.toggle('selected', input?.checked);
+            });
+        }
+
+        // Submit form
+        function submitStory() {
+            const name = document.getElementById('user-name')?.value || 'Anonymous';
+            const email = document.getElementById('user-email')?.value || '';
+
+            // Gather all selections
+            const familiarHouseholds = Array.from(document.querySelectorAll('input[name="familiar_household"]:checked')).map(cb => cb.value);
+            const gapExperience = Array.from(document.querySelectorAll('input[name="gap_experience"]:checked')).map(cb => cb.value);
+            const employerExp = Array.from(document.querySelectorAll('input[name="employer_exp"]:checked')).map(cb => cb.value);
+            const knewPrograms = Array.from(document.querySelectorAll('input[name="knew_programs"]:checked')).map(cb => cb.value);
+            const whoAreYou = Array.from(document.querySelectorAll('input[name="who_are_you"]:checked')).map(cb => cb.value);
+
+            const experience = document.getElementById('experience')?.value || '';
+            const oneThing = document.getElementById('one-thing')?.value || '';
+
+            // Disable button while sending
+            const btn = document.querySelector('.submit-button');
+            btn.disabled = true;
+            btn.textContent = 'Sending...';
+
+            // Send to Formspree
+            fetch('{{FORMSPREE_ENDPOINT}}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    _subject: 'Housing Story Response - {{COUNTY_NAME}}',
+                    name: name,
+                    email: email,
+                    familiar_households: familiarHouseholds.join(', '),
+                    gap_experience: gapExperience.join(', '),
+                    employer_experience: employerExp.join(', '),
+                    knew_programs: knewPrograms.join(', '),
+                    who_are_you: whoAreYou.join(', '),
+                    urgent_rental: ratingSelections.urgent_rental || '',
+                    urgent_homeownership: ratingSelections.urgent_homeownership || '',
+                    urgent_senior: ratingSelections.urgent_senior || '',
+                    urgent_workforce: ratingSelections.urgent_workforce || '',
+                    experience: experience,
+                    one_thing: oneThing
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    btn.textContent = 'Sent!';
+                    btn.style.background = '#059669';
+                    alert('Thank you! Your story has been shared. Your input will help shape the Housing Action Plan.');
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            })
+            .catch(error => {
+                btn.disabled = false;
+                btn.textContent = 'Send My Story';
+                alert('Something went wrong. Please try again or email {{CONTACT_EMAIL}} directly.');
+            });
+        }
+
+        // Initialize
+        updateSummary();
+    </script>
+</body>
+</html>
