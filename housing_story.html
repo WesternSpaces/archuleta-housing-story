@@ -956,6 +956,11 @@
             <p style="margin-bottom: 12px;">Actions can include policy changes, funding allocations, intergovernmental agreements, partnerships with employers and nonprofits, land use updates, and more—all tailored to our community's unique constraints, resources, and capacity.</p>
             <p style="margin-bottom: 0;">The HAP also includes an <strong>implementation plan</strong>: timelines for each action, who's responsible, and how we'll track progress. It's a living document—designed to adapt over time as conditions change and we learn what's working and what isn't.</p>
         </div>
+
+        <div style="background: linear-gradient(135deg, #f0f7f7 0%, #e8f4f4 100%); border-left: 4px solid #0d6b6e; padding: 20px 24px; margin: 25px 0 0 0; border-radius: 0 8px 8px 0;">
+            <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #0d6b6e; margin-bottom: 10px;">📍 Draft Vision</div>
+            <p style="font-style: italic; font-size: 1.05rem; line-height: 1.6; margin: 0; color: #1a1a1a;">"Archuleta County and the Town of Pagosa Springs will be a community where people at all income levels can find a place to call home—where workers can afford to live near their jobs, families can put down roots, and seniors can age in place."</p>
+        </div>
     </section>
 
     <!-- CHAPTER 1: MEET YOUR NEIGHBORS -->
@@ -1727,16 +1732,6 @@
 
         <!-- Question 3 -->
         <div class="question-card">
-            <h3>Draft Vision Statement</h3>
-            <div class="callout" style="font-style: italic;">
-                "Archuleta County and the Town of Pagosa Springs will be a community where people at all income levels can find a place to call home—where workers can afford to live near their jobs, families can put down roots, and seniors can age in place."
-            </div>
-            <p><strong>Does this vision resonate? What would you add or change?</strong></p>
-            <textarea id="vision-feedback" placeholder="Share your thoughts on the vision statement..." oninput="updateSummary()"></textarea>
-        </div>
-
-        <!-- Question 4 -->
-        <div class="question-card">
             <h3>Six Draft Objectives — Rate Their Priority</h3>
             <p><strong>How important is each objective for our community?</strong></p>
 
@@ -2220,7 +2215,6 @@
             const knewPrograms = Array.from(document.querySelectorAll('input[name="knew_programs"]:checked')).map(cb => cb.value);
             const whoAreYou = Array.from(document.querySelectorAll('input[name="who_are_you"]:checked')).map(cb => cb.value);
 
-            const visionFeedback = document.getElementById('vision-feedback')?.value || '';
             const experience = document.getElementById('experience')?.value || '';
             const oneThing = document.getElementById('one-thing')?.value || '';
             const whoElse = document.getElementById('who-else')?.value || '';
@@ -2258,7 +2252,6 @@
                     obj_preserve_affordable: ratingSelections.obj_preserve || '',
                     obj_displacement: ratingSelections.obj_displacement || '',
                     obj_resources: ratingSelections.obj_resources || '',
-                    vision_feedback: visionFeedback,
                     experience: experience,
                     one_thing: oneThing
                 })
