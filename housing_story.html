@@ -274,8 +274,8 @@
         .scroll-hint {
             display: none;
             text-align: center;
-            font-size: 0.75rem;
-            color: #888;
+            font-size: 0.85rem;
+            color: #666;
             margin-top: 5px;
         }
 
@@ -332,12 +332,13 @@
             background: #e8edf2;
             border: 1px solid #b8c4d0;
             color: #2D3E4F;
-            padding: 4px 10px;
-            border-radius: 15px;
-            font-size: 0.85rem;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
             cursor: pointer;
             margin-left: 10px;
             transition: all 0.2s;
+            min-height: 44px;
         }
 
         .info-toggle:hover {
@@ -352,12 +353,13 @@
             background: #fef7ed;
             border: 1px solid #e5c9a8;
             color: #78350f;
-            padding: 4px 10px;
-            border-radius: 15px;
-            font-size: 0.85rem;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
             cursor: pointer;
             margin-left: 10px;
             transition: all 0.2s;
+            min-height: 44px;
         }
 
         .info-toggle-def:hover {
@@ -616,7 +618,7 @@
         }
 
         .summary-notes.empty {
-            color: rgba(255,255,255,0.5);
+            color: rgba(255,255,255,0.7);
             font-style: italic;
         }
 
@@ -873,6 +875,52 @@
                 font-size: 1.6rem;
             }
         }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 48px;
+            height: 48px;
+            background: #2D3E4F;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s, background 0.2s;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: #1e2d3a;
+        }
+
+        .back-to-top:focus {
+            outline: 3px solid #FACE6A;
+            outline-offset: 2px;
+        }
+
+        @media (max-width: 600px) {
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 44px;
+                height: 44px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -958,7 +1006,7 @@
         </div>
 
         <div style="background: linear-gradient(135deg, #f0f7f7 0%, #e8f4f4 100%); border-left: 4px solid #0d6b6e; padding: 20px 24px; margin: 25px 0 0 0; border-radius: 0 8px 8px 0;">
-            <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #0d6b6e; margin-bottom: 10px;">📍 Draft Vision</div>
+            <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #0d6b6e; margin-bottom: 10px;">📍 Draft Vision</div>
             <p style="font-style: italic; font-size: 1.05rem; line-height: 1.6; margin: 0; color: #1a1a1a;">"Archuleta County and the Town of Pagosa Springs will be a community where people at all income levels can find a place to call home—where workers can afford to live near their jobs, families can put down roots, and seniors can age in place."</p>
         </div>
     </section>
@@ -2274,6 +2322,25 @@
 
         // Initialize
         updateSummary();
+
+        // Back to top button
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     </script>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        ↑
+    </button>
 </body>
 </html>
