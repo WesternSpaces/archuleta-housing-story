@@ -111,8 +111,16 @@
             border-top-color: #FACE6A;
         }
 
+        .chapter-section.community {
+            border-top-color: #0e7490;
+        }
+
         .chapter-section.economic {
             border-top-color: #d97706;
+        }
+
+        .chapter-section.next {
+            border-top-color: #FACE6A;
         }
 
         .chapter-section.resources {
@@ -150,8 +158,17 @@
             color: #2D3E4F;
         }
 
+        .chapter-section.community .chapter-number {
+            background: #0e7490;
+        }
+
         .chapter-section.economic .chapter-number {
             background: #d97706;
+        }
+
+        .chapter-section.next .chapter-number {
+            background: #FACE6A;
+            color: #2D3E4F;
         }
 
         .chapter-section.resources .chapter-number {
@@ -1033,6 +1050,24 @@
         }
 
         /* Chapter-colored nav buttons */
+        .chapter-nav a.nav-community {
+            background: rgba(14, 116, 144, 0.15);
+            color: #0e7490;
+        }
+        .chapter-nav a.nav-community:hover,
+        .chapter-nav a.nav-community.active {
+            background: #0e7490;
+            color: white;
+        }
+        .chapter-nav a.nav-next {
+            background: rgba(250, 206, 106, 0.3);
+            color: #92600a;
+        }
+        .chapter-nav a.nav-next:hover,
+        .chapter-nav a.nav-next.active {
+            background: #FACE6A;
+            color: #2D3E4F;
+        }
         .chapter-nav a.nav-economic {
             background: rgba(217, 119, 6, 0.15);
             color: #d97706;
@@ -1115,12 +1150,12 @@
     <!-- Chapter Navigation -->
     <nav class="chapter-nav" aria-label="Jump to chapter">
         <span class="nav-header">Jump to</span>
-        <a href="#chapter-1"><span class="nav-number">1</span><span class="nav-label">Community</span></a>
-        <a href="#chapter-2"><span class="nav-number">2</span><span class="nav-label">The Math</span></a>
+        <a href="#chapter-1" class="nav-community"><span class="nav-number">1</span><span class="nav-label">Community</span></a>
+        <a href="#chapter-2" class="nav-economic"><span class="nav-number">2</span><span class="nav-label">The Math</span></a>
         <a href="#chapter-3" class="nav-economic"><span class="nav-number">3</span><span class="nav-label">Impact</span></a>
         <a href="#chapter-4" class="nav-resources"><span class="nav-number">4</span><span class="nav-label">Current Work</span></a>
         <a href="#chapter-5" class="nav-reflection"><span class="nav-number">5</span><span class="nav-label">Your Turn</span></a>
-        <a href="#chapter-6"><span class="nav-number">6</span><span class="nav-label">Next Steps</span></a>
+        <a href="#chapter-6" class="nav-next"><span class="nav-number">6</span><span class="nav-label">Next Steps</span></a>
     </nav>
 
     <div class="page-wrapper">
@@ -1186,7 +1221,7 @@
     </section>
 
     <!-- CHAPTER 1: MEET YOUR NEIGHBORS -->
-    <section class="chapter-section" id="chapter-1">
+    <section class="chapter-section community" id="chapter-1">
         <h2><span class="chapter-number">1</span> Meet the Community</h2>
         <p>These aren't real people, but they represent real situations in our community. As you read, consider: <strong>Which household's story resonates with you—or reminds you of someone in our community?</strong></p>
 
@@ -1381,7 +1416,7 @@
     </section>
 
     <!-- CHAPTER 2: THE MATH -->
-    <section class="chapter-section highlight" id="chapter-2">
+    <section class="chapter-section economic" id="chapter-2">
         <h2>
             <span class="chapter-number">2</span> The Math Doesn't Work
         </h2>
@@ -2075,7 +2110,7 @@
     </section>
 
     <!-- CHAPTER 6: WHAT'S NEXT -->
-    <section class="chapter-section" id="chapter-6">
+    <section class="chapter-section next" id="chapter-6">
         <h2><span class="chapter-number">6</span> What Happens Next</h2>
 
         <div class="timeline">
