@@ -1772,6 +1772,12 @@
             </div>
         </div>
         <div class="summary-section">
+            <h4>What brings you here</h4>
+            <div class="summary-notes" id="mobile-who-are-you-preview" style="font-size: 0.8rem;">
+                <span class="empty">Not selected yet</span>
+            </div>
+        </div>
+        <div class="summary-section">
             <h4>Your reflections</h4>
             <div class="summary-notes empty" id="mobile-notes-preview">Your notes will appear here...</div>
         </div>
@@ -1903,6 +1909,13 @@
                 <div class="summary-section">
                     <h4>Programs you knew about</h4>
                     <div class="summary-notes" id="knew-programs-preview" style="min-height: 30px; font-size: 0.8rem;">
+                        <span class="empty">Not selected yet</span>
+                    </div>
+                </div>
+
+                <div class="summary-section">
+                    <h4>What brings you here</h4>
+                    <div class="summary-notes" id="who-are-you-preview" style="min-height: 30px; font-size: 0.8rem;">
                         <span class="empty">Not selected yet</span>
                     </div>
                 </div>
@@ -2067,6 +2080,24 @@
                 : '<span class="empty">Not selected yet</span>';
             if (knewProgramsPreview) knewProgramsPreview.innerHTML = programsHTML;
             if (mobileKnewProgramsPreview) mobileKnewProgramsPreview.innerHTML = programsHTML;
+
+            // Update who are you preview (Section 5 question)
+            const whoAreYouPreview = document.getElementById('who-are-you-preview');
+            const mobileWhoAreYouPreview = document.getElementById('mobile-who-are-you-preview');
+            const whoLabels = {
+                'affected': 'Personally affected',
+                'community': 'Care about community',
+                'know_someone': 'Know someone affected',
+                'curious': 'Curious to learn',
+                'work_housing': 'Work in housing field',
+                'solutions': 'Want to help find solutions'
+            };
+            const whoSelections = Array.from(document.querySelectorAll('input[name="who_are_you"]:checked')).map(cb => whoLabels[cb.value] || cb.value);
+            const whoHTML = whoSelections.length > 0
+                ? whoSelections.join('<br>')
+                : '<span class="empty">Not selected yet</span>';
+            if (whoAreYouPreview) whoAreYouPreview.innerHTML = whoHTML;
+            if (mobileWhoAreYouPreview) mobileWhoAreYouPreview.innerHTML = whoHTML;
 
             // Highlight selected options
             document.querySelectorAll('.reflection-option').forEach(opt => {
