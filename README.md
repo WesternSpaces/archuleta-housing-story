@@ -10,7 +10,7 @@ Materials for Open House #1 - January 21, 2026
 |----------|-----|
 | **Live Interactive Story** | https://westernspaces.github.io/archuleta-housing-story/housing_story.html |
 | **GitHub Repo** | https://github.com/WesternSpaces/archuleta-housing-story |
-| **Formspree Dashboard** | https://formspree.io/ (form ID: `xzznvopz`) |
+| **Formspree Dashboard** | https://formspree.io/ (form ID: `xreepgko`) |
 
 ---
 
@@ -18,13 +18,17 @@ Materials for Open House #1 - January 21, 2026
 
 ```
 Interactive_Story/
-├── housing_story.html      # Main interactive page (deployed to GitHub Pages)
-├── story_content.md        # Source content for all 6 chapters
-├── print_handout.html      # Tri-fold handout (print-ready)
+├── housing_story.html       # Main interactive page (deployed to GitHub Pages)
+├── story_content.md         # Source content for all 6 chapters
+├── print_handout.html       # Tri-fold handout (print-ready)
 ├── print_response_card.html # Response cards, 2-up (print-ready)
-├── qr_housing_story.png    # QR code linking to live page
-├── DEPLOY.md               # Detailed deployment documentation
-└── README.md               # This file
+├── qr_housing_story.png     # QR code linking to live page
+├── DEPLOY.md                # Detailed deployment documentation
+├── README.md                # This file
+└── images/
+    ├── hap_framework.svg    # HAP components diagram (not currently used)
+    ├── 01_affordability_gap.png
+    └── 02_housing_need_by_income.png
 ```
 
 ---
@@ -194,10 +198,40 @@ These are the correct figures - verify any updates against the HNA:
 
 ## Related Files
 
+- `/Reference Documents/Archuleta_County_HNA.md` - **HNA converted to markdown** (full text, searchable)
+- `/Reference Documents/Archuleta County HNA - Final 04 08 2025.docx` - Original HNA document
 - `/Engagement/Session One/Story_Guide_Handout.md` - Original handout content spec
 - `/Engagement/Session One/Story_Response_Card.md` - Original response card spec
 - `/Engagement/Session One/Open_House_1_Planning.md` - Original planning doc
-- `/Reference Documents/Archuleta County HNA - Final 04 08 2025.docx` - Source data
+
+---
+
+## Changelog
+
+### January 17, 2026 - Round 4 Updates
+
+**Content & Accuracy:**
+- Fixed Housing Need methodology description (now accurately describes catch-up + keep-up methodology from HNA)
+- Converted HNA from .docx to markdown (`/Reference Documents/Archuleta_County_HNA.md`)
+- Updated HNA and HAP descriptions with comprehensive explanations
+- Changed section title from "Meet Your Neighbors" to "Meet the Community"
+
+**AMI Section:**
+- Added "Category" column to AMI table (Moderate Income, Area Median, etc.)
+- Removed 5-person and 6-person columns
+- Spelled out "U.S. Department of Housing and Urban Development (HUD)"
+- Added context: AMI varies by county, used for funding programs
+
+**Survey Updates:**
+- Added "None of these stories are familiar to me" option
+- Changed employer question to be more inclusive
+
+**Visual Changes:**
+- Changed red stat boxes to slate blue (#2D3E4F)
+- Added 30% affordability standard explanation to Section 2 intro
+
+**Bug Fixes:**
+- Fixed dig deeper toggles not expanding in correct location (moved content divs to follow buttons)
 
 ---
 
