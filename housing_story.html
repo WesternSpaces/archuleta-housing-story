@@ -922,38 +922,42 @@
             }
         }
 
-        /* Chapter Navigation */
+        /* Chapter Navigation - Floating Left Tabs */
         .chapter-nav {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             gap: 8px;
-            justify-content: center;
-            padding: 15px 20px;
+            padding: 12px;
             background: white;
-            border-radius: 10px;
-            margin: 0 auto 20px auto;
-            max-width: 1300px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 999;
         }
 
         .chapter-nav a {
-            display: inline-flex;
+            display: flex;
             align-items: center;
-            gap: 6px;
-            padding: 8px 14px;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
             background: #f0f3f5;
             color: #2D3E4F;
             text-decoration: none;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
+            border-radius: 50%;
+            font-size: 0.9rem;
+            font-weight: 600;
             transition: all 0.2s;
-            min-height: 40px;
+            position: relative;
         }
 
         .chapter-nav a:hover {
             background: #2D3E4F;
             color: white;
+            transform: scale(1.1);
         }
 
         .chapter-nav a:focus {
@@ -961,40 +965,50 @@
             outline-offset: 2px;
         }
 
-        .chapter-nav a .nav-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 22px;
-            height: 22px;
+        .chapter-nav a.active {
             background: #2D3E4F;
             color: white;
-            border-radius: 50%;
-            font-size: 0.75rem;
+        }
+
+        .chapter-nav a .nav-number {
+            font-size: 1rem;
             font-weight: 700;
         }
 
-        .chapter-nav a:hover .nav-number {
-            background: white;
-            color: #2D3E4F;
+        .chapter-nav a .nav-label {
+            position: absolute;
+            left: 54px;
+            background: #2D3E4F;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s, visibility 0.2s;
+            pointer-events: none;
         }
 
-        @media (max-width: 600px) {
+        .chapter-nav a .nav-label::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 6px solid transparent;
+            border-right-color: #2D3E4F;
+        }
+
+        .chapter-nav a:hover .nav-label {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Hide on smaller screens, show mobile toggle */
+        @media (max-width: 1100px) {
             .chapter-nav {
-                gap: 6px;
-                padding: 12px 15px;
-            }
-            .chapter-nav a {
-                padding: 6px 10px;
-                font-size: 0.8rem;
-            }
-            .chapter-nav a .nav-label {
                 display: none;
-            }
-            .chapter-nav a .nav-number {
-                width: 28px;
-                height: 28px;
-                font-size: 0.85rem;
             }
         }
 
@@ -2458,6 +2472,30 @@
                 }
             });
         });
+
+        // Highlight active chapter in nav
+        const chapters = document.querySelectorAll('[id^="chapter-"]');
+        const navLinks = document.querySelectorAll('.chapter-nav a');
+
+        function updateActiveChapter() {
+            let currentChapter = '';
+            chapters.forEach(chapter => {
+                const rect = chapter.getBoundingClientRect();
+                if (rect.top <= 150) {
+                    currentChapter = chapter.id;
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + currentChapter) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveChapter);
+        updateActiveChapter(); // Initial call
     </script>
 
     <!-- Back to top button -->
