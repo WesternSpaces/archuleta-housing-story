@@ -115,6 +115,10 @@
             border-top-color: #0e7490;
         }
 
+        .chapter-section.math {
+            border-top-color: #2563eb;
+        }
+
         .chapter-section.economic {
             border-top-color: #d97706;
         }
@@ -160,6 +164,10 @@
 
         .chapter-section.community .chapter-number {
             background: #0e7490;
+        }
+
+        .chapter-section.math .chapter-number {
+            background: #2563eb;
         }
 
         .chapter-section.economic .chapter-number {
@@ -1068,6 +1076,15 @@
             background: #FACE6A;
             color: #2D3E4F;
         }
+        .chapter-nav a.nav-math {
+            background: rgba(37, 99, 235, 0.15);
+            color: #2563eb;
+        }
+        .chapter-nav a.nav-math:hover,
+        .chapter-nav a.nav-math.active {
+            background: #2563eb;
+            color: white;
+        }
         .chapter-nav a.nav-economic {
             background: rgba(217, 119, 6, 0.15);
             color: #d97706;
@@ -1151,7 +1168,7 @@
     <nav class="chapter-nav" aria-label="Jump to chapter">
         <span class="nav-header">Jump to</span>
         <a href="#chapter-1" class="nav-community"><span class="nav-number">1</span><span class="nav-label">Community</span></a>
-        <a href="#chapter-2" class="nav-economic"><span class="nav-number">2</span><span class="nav-label">The Math</span></a>
+        <a href="#chapter-2" class="nav-math"><span class="nav-number">2</span><span class="nav-label">The Math</span></a>
         <a href="#chapter-3" class="nav-economic"><span class="nav-number">3</span><span class="nav-label">Impact</span></a>
         <a href="#chapter-4" class="nav-resources"><span class="nav-number">4</span><span class="nav-label">Current Work</span></a>
         <a href="#chapter-5" class="nav-reflection"><span class="nav-number">5</span><span class="nav-label">Your Turn</span></a>
@@ -1416,7 +1433,7 @@
     </section>
 
     <!-- CHAPTER 2: THE MATH -->
-    <section class="chapter-section economic" id="chapter-2">
+    <section class="chapter-section math" id="chapter-2">
         <h2>
             <span class="chapter-number">2</span> The Math Doesn't Work
         </h2>
