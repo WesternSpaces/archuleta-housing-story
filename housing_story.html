@@ -1005,6 +1005,18 @@
             visibility: visible;
         }
 
+        .chapter-nav .nav-header {
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #666;
+            text-align: center;
+            padding-bottom: 8px;
+            margin-bottom: 4px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
         /* Hide only on phones */
         @media (max-width: 600px) {
             .chapter-nav {
@@ -1065,6 +1077,7 @@
 
     <!-- Chapter Navigation -->
     <nav class="chapter-nav" aria-label="Jump to chapter">
+        <span class="nav-header">Jump to</span>
         <a href="#chapter-1"><span class="nav-number">1</span><span class="nav-label">Community</span></a>
         <a href="#chapter-2"><span class="nav-number">2</span><span class="nav-label">The Math</span></a>
         <a href="#chapter-3"><span class="nav-number">3</span><span class="nav-label">Impact</span></a>
