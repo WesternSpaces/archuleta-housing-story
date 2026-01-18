@@ -1058,6 +1058,16 @@
         }
 
         /* Chapter-colored nav buttons */
+        .chapter-nav a.nav-home {
+            background: rgba(45, 62, 79, 0.1);
+            color: #2D3E4F;
+            font-size: 1.1rem;
+        }
+        .chapter-nav a.nav-home:hover,
+        .chapter-nav a.nav-home.active {
+            background: #2D3E4F;
+            color: white;
+        }
         .chapter-nav a.nav-community {
             background: rgba(14, 116, 144, 0.15);
             color: #0e7490;
@@ -1132,7 +1142,7 @@
 
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header style="max-width: 1300px; margin: 0 auto 30px auto; overflow: hidden; position: relative; text-align: center; padding: 40px 30px; background: linear-gradient(135deg, #2D3E4F 0%, #354a5f 50%, #2D3E4F 100%);">
+    <header id="top" style="max-width: 1300px; margin: 0 auto 30px auto; overflow: hidden; position: relative; text-align: center; padding: 40px 30px; background: linear-gradient(135deg, #2D3E4F 0%, #354a5f 50%, #2D3E4F 100%);">
         <!-- Topo pattern overlay -->
         <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.12; pointer-events: none;" preserveAspectRatio="xMidYMid slice" viewBox="0 0 400 200">
             <path d="M0,190 Q80,170 160,175 T320,165 T400,175" fill="none" stroke="white" stroke-width="1"/>
@@ -1167,6 +1177,7 @@
     <!-- Chapter Navigation -->
     <nav class="chapter-nav" aria-label="Jump to chapter">
         <span class="nav-header">Jump to</span>
+        <a href="#top" class="nav-home"><span class="nav-number">↑</span><span class="nav-label">Start</span></a>
         <a href="#chapter-1" class="nav-community"><span class="nav-number">1</span><span class="nav-label">Community</span></a>
         <a href="#chapter-2" class="nav-math"><span class="nav-number">2</span><span class="nav-label">The Math</span></a>
         <a href="#chapter-3" class="nav-economic"><span class="nav-number">3</span><span class="nav-label">Impact</span></a>
@@ -1177,6 +1188,16 @@
 
     <div class="page-wrapper">
     <div class="main-content" id="main-content" tabindex="-1">
+
+    <!-- HOW TO USE -->
+    <div style="background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 8px; padding: 15px 20px; margin: 0 0 20px 0; font-size: 0.9rem;">
+        <strong style="color: #2D3E4F;">How to use this story:</strong>
+        <ul style="margin: 8px 0 0 20px; padding: 0; line-height: 1.6;">
+            <li>Tap the <span style="background: #fef7ed; border: 1px solid #e5c9a8; padding: 2px 6px; border-radius: 10px; font-size: 0.85rem;">ⓘ</span> buttons to learn more — tap again to close</li>
+            <li>Your responses build in the "Your Story So Far" sidebar</li>
+            <li>Share your input at the end</li>
+        </ul>
+    </div>
 
     <!-- ABOUT THIS PROCESS -->
     <section class="chapter-section" style="border-top-color: #d97706;">
@@ -1189,15 +1210,6 @@
             <button class="info-toggle-def" onclick="toggleInfo('infoHNA')"><span>ⓘ</span> What's a Housing Needs Assessment?</button>
             <button class="info-toggle-def" onclick="toggleInfo('infoHAP')"><span>ⓘ</span> What's a Housing Action Plan?</button>
             <button class="info-toggle-def" onclick="toggleInfo('infoProcess')"><span>ⓘ</span> Our Process</button>
-        </div>
-
-        <div style="background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 8px; padding: 15px 20px; margin: 20px 0; font-size: 0.9rem;">
-            <strong style="color: #2D3E4F;">How to use this story:</strong>
-            <ul style="margin: 8px 0 0 20px; padding: 0; line-height: 1.6;">
-                <li>Tap the <span style="background: #fef7ed; border: 1px solid #e5c9a8; padding: 2px 6px; border-radius: 10px; font-size: 0.85rem;">ⓘ</span> buttons to learn more — tap again to close</li>
-                <li>Your responses build in the "Your Story So Far" sidebar</li>
-                <li>Share your input at the end</li>
-            </ul>
         </div>
 
         <div class="info-content" id="infoProcess">
