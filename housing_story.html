@@ -381,6 +381,14 @@
             display: block;
         }
 
+        /* Close hint for expanded sections */
+        .close-hint {
+            font-size: 0.8rem;
+            color: #666;
+            font-weight: normal;
+            margin-left: 6px;
+        }
+
         .info-content h4 {
             color: #2D3E4F;
             margin: 0 0 10px 0;
@@ -1024,6 +1032,35 @@
             }
         }
 
+        /* Chapter-colored nav buttons */
+        .chapter-nav a.nav-economic {
+            background: rgba(217, 119, 6, 0.15);
+            color: #d97706;
+        }
+        .chapter-nav a.nav-economic:hover,
+        .chapter-nav a.nav-economic.active {
+            background: #d97706;
+            color: white;
+        }
+        .chapter-nav a.nav-resources {
+            background: rgba(5, 150, 105, 0.15);
+            color: #059669;
+        }
+        .chapter-nav a.nav-resources:hover,
+        .chapter-nav a.nav-resources.active {
+            background: #059669;
+            color: white;
+        }
+        .chapter-nav a.nav-reflection {
+            background: rgba(124, 58, 237, 0.15);
+            color: #7c3aed;
+        }
+        .chapter-nav a.nav-reflection:hover,
+        .chapter-nav a.nav-reflection.active {
+            background: #7c3aed;
+            color: white;
+        }
+
         /* Progress Bar */
         .progress-bar {
             position: fixed;
@@ -1063,7 +1100,7 @@
 
         <!-- Main title -->
         <h1 style="margin: 0 0 15px 0; font-size: 2.8rem; font-weight: 800; line-height: 1.1; letter-spacing: -1px;">
-            The Housing Story
+            Our Housing Story
         </h1>
 
         <!-- Subtitle -->
@@ -1080,9 +1117,9 @@
         <span class="nav-header">Jump to</span>
         <a href="#chapter-1"><span class="nav-number">1</span><span class="nav-label">Community</span></a>
         <a href="#chapter-2"><span class="nav-number">2</span><span class="nav-label">The Math</span></a>
-        <a href="#chapter-3"><span class="nav-number">3</span><span class="nav-label">Impact</span></a>
-        <a href="#chapter-4"><span class="nav-number">4</span><span class="nav-label">Current Work</span></a>
-        <a href="#chapter-5"><span class="nav-number">5</span><span class="nav-label">Your Turn</span></a>
+        <a href="#chapter-3" class="nav-economic"><span class="nav-number">3</span><span class="nav-label">Impact</span></a>
+        <a href="#chapter-4" class="nav-resources"><span class="nav-number">4</span><span class="nav-label">Current Work</span></a>
+        <a href="#chapter-5" class="nav-reflection"><span class="nav-number">5</span><span class="nav-label">Your Turn</span></a>
         <a href="#chapter-6"><span class="nav-number">6</span><span class="nav-label">Next Steps</span></a>
     </nav>
 
@@ -1100,6 +1137,15 @@
             <button class="info-toggle-def" onclick="toggleInfo('infoHNA')"><span>ⓘ</span> What's a Housing Needs Assessment?</button>
             <button class="info-toggle-def" onclick="toggleInfo('infoHAP')"><span>ⓘ</span> What's a Housing Action Plan?</button>
             <button class="info-toggle-def" onclick="toggleInfo('infoProcess')"><span>ⓘ</span> Our Process</button>
+        </div>
+
+        <div style="background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 8px; padding: 15px 20px; margin: 20px 0; font-size: 0.9rem;">
+            <strong style="color: #2D3E4F;">How to use this story:</strong>
+            <ul style="margin: 8px 0 0 20px; padding: 0; line-height: 1.6;">
+                <li>Tap the <span style="background: #fef7ed; border: 1px solid #e5c9a8; padding: 2px 6px; border-radius: 10px; font-size: 0.85rem;">ⓘ</span> buttons to learn more — tap again to close</li>
+                <li>Your responses build in the "Your Story So Far" sidebar</li>
+                <li>Share your input at the end</li>
+            </ul>
         </div>
 
         <div class="info-content" id="infoProcess">
@@ -1152,7 +1198,7 @@
             <h4>Understanding AMI & Cost Burden</h4>
             <p><strong>Area Median Income (AMI)</strong> is the midpoint of household incomes in an area—half of households earn more, half earn less. The U.S. Department of Housing and Urban Development (HUD) calculates AMI annually for every county, adjusting for household size. AMI varies by county based on local wages and is used to determine eligibility for housing funding programs and to set affordable rent levels. For Archuleta County in 2025, 100% AMI for a 2-person household is $81,600/year.</p>
 
-            <p style="margin: 15px 0 8px 0;"><strong>Key definitions:</strong></p>
+            <p style="margin: 15px 0 8px 0;"><strong>Definitions:</strong></p>
             <ul style="margin: 0 0 15px 20px; padding: 0;">
                 <li><strong>Affordable housing:</strong> Housing where the occupant pays no more than 30% of gross income for housing costs (including utilities)</li>
                 <li><strong>Cost-burdened:</strong> A household spending more than 30% of income on housing</li>
@@ -1390,8 +1436,8 @@
                 <tr>
                     <th>Household</th>
                     <th>Income / AMI</th>
-                    <th>Affordable</th>
-                    <th>Market</th>
+                    <th>Max Affordable</th>
+                    <th>Median Market</th>
                     <th>Gap</th>
                 </tr>
                 <tr>
@@ -1427,7 +1473,7 @@
                     <td>Variable/unstable</td>
                     <td>Transitional housing</td>
                     <td>None in county</td>
-                    <td class="gap-negative">No options</td>
+                    <td class="gap-negative">Very limited</td>
                 </tr>
             </table>
             <div class="scroll-hint">← Swipe to see more →</div>
@@ -1470,39 +1516,9 @@
         <h2><span class="chapter-number">3</span> It Affects All of Us</h2>
         <p>Pat & Chris—the restaurant owners who can't find workers—their story isn't unique. Housing affects more than just the people looking for a place to live—it affects our whole community.</p>
 
-        <!-- Dig Deeper sections for Chapter 3 -->
+        <!-- Dig Deeper section for Chapter 3 -->
         <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 15px 0 20px 0;">
-            <button class="info-toggle" onclick="toggleInfo('digDeeperEmployment')"><span>📊</span> Dig Deeper: Employment Data</button>
             <button class="info-toggle" onclick="toggleInfo('digDeeperAffected')"><span>📊</span> Dig Deeper: Who's Most Affected</button>
-        </div>
-
-        <div class="info-content" id="digDeeperEmployment">
-            <h4>The Economic Reality</h4>
-            <p style="font-size: 0.9rem; margin-bottom: 15px;">Housing is not just a personal problem. It is an economic one. When workers cannot find housing, businesses cannot find workers. Many workers commute from Durango, Bayfield, and other communities because they cannot find housing here. Others do not take jobs in Archuleta County at all.</p>
-            <table style="width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.9rem;">
-                <tr style="background: #f8f9fa;">
-                    <td style="padding: 8px 12px; border: 1px solid #ddd;"><strong>Total Jobs (2024)</strong></td>
-                    <td style="padding: 8px 12px; border: 1px solid #ddd; text-align: right;">7,523</td>
-                </tr>
-                <tr>
-                    <td style="padding: 8px 12px; border: 1px solid #ddd;"><strong>Projected Jobs (2034)</strong></td>
-                    <td style="padding: 8px 12px; border: 1px solid #ddd; text-align: right;">8,069 (+546 new jobs)</td>
-                </tr>
-                <tr style="background: #f8f9fa;">
-                    <td style="padding: 8px 12px; border: 1px solid #ddd;"><strong>Unfilled Positions at Peak Season</strong></td>
-                    <td style="padding: 8px 12px; border: 1px solid #ddd; text-align: right;">~17%</td>
-                </tr>
-                <tr>
-                    <td style="padding: 8px 12px; border: 1px solid #ddd;"><strong>Workers Commuting In Daily</strong></td>
-                    <td style="padding: 8px 12px; border: 1px solid #ddd; text-align: right;">1,456</td>
-                </tr>
-                <tr style="background: #f8f9fa;">
-                    <td style="padding: 8px 12px; border: 1px solid #ddd;"><strong>Jobs per Working Household</strong></td>
-                    <td style="padding: 8px 12px; border: 1px solid #ddd; text-align: right;">3.5 (extreme ratio)</td>
-                </tr>
-            </table>
-            <p style="font-size: 0.9rem; margin-bottom: 10px;">Every unfilled position is a business that cannot serve customers, a service that goes unprovided, a tax base that does not expand.</p>
-            <p style="font-size: 0.85rem; color: #666;">Source: 2025 Housing Needs Assessment, Employer Survey</p>
         </div>
 
         <div class="info-content" id="digDeeperAffected">
@@ -1601,16 +1617,10 @@
             <div class="table-wrapper">
                 <table style="font-size: 0.9rem;">
                     <tr>
-                        <th>Program/Property</th>
+                        <th>Property</th>
                         <th>Units</th>
                         <th>Serving</th>
                         <th>Status</th>
-                    </tr>
-                    <tr>
-                        <td><strong>Housing Choice Vouchers</strong></td>
-                        <td>~30</td>
-                        <td>≤50% AMI</td>
-                        <td style="color: #dc2626;">At capacity</td>
                     </tr>
                     <tr>
                         <td><strong>Rose Mountain Townhomes</strong></td>
@@ -1620,15 +1630,15 @@
                     </tr>
                     <tr>
                         <td><strong>Hickory Ridge Apartments</strong></td>
-                        <td>41</td>
+                        <td>40</td>
                         <td>≤60% AMI</td>
                         <td>Short waitlist</td>
                     </tr>
                     <tr>
-                        <td><strong>Archuleta Housing</strong></td>
-                        <td>52</td>
-                        <td>50-60% AMI</td>
-                        <td style="color: #d97706;">Rehab needed</td>
+                        <td><strong>Archuleta Housing for Elderly</strong></td>
+                        <td>12</td>
+                        <td>Seniors 0-30% AMI</td>
+                        <td>—</td>
                     </tr>
                     <tr>
                         <td><strong>Casa de los Arcos</strong></td>
@@ -1638,13 +1648,19 @@
                     </tr>
                     <tr>
                         <td><strong>Socorro Senior Living</strong></td>
-                        <td>12</td>
-                        <td>Seniors</td>
+                        <td>19</td>
+                        <td>Seniors 0-30% AMI</td>
                         <td>—</td>
                     </tr>
+                    <tr>
+                        <td><strong>Timberline Apartments</strong></td>
+                        <td>50</td>
+                        <td>LIHTC 30-80% AMI</td>
+                        <td style="color: #059669;">Coming soon</td>
+                    </tr>
                     <tr style="background: #f0f3f5; font-weight: 600;">
-                        <td><strong>Total deed-restricted</strong></td>
-                        <td><strong>~195 units</strong></td>
+                        <td><strong>Total</strong></td>
+                        <td><strong>171 units</strong></td>
                         <td colspan="2"></td>
                     </tr>
                 </table>
@@ -1669,9 +1685,9 @@
                 </tr>
                 <tr>
                     <td>Timberline Apartments</td>
-                    <td>100</td>
+                    <td>50</td>
                     <td>LIHTC (30-80% AMI)</td>
-                    <td>2026-2030</td>
+                    <td><em>Now in inventory</em></td>
                 </tr>
                 <tr>
                     <td>The Enclave</td>
@@ -1981,6 +1997,13 @@
             <p><strong>What matters most for our community's housing future?</strong></p>
             <textarea id="one-thing" placeholder="What should decision-makers prioritize?" oninput="updateSummary()"></textarea>
         </div>
+
+        <!-- Question 7: Open-ended -->
+        <div class="question-card">
+            <h3>Anything Else?</h3>
+            <p><strong>Is there anything else you'd like to share?</strong></p>
+            <textarea id="anything-else" placeholder="Share any other thoughts, concerns, or ideas..." oninput="updateSummary()"></textarea>
+        </div>
     </section>
 
     <!-- MOBILE SUMMARY -->
@@ -2214,10 +2237,25 @@
         // Toggle info content visibility
         function toggleInfo(id) {
             const content = document.getElementById(id);
+            // Find the button that controls this content
+            const button = document.querySelector(`[onclick="toggleInfo('${id}')"]`);
+
             if (content.classList.contains('show')) {
                 content.classList.remove('show');
+                // Remove close hint
+                if (button) {
+                    const hint = button.querySelector('.close-hint');
+                    if (hint) hint.remove();
+                }
             } else {
                 content.classList.add('show');
+                // Add close hint
+                if (button && !button.querySelector('.close-hint')) {
+                    const hint = document.createElement('span');
+                    hint.className = 'close-hint';
+                    hint.textContent = '(tap to close)';
+                    button.appendChild(hint);
+                }
             }
         }
 
@@ -2393,6 +2431,7 @@
 
             const experience = document.getElementById('experience')?.value || '';
             const oneThing = document.getElementById('one-thing')?.value || '';
+            const anythingElse = document.getElementById('anything-else')?.value || '';
             const whoElse = document.getElementById('who-else')?.value || '';
 
             // Disable button while sending
@@ -2429,7 +2468,8 @@
                     obj_displacement: ratingSelections.obj_displacement || '',
                     obj_resources: ratingSelections.obj_resources || '',
                     experience: experience,
-                    one_thing: oneThing
+                    one_thing: oneThing,
+                    anything_else: anythingElse
                 })
             })
             .then(response => {
