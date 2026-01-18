@@ -1778,6 +1778,12 @@
             </div>
         </div>
         <div class="summary-section">
+            <h4>Objective priorities</h4>
+            <div class="summary-notes" id="mobile-objectives-preview" style="font-size: 0.8rem;">
+                <span class="empty">Not rated yet</span>
+            </div>
+        </div>
+        <div class="summary-section">
             <h4>Your reflections</h4>
             <div class="summary-notes empty" id="mobile-notes-preview">Your notes will appear here...</div>
         </div>
@@ -1928,6 +1934,13 @@
                 </div>
 
                 <div class="summary-section">
+                    <h4>Objective priorities</h4>
+                    <div class="summary-notes" id="objectives-preview" style="min-height: 60px; font-size: 0.8rem;">
+                        <span class="empty">Not rated yet</span>
+                    </div>
+                </div>
+
+                <div class="summary-section">
                     <h4>Your reflections</h4>
                     <div class="summary-notes" id="notes-preview">
                         <span class="empty">Your notes will appear here...</span>
@@ -2025,6 +2038,23 @@
             } else {
                 urgentPreview.innerHTML = '<span class="empty">Not rated yet</span>';
             }
+
+            // Update objectives preview with rating summary
+            const objectivesPreview = document.getElementById('objectives-preview');
+            const mobileObjectivesPreview = document.getElementById('mobile-objectives-preview');
+            const objRatings = [];
+            if (ratingSelections.obj_workforce) objRatings.push(`Workforce: ${ratingSelections.obj_workforce}`);
+            if (ratingSelections.obj_rental) objRatings.push(`Rental: ${ratingSelections.obj_rental}`);
+            if (ratingSelections.obj_ownership) objRatings.push(`Ownership: ${ratingSelections.obj_ownership}`);
+            if (ratingSelections.obj_preserve) objRatings.push(`Preserve: ${ratingSelections.obj_preserve}`);
+            if (ratingSelections.obj_displacement) objRatings.push(`Displacement: ${ratingSelections.obj_displacement}`);
+            if (ratingSelections.obj_resources) objRatings.push(`Resources: ${ratingSelections.obj_resources}`);
+
+            const objHTML = objRatings.length > 0
+                ? objRatings.join('<br>')
+                : '<span class="empty">Not rated yet</span>';
+            if (objectivesPreview) objectivesPreview.innerHTML = objHTML;
+            if (mobileObjectivesPreview) mobileObjectivesPreview.innerHTML = objHTML;
 
             // Update notes preview
             const experience = document.getElementById('experience')?.value || '';
