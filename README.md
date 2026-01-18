@@ -233,6 +233,34 @@ These are the correct figures - verify any updates against the HNA:
 **Bug Fixes:**
 - Fixed dig deeper toggles not expanding in correct location (moved content divs to follow buttons)
 
+### January 17, 2026 - Round 5 Updates
+
+**Household Profiles:**
+- Added jobs to Mike & Jenny intro (Jenny is deputy sheriff, Mike teaches middle school)
+- Changed Linda's career from teacher to Forest Service (avoid duplicate teachers)
+- Clarified Pat & Chris "can't find workers for their restaurant"
+- Added "example households" language to clarify these are representative, not real people
+
+**Section 3 - Community Impact:**
+- Improved Employment Data dig deeper with narrative framing and data table
+- Improved Who's Most Affected with prominent rent/home price stats and industry explanation
+- Added reminder of who Pat & Chris are in intro paragraph
+- Removed editorializing ("The worker, the business, and the community all lose")
+
+**Section 5 - Your Turn:**
+- Added visual separation between questions (question-card styling)
+- Bolded all question text for consistency
+- Added missing h3 heading for "What Matters Most" question
+
+**Survey/Tally Updates:**
+- Added "I haven't seen these impacts" option to affordability question
+- Added "What brings you here" to Your Story So Far tally
+- Added objective priorities to Your Story So Far tally
+
+**Style Guide Compliance:**
+- Spelled out all currency amounts ($385K → $385,000, etc.)
+- Verified all household income/AMI calculations against HNA data
+
 ---
 
 *Last updated: January 17, 2026*
