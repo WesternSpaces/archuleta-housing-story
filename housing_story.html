@@ -1409,9 +1409,11 @@
     <section class="chapter-section resources">
         <h2>
             <span class="chapter-number">4</span> We're Not Starting From Scratch
-            <button class="info-toggle" onclick="toggleInfo('infoInventory')"><span>ⓘ</span> Current Inventory</button>
-            <button class="info-toggle" onclick="toggleInfo('infoPipeline')"><span>ⓘ</span> Pipeline</button>
         </h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: -10px 0 15px 0;">
+            <button class="info-toggle" onclick="toggleInfo('infoInventory')" style="margin-left: 0;"><span>ⓘ</span> Current Inventory</button>
+            <button class="info-toggle" onclick="toggleInfo('infoPipeline')" style="margin-left: 0;"><span>ⓘ</span> Pipeline</button>
+        </div>
         <p>Our community has already taken steps to address housing—and the Housing Action Plan builds on this foundation. Housing is already a priority in both Town and County strategic plans. The question isn't whether to act—it's how. Here's what exists and how it connects to our five households.</p>
 
         <div class="info-content" id="infoInventory">
