@@ -118,18 +118,48 @@ These sections should be rewritten for each community:
 
 ## Household Stories
 
-The four household archetypes can be customized but follow this pattern:
+The five household archetypes can be customized but follow this pattern:
 
-1. **The Essential Worker** (Anna) - ~50% AMI, single, renter
+1. **The Essential Worker** (Anna) - ~50% AMI, single, renter, healthcare/service worker
 2. **The Working Family** (Mike & Jenny) - ~100% AMI, family with kids, trying to buy
-3. **The Retirees** (Linda & Tom) - ~80% AMI, want to downsize
-4. **The Employers** (Pat & Chris) - Business owners struggling to hire
+3. **The Retirees** (Linda & Tom) - ~80% AMI, want to downsize, aging in place
+4. **The Employers** (Pat & Chris) - Business owners struggling to hire due to housing
+5. **The Unstable** (Sam) - Seasonal/variable income, housing instability, limited options
 
 For each household, update:
 - Name(s) and occupation(s)
 - Income and AMI level
 - Specific situation/story
-- Affordability calculations
+- Affordability calculations (Max Affordable vs Median Market)
+
+---
+
+## Chapter Structure & Colors
+
+The story has 6 chapters plus an About section. Each chapter has a distinct color used in the navigation and section borders:
+
+| Chapter | Class | Color | Hex |
+|---------|-------|-------|-----|
+| 1 - Meet the Community | `community` | Cyan | `#0e7490` |
+| 2 - The Math | `math` | Blue | `#2563eb` |
+| 3 - Impact | `economic` | Orange | `#d97706` |
+| 4 - Current Work | `resources` | Green | `#059669` |
+| 5 - Your Turn | `reflection` | Purple | `#7c3aed` |
+| 6 - Next Steps | `next` | Gold | `#FACE6A` |
+
+To customize colors, update:
+1. CSS classes `.chapter-section.[class]` for border colors
+2. CSS classes `.chapter-section.[class] .chapter-number` for number badges
+3. CSS classes `.chapter-nav a.nav-[class]` for navigation buttons
+4. HTML classes on `<section>` elements and `<nav>` links
+
+### Navigation Features
+
+The chapter navigation includes:
+- **Start button** (↑) - jumps back to top of page
+- **Color-coded chapter buttons** - match section themes
+- **Hover labels** - show chapter names on hover
+- **Active state** - highlights current section while scrolling
 
 ---
 
@@ -160,11 +190,12 @@ The form submits these fields:
 - `name`, `email`
 - `familiar_households` (comma-separated)
 - `gap_experience` (comma-separated)
-- `employer_experience` (comma-separated)
+- `housing_impact` (comma-separated)
 - `knew_programs` (comma-separated)
 - `who_are_you` (comma-separated)
-- `urgent_rental`, `urgent_homeownership`, `urgent_senior`, `urgent_workforce` (low/medium/high)
-- `experience`, `one_thing` (text)
+- `urgent_rental`, `urgent_homeownership`, `urgent_senior`, `urgent_workforce`, `urgent_emergency` (low/medium/high)
+- `obj_workforce`, `obj_rental`, `obj_ownership`, `obj_preserve`, `obj_displacement`, `obj_resources` (low/medium/high)
+- `experience`, `one_thing`, `anything_else` (text)
 
 ---
 

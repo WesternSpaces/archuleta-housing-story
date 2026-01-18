@@ -35,12 +35,13 @@ Interactive_Story/
 
 ## The Story
 
-An interactive narrative following 4 households through the housing crisis:
+An interactive narrative following 5 households through the housing crisis:
 
-1. **Maria** - Healthcare worker, can't afford rent ($1,733/mo gap)
-2. **The Garcias** - Young family, can't find a home to buy ($203,500 gap)
-3. **The Rodriguezes** - Restaurant owners, can't find workers (employer perspective)
-4. **Robert** - Retiring teacher, can't find a place to downsize
+1. **Anna** - Healthcare worker, can't afford rent ($1,050/mo gap)
+2. **Mike & Jenny** - Young family, can't find a home to buy ($168,500 gap)
+3. **Linda & Tom** - Retirees wanting to downsize, limited options
+4. **Pat & Chris** - Restaurant owners, can't find workers (employer perspective)
+5. **Sam** - Seasonal worker facing housing instability
 
 This restores the **employer perspective** missing from Echo's boards and uses **correct HNA data** (median rent $2,783, not the lower averages).
 
@@ -125,13 +126,24 @@ Responses submitted through the interactive story go to **sarah@westernspaces.co
 
 ## Color Palette
 
-Matches Echo's boards:
+### Chapter Colors
+Each chapter has a distinct color used in both the navigation and section borders:
+
+| Chapter | Color | Hex | Theme |
+|---------|-------|-----|-------|
+| 1 - Community | Cyan | `#0e7490` | Meet the households |
+| 2 - The Math | Blue | `#2563eb` | Affordability gap |
+| 3 - Impact | Orange | `#d97706` | Economic effects |
+| 4 - Current Work | Green | `#059669` | Resources & programs |
+| 5 - Your Turn | Purple | `#7c3aed` | Reflection & input |
+| 6 - Next Steps | Gold | `#FACE6A` | Timeline & process |
+
+### Base Colors
 
 | Color | Hex | Use |
 |-------|-----|-----|
-| Teal | `#0d6b6e` | Headers, primary accent |
-| Gold | `#c9a227` | Secondary accent, highlights |
-| Orange | `#d97706` | Tertiary accent |
+| Slate | `#2D3E4F` | Headers, primary |
+| Gold | `#FACE6A` | Accents, highlights |
 | Light BG | `#f5f7f5` | Page background |
 | Dark text | `#1a1a1a` | Body text |
 
@@ -208,6 +220,40 @@ These are the correct figures - verify any updates against the HNA:
 
 ## Changelog
 
+### January 18, 2026 - Open House #1 Final Updates
+
+**Title & Style:**
+- Changed title from "The Housing Story" to "Our Housing Story"
+- Changed "Key definitions:" to "Definitions:" per style guide
+
+**Navigation & UX:**
+- Added "Start" (↑) button to chapter nav for jumping back to top
+- Moved "How to use this story" instructions to very top (before About section)
+- Added color coding to all chapter nav buttons (see Color Palette section)
+- Added "(tap to close)" hint that appears when info sections are expanded
+
+**Chapter 2 - The Math:**
+- Changed table headers: "Affordable" → "Max Affordable", "Market" → "Median Market"
+- Changed Sam's gap from "No options" to "Very limited" (acknowledges Housing Solutions SW helps ~5/year)
+
+**Chapter 3 - Impact:**
+- Removed "Dig Deeper: Employment Data" section (redundant with existing content)
+
+**Chapter 4 - Inventory (Critical):**
+- Updated to match printed boards (171 total units):
+  - Removed Housing Choice Vouchers (rental assistance, not physical units)
+  - Rose Mountain Townhomes: 34 units
+  - Hickory Ridge Apartments: 40 units (was 41)
+  - Archuleta Housing for Elderly: 12 units, 0-30% AMI
+  - Casa de los Arcos: 16 units
+  - Socorro Senior Living: 19 units (was 12)
+  - Timberline Apartments: 50 units, LIHTC 30-80% AMI (Coming soon)
+- Updated pipeline: Timberline now shows "Now in inventory"
+
+**Chapter 5 - Your Turn:**
+- Added "Anything Else?" open-ended comment field
+- Form submission updated to capture new field
+
 ### January 17, 2026 - Round 4 Updates
 
 **Content & Accuracy:**
@@ -263,4 +309,4 @@ These are the correct figures - verify any updates against the HNA:
 
 ---
 
-*Last updated: January 17, 2026*
+*Last updated: January 18, 2026*
