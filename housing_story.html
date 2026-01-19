@@ -1805,7 +1805,6 @@
 
         <h3 style="margin-top: 25px; padding: 8px 12px; background: #fce7f3; border-left: 4px solid #ec4899; border-radius: 4px;">🏥 For Anna (Two Jobs, ~70% AMI)</h3>
         <ul>
-            <li><strong>Housing Choice Vouchers</strong> — Rental assistance (~30 vouchers, program at capacity)</li>
             <li><strong>Hickory Ridge Apartments</strong> — 40 units for ≤60% AMI</li>
             <li><strong>Rose Mountain Townhomes</strong> — 34 new units at 30-60% AMI (opened 2024)</li>
         </ul>
@@ -1847,6 +1846,7 @@
 
         <h3 style="padding: 8px 12px; background: #fef2f2; border-left: 4px solid #dc2626; border-radius: 4px;">🏕 For Sam (Experiencing Housing Instability)</h3>
         <ul>
+            <li><strong>Housing Choice Vouchers</strong> — Rental assistance (~30 vouchers, program at capacity)</li>
             <li><strong>Rise Above Violence</strong> — Crisis housing for domestic violence survivors only</li>
             <li><strong>Housing Solutions SW</strong> — Rapid re-housing (~5 households/year)</li>
             <li><strong>No emergency shelter</strong> — Nearest is Durango (60 miles)</li>
@@ -1988,7 +1988,7 @@
 
         <!-- Question 3 -->
         <div class="question-card">
-            <h3>Six Draft Objectives — Rate Their Priority</h3>
+            <h3>Seven Draft Objectives — Rate Their Priority</h3>
             <p><strong>How important is each objective for our community?</strong></p>
 
         <div class="rating-group">
@@ -2002,7 +2002,16 @@
             </div>
 
             <div class="rating-item">
-                <div class="rating-label"><strong>2. Expand Rental Supply</strong> — Address the 0.5% vacancy rate</div>
+                <div class="rating-label"><strong>2. Serve a Range of Income Levels</strong> — 43% of households below 80% AMI</div>
+                <div class="rating-buttons" role="group" aria-label="Priority rating for income range">
+                    <button type="button" class="rating-btn" data-name="obj_income" data-value="low" onclick="selectRating(this)">Low</button>
+                    <button type="button" class="rating-btn" data-name="obj_income" data-value="medium" onclick="selectRating(this)">Medium</button>
+                    <button type="button" class="rating-btn" data-name="obj_income" data-value="high" onclick="selectRating(this)">High</button>
+                </div>
+            </div>
+
+            <div class="rating-item">
+                <div class="rating-label"><strong>3. Expand Rental Supply</strong> — Address the 0.5% vacancy rate</div>
                 <div class="rating-buttons" role="group" aria-label="Priority rating for rental supply">
                     <button type="button" class="rating-btn" data-name="obj_rental" data-value="low" onclick="selectRating(this)">Low</button>
                     <button type="button" class="rating-btn" data-name="obj_rental" data-value="medium" onclick="selectRating(this)">Medium</button>
@@ -2011,7 +2020,7 @@
             </div>
 
             <div class="rating-item">
-                <div class="rating-label"><strong>3. Enable Homeownership</strong> — Bridge the affordability gap for buyers</div>
+                <div class="rating-label"><strong>4. Enable Homeownership</strong> — Bridge the affordability gap for buyers</div>
                 <div class="rating-buttons" role="group" aria-label="Priority rating for homeownership">
                     <button type="button" class="rating-btn" data-name="obj_ownership" data-value="low" onclick="selectRating(this)">Low</button>
                     <button type="button" class="rating-btn" data-name="obj_ownership" data-value="medium" onclick="selectRating(this)">Medium</button>
@@ -2020,7 +2029,7 @@
             </div>
 
             <div class="rating-item">
-                <div class="rating-label"><strong>4. Preserve Existing Affordable Housing</strong> — Protect what we have</div>
+                <div class="rating-label"><strong>5. Preserve Existing Affordable Housing</strong> — Protect what we have</div>
                 <div class="rating-buttons" role="group" aria-label="Priority rating for preservation">
                     <button type="button" class="rating-btn" data-name="obj_preserve" data-value="low" onclick="selectRating(this)">Low</button>
                     <button type="button" class="rating-btn" data-name="obj_preserve" data-value="medium" onclick="selectRating(this)">Medium</button>
@@ -2029,7 +2038,7 @@
             </div>
 
             <div class="rating-item">
-                <div class="rating-label"><strong>5. Protect Residents from Displacement</strong> — Keep longtime residents housed</div>
+                <div class="rating-label"><strong>6. Protect Residents from Displacement</strong> — Keep longtime residents housed</div>
                 <div class="rating-buttons" role="group" aria-label="Priority rating for displacement protection">
                     <button type="button" class="rating-btn" data-name="obj_displacement" data-value="low" onclick="selectRating(this)">Low</button>
                     <button type="button" class="rating-btn" data-name="obj_displacement" data-value="medium" onclick="selectRating(this)">Medium</button>
@@ -2038,7 +2047,7 @@
             </div>
 
                 <div class="rating-item">
-                    <div class="rating-label"><strong>6. Maximize Limited Resources</strong> — Target public funds effectively</div>
+                    <div class="rating-label"><strong>7. Maximize Limited Resources</strong> — Target public funds effectively</div>
                     <div class="rating-buttons" role="group" aria-label="Priority rating for resource efficiency">
                         <button type="button" class="rating-btn" data-name="obj_resources" data-value="low" onclick="selectRating(this)">Low</button>
                         <button type="button" class="rating-btn" data-name="obj_resources" data-value="medium" onclick="selectRating(this)">Medium</button>
@@ -2291,6 +2300,7 @@
             urgent_workforce: null,
             urgent_emergency: null,
             obj_workforce: null,
+            obj_income: null,
             obj_rental: null,
             obj_ownership: null,
             obj_preserve: null,
@@ -2389,6 +2399,7 @@
             const mobileObjectivesPreview = document.getElementById('mobile-objectives-preview');
             const objRatings = [];
             if (ratingSelections.obj_workforce) objRatings.push(`Workforce: ${ratingSelections.obj_workforce}`);
+            if (ratingSelections.obj_income) objRatings.push(`Income Range: ${ratingSelections.obj_income}`);
             if (ratingSelections.obj_rental) objRatings.push(`Rental: ${ratingSelections.obj_rental}`);
             if (ratingSelections.obj_ownership) objRatings.push(`Ownership: ${ratingSelections.obj_ownership}`);
             if (ratingSelections.obj_preserve) objRatings.push(`Preserve: ${ratingSelections.obj_preserve}`);
@@ -2526,6 +2537,7 @@
                     urgent_workforce: ratingSelections.urgent_workforce || '',
                     urgent_emergency: ratingSelections.urgent_emergency || '',
                     obj_workforce_stability: ratingSelections.obj_workforce || '',
+                    obj_income_range: ratingSelections.obj_income || '',
                     obj_rental_supply: ratingSelections.obj_rental || '',
                     obj_homeownership: ratingSelections.obj_ownership || '',
                     obj_preserve_affordable: ratingSelections.obj_preserve || '',
