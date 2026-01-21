@@ -796,6 +796,16 @@
             border-color: #dc2626;
         }
 
+        .rating-btn[data-value="skip"] {
+            font-size: 0.8rem;
+            color: #6b7280;
+        }
+
+        .rating-btn[data-value="skip"].selected {
+            background: #9ca3af;
+            border-color: #9ca3af;
+        }
+
         /* Print styles */
         @media print {
             body {
@@ -1928,6 +1938,10 @@
                     <input type="checkbox" name="who_are_you" value="solutions" onchange="updateSummary()">
                     <span>I want to help find solutions</span>
                 </label>
+                <label class="reflection-option">
+                    <input type="checkbox" name="who_are_you" value="skeptical" onchange="updateSummary()">
+                    <span>I'm not sure housing is a major problem here</span>
+                </label>
             </div>
 
             <div style="margin-top: 20px;">
@@ -1948,6 +1962,7 @@
                         <button type="button" class="rating-btn" data-name="urgent_rental" data-value="low" onclick="selectRating(this)">Low</button>
                         <button type="button" class="rating-btn" data-name="urgent_rental" data-value="medium" onclick="selectRating(this)">Medium</button>
                         <button type="button" class="rating-btn" data-name="urgent_rental" data-value="high" onclick="selectRating(this)">High</button>
+                        <button type="button" class="rating-btn" data-name="urgent_rental" data-value="skip" onclick="selectRating(this)">Not sure</button>
                     </div>
                 </div>
 
@@ -1957,6 +1972,7 @@
                         <button type="button" class="rating-btn" data-name="urgent_homeownership" data-value="low" onclick="selectRating(this)">Low</button>
                         <button type="button" class="rating-btn" data-name="urgent_homeownership" data-value="medium" onclick="selectRating(this)">Medium</button>
                         <button type="button" class="rating-btn" data-name="urgent_homeownership" data-value="high" onclick="selectRating(this)">High</button>
+                        <button type="button" class="rating-btn" data-name="urgent_homeownership" data-value="skip" onclick="selectRating(this)">Not sure</button>
                     </div>
                 </div>
 
@@ -1966,6 +1982,7 @@
                         <button type="button" class="rating-btn" data-name="urgent_senior" data-value="low" onclick="selectRating(this)">Low</button>
                         <button type="button" class="rating-btn" data-name="urgent_senior" data-value="medium" onclick="selectRating(this)">Medium</button>
                         <button type="button" class="rating-btn" data-name="urgent_senior" data-value="high" onclick="selectRating(this)">High</button>
+                        <button type="button" class="rating-btn" data-name="urgent_senior" data-value="skip" onclick="selectRating(this)">Not sure</button>
                     </div>
                 </div>
 
@@ -1975,6 +1992,7 @@
                         <button type="button" class="rating-btn" data-name="urgent_workforce" data-value="low" onclick="selectRating(this)">Low</button>
                         <button type="button" class="rating-btn" data-name="urgent_workforce" data-value="medium" onclick="selectRating(this)">Medium</button>
                         <button type="button" class="rating-btn" data-name="urgent_workforce" data-value="high" onclick="selectRating(this)">High</button>
+                        <button type="button" class="rating-btn" data-name="urgent_workforce" data-value="skip" onclick="selectRating(this)">Not sure</button>
                     </div>
                 </div>
 
@@ -1984,6 +2002,7 @@
                         <button type="button" class="rating-btn" data-name="urgent_emergency" data-value="low" onclick="selectRating(this)">Low</button>
                         <button type="button" class="rating-btn" data-name="urgent_emergency" data-value="medium" onclick="selectRating(this)">Medium</button>
                         <button type="button" class="rating-btn" data-name="urgent_emergency" data-value="high" onclick="selectRating(this)">High</button>
+                        <button type="button" class="rating-btn" data-name="urgent_emergency" data-value="skip" onclick="selectRating(this)">Not sure</button>
                     </div>
                 </div>
             </div>
@@ -2001,6 +2020,7 @@
                     <button type="button" class="rating-btn" data-name="obj_workforce" data-value="low" onclick="selectRating(this)">Low</button>
                     <button type="button" class="rating-btn" data-name="obj_workforce" data-value="medium" onclick="selectRating(this)">Medium</button>
                     <button type="button" class="rating-btn" data-name="obj_workforce" data-value="high" onclick="selectRating(this)">High</button>
+                    <button type="button" class="rating-btn" data-name="obj_workforce" data-value="skip" onclick="selectRating(this)">Not sure</button>
                 </div>
             </div>
 
@@ -2010,6 +2030,7 @@
                     <button type="button" class="rating-btn" data-name="obj_income" data-value="low" onclick="selectRating(this)">Low</button>
                     <button type="button" class="rating-btn" data-name="obj_income" data-value="medium" onclick="selectRating(this)">Medium</button>
                     <button type="button" class="rating-btn" data-name="obj_income" data-value="high" onclick="selectRating(this)">High</button>
+                    <button type="button" class="rating-btn" data-name="obj_income" data-value="skip" onclick="selectRating(this)">Not sure</button>
                 </div>
             </div>
 
@@ -2019,6 +2040,7 @@
                     <button type="button" class="rating-btn" data-name="obj_rental" data-value="low" onclick="selectRating(this)">Low</button>
                     <button type="button" class="rating-btn" data-name="obj_rental" data-value="medium" onclick="selectRating(this)">Medium</button>
                     <button type="button" class="rating-btn" data-name="obj_rental" data-value="high" onclick="selectRating(this)">High</button>
+                    <button type="button" class="rating-btn" data-name="obj_rental" data-value="skip" onclick="selectRating(this)">Not sure</button>
                 </div>
             </div>
 
@@ -2028,6 +2050,7 @@
                     <button type="button" class="rating-btn" data-name="obj_ownership" data-value="low" onclick="selectRating(this)">Low</button>
                     <button type="button" class="rating-btn" data-name="obj_ownership" data-value="medium" onclick="selectRating(this)">Medium</button>
                     <button type="button" class="rating-btn" data-name="obj_ownership" data-value="high" onclick="selectRating(this)">High</button>
+                    <button type="button" class="rating-btn" data-name="obj_ownership" data-value="skip" onclick="selectRating(this)">Not sure</button>
                 </div>
             </div>
 
@@ -2037,6 +2060,7 @@
                     <button type="button" class="rating-btn" data-name="obj_preserve" data-value="low" onclick="selectRating(this)">Low</button>
                     <button type="button" class="rating-btn" data-name="obj_preserve" data-value="medium" onclick="selectRating(this)">Medium</button>
                     <button type="button" class="rating-btn" data-name="obj_preserve" data-value="high" onclick="selectRating(this)">High</button>
+                    <button type="button" class="rating-btn" data-name="obj_preserve" data-value="skip" onclick="selectRating(this)">Not sure</button>
                 </div>
             </div>
 
@@ -2046,6 +2070,7 @@
                     <button type="button" class="rating-btn" data-name="obj_displacement" data-value="low" onclick="selectRating(this)">Low</button>
                     <button type="button" class="rating-btn" data-name="obj_displacement" data-value="medium" onclick="selectRating(this)">Medium</button>
                     <button type="button" class="rating-btn" data-name="obj_displacement" data-value="high" onclick="selectRating(this)">High</button>
+                    <button type="button" class="rating-btn" data-name="obj_displacement" data-value="skip" onclick="selectRating(this)">Not sure</button>
                 </div>
             </div>
 
@@ -2055,6 +2080,7 @@
                         <button type="button" class="rating-btn" data-name="obj_resources" data-value="low" onclick="selectRating(this)">Low</button>
                         <button type="button" class="rating-btn" data-name="obj_resources" data-value="medium" onclick="selectRating(this)">Medium</button>
                         <button type="button" class="rating-btn" data-name="obj_resources" data-value="high" onclick="selectRating(this)">High</button>
+                        <button type="button" class="rating-btn" data-name="obj_resources" data-value="skip" onclick="selectRating(this)">Not sure</button>
                     </div>
                 </div>
             </div>
@@ -2062,16 +2088,16 @@
 
         <!-- Question 5 -->
         <div class="question-card">
-            <h3>What Should Decision-Makers Understand?</h3>
-            <p><strong>In one sentence, what do you think decision-makers should understand about housing here?</strong></p>
-            <textarea id="experience" placeholder="Share your perspective..." oninput="updateSummary()"></textarea>
+            <h3>What's Being Missed?</h3>
+            <p><strong>What do you wish decision-makers understood better about housing in our community?</strong></p>
+            <textarea id="experience" placeholder="What's being overlooked or misunderstood..." oninput="updateSummary()"></textarea>
         </div>
 
         <!-- Question 6 -->
         <div class="question-card">
-            <h3>What Should Be Prioritized?</h3>
-            <p><strong>What matters most for our community's housing future?</strong></p>
-            <textarea id="one-thing" placeholder="What should decision-makers prioritize?" oninput="updateSummary()"></textarea>
+            <h3>If You Could Focus on One Thing...</h3>
+            <p><strong>What single action or priority would make the biggest difference?</strong></p>
+            <textarea id="one-thing" placeholder="The one thing I'd prioritize..." oninput="updateSummary()"></textarea>
         </div>
 
         <!-- Question 7: Open-ended -->
@@ -2131,6 +2157,7 @@
     <section class="submit-section">
         <h3 style="color: #2D3E4F; margin-top: 0;">Share Your Story</h3>
         <p>Your input helps shape the Housing Action Plan. Share your reflections so we can include your voice.</p>
+        <p style="font-size: 0.85rem; color: #6b7280; margin-top: 10px;"><strong>Privacy:</strong> Your responses go only to the project team and will be summarized anonymously. We won't share your email or identify you by name without permission.</p>
 
         <div style="margin: 20px 0;">
             <label style="display: block; margin-bottom: 8px; font-weight: 500;">Name (optional):</label>
@@ -2144,6 +2171,12 @@
 
         <button class="submit-button" onclick="submitStory()">Send My Story</button>
         <button class="print-button" onclick="window.print()">Print</button>
+
+        <div id="submit-success" style="display: none; margin-top: 20px; padding: 20px; background: #ecfdf5; border: 2px solid #059669; border-radius: 8px; text-align: center;">
+            <div style="font-size: 2rem; margin-bottom: 10px;">&#10003;</div>
+            <p style="margin: 0; font-weight: 600; color: #065f46;">Thank you! Your story has been shared.</p>
+            <p style="margin: 8px 0 0 0; color: #047857; font-size: 0.95rem;">Your input will help shape the Housing Action Plan.</p>
+        </div>
     </section>
 
     <!-- CHAPTER 6: WHAT'S NEXT -->
@@ -2159,7 +2192,7 @@
                 </div>
             </div>
             <div class="timeline-item">
-                <div class="timeline-marker complete">&#10003;</div>
+                <div class="timeline-marker current">&#9733;</div>
                 <div class="timeline-content">
                     <strong>Strategy Group Sessions</strong> (Jan-Mar 2026)
                     <p>Working group shaping goals and strategies</p>
@@ -2215,6 +2248,7 @@
         <p>Questions? Contact <a href="mailto:sarah@westernspaces.co">sarah@westernspaces.co</a></p>
         <p style="margin-top: 10px; font-size: 0.85rem;">Data source: 2025 Regional Housing Needs Assessment</p>
         <p style="font-size: 0.85rem;">Prepared for the Archuleta County & Town of Pagosa Springs Housing Action Plan</p>
+        <p style="font-size: 0.85rem; margin-top: 15px; color: #6b7280;"><a href="https://westernspaces.co" style="color: #6b7280;">Western Spaces</a> (Sarah Brown McClain) is the housing consultant facilitating this planning process.</p>
     </footer>
 
     </div><!-- end main-content -->
@@ -2545,7 +2579,8 @@
                 if (response.ok) {
                     btn.textContent = 'Sent!';
                     btn.style.background = '#059669';
-                    alert('Thank you! Your story has been shared. Your input will help shape the Housing Action Plan.');
+                    document.getElementById('submit-success').style.display = 'block';
+                    btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 } else {
                     throw new Error('Form submission failed');
                 }
