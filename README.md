@@ -2,6 +2,12 @@
 
 Materials for Open House #1 - January 21, 2026
 
+> **Note:** This is a **separate git repository** from the main Western Spaces repo. When making changes, ensure you're in this directory:
+> ```
+> cd "/Users/sarah/Documents/Western Spaces/Archuletta County/HAP/Engagement/Session One/Interactive_Story"
+> ```
+> The parent `Western Spaces` folder has its own repo that ignores this directory.
+
 ---
 
 ## Quick Links
@@ -220,6 +226,40 @@ These are the correct figures - verify any updates against the HNA:
 
 ## Changelog
 
+### January 18, 2026 - Final Pre-Event Updates
+
+**Response Card (`print_response_card.html`):**
+- Restructured for proper double-sided printing (Page 1: both fronts, Page 2: both backs)
+- Updated Sam's icon to 🏕 (tent) with red background to match canonical materials
+- Changed "Restaurant owners" to "Business owners" for Pat & Chris
+- Added dashed cut line between cards
+- Tightened layout to fit 2 cards per page
+
+**Chapter 4 - Resources:**
+- Moved Housing Choice Vouchers from Anna's section to Sam's section (Sam more likely to qualify)
+
+**Print & Sidebar:**
+- Added print style to hide chapter navigation when printing
+- Removed "Your reflections" section from sidebar (open-ended text cluttered the summary)
+
+### January 18, 2026 - Seven Objectives Update
+
+**Chapter 5 - Your Turn:**
+- Changed from 6 to 7 draft objectives
+- Added new objective #2: "Serve a Range of Income Levels — 43% of households below 80% AMI"
+- Renumbered existing objectives 2-6 to become 3-7
+- Updated JavaScript to track new objective (obj_income)
+- Updated form submission to include obj_income_range field
+
+**Seven Draft Objectives (Final):**
+1. Support Workforce Stability — Help employers recruit and retain workers
+2. Serve a Range of Income Levels — 43% of households below 80% AMI
+3. Expand Rental Supply — Address the 0.5% vacancy rate
+4. Enable Homeownership — Bridge the affordability gap for buyers
+5. Preserve Existing Affordable Housing — Protect what we have
+6. Protect Residents from Displacement — Keep longtime residents housed
+7. Maximize Limited Resources — Target public funds effectively
+
 ### January 18, 2026 - Open House #1 Final Updates
 
 **Title & Style:**
@@ -309,4 +349,4 @@ These are the correct figures - verify any updates against the HNA:
 
 ---
 
-*Last updated: January 18, 2026*
+*Last updated: January 18, 2026 (final pre-event updates)*
