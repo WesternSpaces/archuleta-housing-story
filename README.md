@@ -226,6 +226,31 @@ These are the correct figures - verify any updates against the HNA:
 
 ## Changelog
 
+### January 20, 2026 - Pre-Event UX Improvements
+
+**Content fixes (from coworker feedback):**
+- Added "Subsidized housing" definition (distinct from "Affordable housing")
+- Spelled out "Certified Nursing Assistant (CNA)" in Anna's profile
+- Added tenure split explanation in "Dig Deeper: Housing Need by 2035"
+- Fixed sentence fragment in Section 3 intro
+- Updated inventory table: removed Timberline, added Archuleta Housing Inc. (173 total units)
+- Updated pipeline table: Timberline now shows "2025-2026" (not "Now in inventory")
+- Updated Pat & Chris section: Timberline as separate bullet item
+
+**UX improvements (from fresh review against UX guide):**
+- Fixed timeline: Strategy Group Sessions now shows as in-progress (was incorrectly marked complete)
+- Added "Not sure" option to all 12 rating buttons (urgency + objectives)
+- Reworded similar open questions for clarity:
+  - "What's Being Missed?" (awareness/understanding)
+  - "If You Could Focus on One Thing..." (action/priority)
+- Replaced alert() with inline success message after form submission
+- Added privacy statement in submit section
+- Added "I'm not sure housing is a major problem here" option for skeptics
+- Added Western Spaces (Sarah Brown McClain) credit in footer
+
+**Reference documents:**
+- `UX_Guide_Public_Engagement.md` - UX best practices for civic engagement (used for this review)
+
 ### January 18, 2026 - Final Pre-Event Updates
 
 **Response Card (`print_response_card.html`):**
@@ -349,4 +374,4 @@ These are the correct figures - verify any updates against the HNA:
 
 ---
 
-*Last updated: January 18, 2026 (final pre-event updates)*
+*Last updated: January 20, 2026 (pre-event UX improvements)*
